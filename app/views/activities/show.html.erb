@@ -1,5 +1,21 @@
-<h2><%= @activity.name %></h2>
-<% if @activity.photo.key %>
-  <%= cl_image_tag @activity.photo.key, crop: :fill%>
-<% end %>
-<p><%= @activity.description %></p>
+  <h2><%= @activity.name %></h2>
+  <% if @activity.photo.key %>
+    <%= cl_image_tag @activity.photo.key, crop: :fill%>
+  <% end %>
+<div class="container-activity">
+  <div class="description-price-activity">
+    <h2><strong>DESCRIPTION</strong></h2>
+    <p><%= @activity.description %></p>
+    <h2><strong>LOCATION</strong></h2>
+    <p><%= @activity.location %></p>
+    <h2><strong>REVIEWS</strong></h2>
+  </div>
+
+
+  <div class="card-add-to-itinerary">
+    <p><strong>$<%= @activity.price%></strong> per traveler</p>
+  </div>
+</div>
+
+<%# intermediare  input date
+simple form %>
