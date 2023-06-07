@@ -5,4 +5,21 @@
 
 <form action = "/activities">
  <input placeholder="Where?" type="location" name="location" id="location">
+ <div class = "form-banner d-flex justify-content-end mb-1" >
+    <div class = "datecalendar m-1">
+      <label for="arrive_date">From: </label>
+    </div>
+    <div class="datecalendar">
+      <input type="date" name="arrive_date" min="2023-06-02" value="2023-06-02" id="arrive_date" class="input-home">
+    </div>
+ </div>
+
+  <div class = "form-banner d-flex justify-content-end mb-1">
+    <div class = "datecalendar m-1">
+      <label for="date">To:</label>
+    </div>
+    <div class="datecalendar">
+      <input type="date" name="date" value="2023-06-03" id="date" class="input-home">
+    </div>
+  </div>
 </form>

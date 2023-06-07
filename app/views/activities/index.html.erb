@@ -6,7 +6,7 @@
     <p><%= a.description %></p>
     <p><%= a.price %></p>
     <p><%= link_to "See details", activity_path(a) %>
-    <%= link_to "Add them to the valise", which_trip_path(a)%>
+    <%= link_to "Add them to the valise", intermediaire_path(start_date: @start_date, end_date: @end_date, activity_id: a.id)%>
   </div>
 <% end %>
 
