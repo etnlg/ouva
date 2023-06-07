@@ -41,20 +41,35 @@ puts "Creating trips"
 
 puts "Creating activities"
 
-Activity.create!(owner_id: Owner.last.id, name: "Horse riding", description: "Horse riding on the beach, beautiful sunsets", location: "Son Saura, Menorca", price: 35)
-puts '1'
-Activity.create!(owner_id: Owner.first.id, name: "Diving", description: "Diving in incredible water", location: "Cala escorxada, Menorca", price: 65)
-puts "2"
-Activity.create!(owner_id: Owner.first.id, name: "Jumping", description: "Jumping from big caillou", location: "Cala en Brut, Menorca", price: 0)
-Activity.create!(owner_id: Owner.first.id, name: "Horse Riding", description: "Experience horse riding on the pristine beaches with beautiful sunsets", location: "Son Saura, Menorca", price: 35)
-Activity.create!(owner_id: Owner.last.id, name: "Kayaking Adventure", description: "Explore the stunning coastline and secluded coves by kayak", location: "Son Saura, Menorca", price: 50)
-Activity.create!(owner_id: Owner.last.id, name: "Scuba Diving", description: "Discover the rich marine life and clear waters of Menorca", location: "Fornells, Menorca", price: 60)
-Activity.create!(owner_id: Owner.last.id, name: "Historical Tour", description: "A guided tour around Menorca's ancient and historical sites", location: "Mahon, Menorca", price: 30)
-Activity.create!(owner_id: Owner.last.id, name: "Wine Tasting", description: "Taste the authentic and exquisite wines of Menorca", location: "Binifadet, Menorca", price: 25)
-Activity.create!(owner_id: Owner.last.id, name: "Hiking at El Toro", description: "Conquer the highest peak in Menorca for panoramic island views", location: "El Toro, Menorca", price: 20)
-Activity.create!(owner_id: Owner.last.id, name: "Cycling Tour", description: "Experience a cycling adventure through Menorca's scenic landscapes", location: "Ciutadella, Menorca", price: 40)
-Activity.create!(owner_id: Owner.last.id, name: "Boat Tour", description: "Relax on a boat tour to explore the stunning bays and beaches", location: "Cala'n Bosch, Menorca", price: 70)
-Activity.create!(owner_id: Owner.last.id, name: "Cheese Tasting", description: "Sample traditional Menorcan cheeses at a local farm", location: "Mahon, Menorca", price: 20)
-Activity.create!(owner_id: Owner.last.id, name: "Photography Workshop", description: "Capture Menorca's beauty through your lens with a professional", location: "Binibeca, Menorca", price: 45)
+image = Rails.root.join("app", "assets", "images", "diving.jpg")
+file = File.open(ActionController::Base.helpers.image_path(image))
+activity = Activity.new(owner_id: Owner.last.id, name: "Diving between the continents", description: "Silfra is a fissure between
+  the North American and Eurasian tectonic plates in Thingvellir National Park.
+  Immerse yourself in the clearest water in the world and float between two continents in Iceland! A snorkeling adventure
+  in the famous Silfra fissure is an unforgettable experience, there is a reason this Snorkeling Tour was awarded 5th
+   place on the Best of the Best Traveler's choice award of 2022 by Tripadvisor as well as being Tripadvisor's No 4
+   experience in the world in 2019!", location: "Silfra, Iceland", price: 199)
+activity.photo.attach(io: file, filename: "diving.jpg", content_type: "image/jpg")
+activity.save!
+
+image = Rails.root.join("app", "assets", "images", "snowmobile1.jpg")
+file = File.open(ActionController::Base.helpers.image_path(image))
+activity = Activity.new(owner_id: Owner.last.id, name: " Snowmobile tour on Langjokull Glacier", description: "Hop on
+  a snowmobile and go on an exhilarating ride on the snowy slopes.
+  You'll be talking about your adventure on Iceland's second largest glacier for years to come! Welcome to the wintry
+  world of glaciers in Iceland!", location: "Skjol, Iceland", price: 250)
+activity.photo.attach(io: file, filename: "snowmobile1.jpg", content_type: "image/jpg")
+activity.save!
+
+
+image = Rails.root.join("app", "assets", "images", "horse.jpg")
+file = File.open(ActionController::Base.helpers.image_path(image))
+activity = Activity.new(owner_id: Owner.last.id, name: "Horse riding next to a volcano", description: "Saddle up and
+  discover the unique volcanic landscape at the outskirts of
+  Reykjavík on the back of a horse. Ride around the countryside and get to know the friendly Icelandic horse on this
+  exciting tour", location: "Reykjavík, Iceland", price: 150)
+activity.photo.attach(io: file, filename: "horse.jpg", content_type: "image/jpg")
+activity.save!
+
 
 puts "Done"
