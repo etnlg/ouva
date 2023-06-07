@@ -1,0 +1,16 @@
+<h2>Your trip!</h2>
+<% date = Date.parse(@start_date) %>
+
+<% (1..@trip_length).each do |n| %>
+  <div class = "bg-white shadow m-3 p-3">
+    <% date += 1 %>
+    <p><strong>Day <%= n %></strong> (<%=date%>)<p>
+    <% if @act_hash[n] %>
+      <% activity = @act_hash[n] %>
+      <p><strong>Name:</strong> <%= activity.name %></p>
+      <p><strong>Description:</strong> <%= activity.description %></p>
+    <% else %>
+      <%= link_to "Add an acitvity", root_path %>
+    <% end %>
+  </div>
+<% end %>

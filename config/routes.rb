@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :owners
   devise_for :users
   root to: "pages#home"
+  get "pages/intermediaire", to: "pages#intermediaire", as: "intermediaire"
   resources :activities
   get "trips/which", to: "trips#which", as: 'which_trip'
   resources :trips do
