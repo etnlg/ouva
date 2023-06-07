@@ -1,0 +1,39 @@
+.card-container {
+  // border: 1px solid black;
+  width: 435px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+}
+
+.card-img {
+}
+
+.card-img img {
+  width: 435px;
+  height: 471px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-info {
+  height: 104px;
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  // margin-top: 20px;
+}
+
+.card-name {
+  margin-left: 30px;
+}
+
+.card-location {
+  margin-right: 46px;
+}
+
+h4, p {
+  margin: 0;
+}
