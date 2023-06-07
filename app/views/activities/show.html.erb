@@ -1,3 +1,5 @@
 <h2><%= @activity.name %></h2>
-
+<% if @activity.photo.key %>
+  <%= cl_image_tag @activity.photo.key, crop: :fill%>
+<% end %>
 <p><%= @activity.description %></p>

@@ -1,0 +1,9 @@
+<div class="container my-3">
+  <h1>Create a new trip!</h1>
+  <%= simple_form_for(@trip) do |f| %>
+    <%= f.input :destination %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Create"%>
+  <% end %>
+</div>
