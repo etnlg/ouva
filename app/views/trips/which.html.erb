@@ -1,0 +1,11 @@
+<h2>To which trip do you want to add this activity to?</h2>
+
+<div class = "d-flex">
+  <% @trips.each do |t| %>
+    <div class = "bg-white shadow m-3 p-3">
+      <p><%= t.destination %></p>
+      <p><%= link_to "Add to this trip", trip_trip_activities_path(trip_id: t, activity_id: @activity_id),
+      data: {turbo_method: :post} %>
+    </div>
+  <% end %>
+</div>

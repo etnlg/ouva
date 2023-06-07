@@ -1,0 +1,17 @@
+<h2>Here are all your trip activities!</h2>
+
+<% @trip_activities.each do |act| %>
+  <div class = "d-flex bg-white shadow">
+    <div class = "m-3 p-3">
+      <% activity = Activity.find(act.activity_id) %>
+      <h2><%= activity.name %></h2>
+      <p><%= activity.description %></p>
+      <p><%= activity.location %></p>
+      <p><%= activity.price %> <strong>EUR</strong></p>
+    </div>
+    <div class = "m-3 p-3">
+      <% owner = Owner.find(activity.owner_id) %>
+      <h5>This activity is proposed by <%= owner.firstname %> <%= owner.lastname %></h5>
+    </div>
+  </div>
+<% end %>

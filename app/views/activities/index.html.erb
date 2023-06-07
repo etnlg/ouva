@@ -5,6 +5,8 @@
     <h4><%= a.name %></h4>
     <p><%= a.description %></p>
     <p><%= a.price %></p>
+    <p><%= link_to "See details", activity_path(a) %>
+    <%= link_to "Add them to the valise", which_trip_path(a)%>
   </div>
 <% end %>
 
