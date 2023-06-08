@@ -41,35 +41,189 @@ puts "Creating trips"
 
 puts "Creating activities"
 
-image = Rails.root.join("app", "assets", "images", "diving.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
+image1 = Rails.root.join("app", "assets", "images", "iceland", "diving.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "diving2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "diving3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Diving between the continents", description: "Silfra is a fissure between
   the North American and Eurasian tectonic plates in Thingvellir National Park.
   Immerse yourself in the clearest water in the world and float between two continents in Iceland! A snorkeling adventure
   in the famous Silfra fissure is an unforgettable experience, there is a reason this Snorkeling Tour was awarded 5th
    place on the Best of the Best Traveler's choice award of 2022 by Tripadvisor as well as being Tripadvisor's No 4
    experience in the world in 2019!", location: "Silfra, Iceland", price: 199)
-activity.photo.attach(io: file, filename: "diving.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file1, filename: "diving.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "diving2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "diving3.jpg", content_type: "image/jpg")
 activity.save!
 
-image = Rails.root.join("app", "assets", "images", "snowmobile1.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
+image1 = Rails.root.join("app", "assets", "images", "iceland", "snowmobile1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "snowmobile2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "snowmobile3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: " Snowmobile tour on Langjokull Glacier", description: "Hop on
   a snowmobile and go on an exhilarating ride on the snowy slopes.
   You'll be talking about your adventure on Iceland's second largest glacier for years to come! Welcome to the wintry
   world of glaciers in Iceland!", location: "Skjol, Iceland", price: 250)
-activity.photo.attach(io: file, filename: "snowmobile1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file1, filename: "snowmobile1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "snowmobile2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "snowmobile3.jpg", content_type: "image/jpg")
 activity.save!
 
 
-image = Rails.root.join("app", "assets", "images", "horse.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
+image1 = Rails.root.join("app", "assets", "images", "iceland", "horse.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "horse2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "horse3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Horse riding next to a volcano", description: "Saddle up and
   discover the unique volcanic landscape at the outskirts of
   Reykjavík on the back of a horse. Ride around the countryside and get to know the friendly Icelandic horse on this
-  exciting tour", location: "Reykjavík, Iceland", price: 150)
-activity.photo.attach(io: file, filename: "horse.jpg", content_type: "image/jpg")
+  exciting tour", location: "Reykjavik, Iceland", price: 150)
+activity.photo.attach(io: file1, filename: "horse.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
 activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "iceland", "quad1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "quad2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "quad3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Quad tour", description: "This is an opportunity like no other
+   to escape the hustle and bustle of city life and immerse yourself in Iceland's stunning natural beauty. Our ATV tour
+   is designed for riders of all abilities, and you'll have a blast exploring rugged trails, picturesque routes along
+   Lake Hafravatn, and a variety of terrains. The highlight of this tour is the ascent to the Reykjavik Peak mountain,
+   where you'll be rewarded with breathtaking views of Iceland's third most active volcanic system, the Hengill mountain
+   range, and the Hellisheiði geothermal power plant that provides energy to the capital. From this vantage point, you'll
+   witness the beauty of Faxaflói bay, the entire capital region, the Bláfjöll mountain range, and the iconic Esja..
+  Don't miss out on this once-in-a-lifetime experience to see Reykjavik from a whole new perspective.",
+   location: "Reykjavik, Iceland", price: 189)
+activity.photo.attach(io: file1, filename: "quad1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "quad2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "quad3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "iceland", "glacier1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "glacier2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "glacier3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Glacier tour", description: "This five-and-a-half-hour glacier
+  hiking tour will take you to the magnificent Falljökull glacier. Falljokull is an outlet glacier from Vatnajokull,
+   the largest glacier in Europe and the King of natural ice sculptures. As you hike around this magical ice setting,
+   you will get all the information about this enchanting place from your friendly and knowledgeable guide, taking you
+   to all the best spots to deeply enjoy the glacier.",
+   location: "Hof, Iceland", price: 143)
+activity.photo.attach(io: file1, filename: "glacier1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "glacier2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "glacier3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "iceland", "dog1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "dog2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "dog3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Dog Sledding", description: "Dog sledding can be done year round,
+  although you will only go dog sledding on a glacier during the summertime.
+  In winter, the weather on the glaciers can be too harsh so the dogs are kept on the South Coast of Iceland where the
+  weather is milder, so there's actually not a guarantee that you will go dog sledding on snow during wintertime—but
+  it's guaranteed during summer!
+  Dog sledding is a fun activity for all ages, and kids as young as 2 years old can go on the dog sleds. You also get
+   plenty of time to fuss over the cute and fun dogs, in amidst travelling in a beautiful landscape in style. ",
+   location: "Reykjavik, Iceland", price: 177)
+activity.photo.attach(io: file1, filename: "dog1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "dog2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "dog3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "iceland", "surf1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "surf2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "surf3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Surfing in Iceland", description: "Surfing in Iceland is not only
+  for hardcore surfers but for anyone looking for something a little different during their stay. Although the waves can
+     be big and the sea is ice cold, surfing here presents some unique benefits, such as incredible surroundings, endurance
+     training and some fantastic surf breaks. Without a doubt, the best time to go surfing in Iceland is between October and
+     March, when most of the country is battered by rain, storms and strong winds. Of course, strong winds means strong waves
+     along the coastlines, thus a better and more challenging experience.
+     The majority of surfing in Iceland is done off the moon-like landscapes of the Reykjanes Peninsula, home to such
+     attractions as Lake Kleifarvatn and the Bridge Between the Continents.    ",
+   location: "Garour, Iceland", price: 100)
+activity.photo.attach(io: file1, filename: "surf1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "surf2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "surf3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "iceland", "bike1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "bike2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "bike3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking in Iceland", description: "Everyone loves a cyclist.
+   Pedalling away on their two-wheelers, this interesting breed of sportsman has long found Iceland to be particularly suited
+   to cycling; the roads are long, scenic and hold little traffic, and most of the major attractions can be accessed from
+   the island's Ring Road.
+  This has allowed cyclists to merge their passion with traditional sightseeing, extending the process over a number of
+  days in order to allow passage from destination to the next. ",
+   location: "Hengill, Iceland", price: 130)
+activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
+activity.save!
+
+
+image1 = Rails.root.join("app", "assets", "images", "iceland", "volcano1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "volcano2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "volcano3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Volcano Tour", description: "Although infinitely more exciting when
+  they are erupting, this tour inside a volcano is still a pretty impressive caving tour available in the summertime.
+   Fear not, you won't see any flowing magma, but instead, a dazzling caldera made up colourful inner rock faces.
+
+  Volcano tours provide a fascinating insight into the geothermally active nature of Iceland's landscape, as well as
+   presenting one of the more unique activities on earth—actually being inside a volcano!  ",
+   location: "Grindavik, Iceland", price: 145)
+activity.photo.attach(io: file1, filename: "volcano1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "volcano2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "volcano3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "iceland", "ski1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "iceland", "ski2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "iceland", "ski3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Heli-skiing and Heli-snowboarding", description: "Heli-skiing
+  and Heli-snowboarding are two of the ultimate extreme sports you can experience in Iceland. They are also one of the
+   priciest, unfortunately, but then again, whenever did something so spectacular come cheap?
+
+  Heli-skiing and Heli-snowboarding are, quite obviously, more extreme than their usual counterpart, meaning that a
+  higher level of experience and skill is required in order to participate in this type of tour. For those who fit the
+  description, you will have the rare opportunity to ski/snowboard from the summit of a mountain all way down to the
+   coastlines of the Atlantic. Nothing beats the feeling of skiing or snowboarding down a steep hill with fresh powder.
+   Such an experience is only complimented by being the only one on the slope. Not to mention when you have breathtaking
+   views all the way down and get to fly around in a helicopter on your way up.",
+   location: "Dalvik, Iceland", price: 200)
+activity.photo.attach(io: file1, filename: "ski1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
+activity.save!
+
 
 
 puts "Done"
