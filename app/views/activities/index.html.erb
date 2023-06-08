@@ -2,10 +2,11 @@
 
 <% @activities.each do |a| %>
   <div class = "bg-white shadow border m-3 p-3">
+    <%= cl_image_tag a.photo.blobs[0].key, width: 400, height: 300, crop: :fill %>
     <h4><%= a.name %></h4>
     <p><%= a.description %></p>
     <p><%= a.price %></p>
-    <p><%= link_to "See details", activity_path(a) %>
+    <p><%= link_to "See details", activity_path(start_date: @start_date, end_date: @end_date, id: a.id, location: @location) %>
     <%= link_to "Add them to the valise", intermediaire_path(start_date: @start_date, end_date: @end_date, activity_id: a.id)%>
   </div>
 <% end %>

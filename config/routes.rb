@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   get "pages/intermediaire", to: "pages#intermediaire", as: "intermediaire"
+  get "pages/checkout", to: "pages#checkout", as: "checkout"
   resources :activities
   get "trips/which", to: "trips#which", as: 'which_trip'
   resources :trips do

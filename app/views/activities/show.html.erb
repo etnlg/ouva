@@ -55,7 +55,13 @@
       <p><strong>$<%= @activity.price%></strong> per traveler</p>
     </div>
 
-    <form class="form-show", action = "/intermediare">
+
+    <form class="form-show", action = "/pages/intermediaire">
+      <input type="hidden" name="start_date" value= <%= @start_date %> >
+      <input type="hidden" name="end_date" value= <%= @end_date %>>
+      <input type="hidden" name="activity_id" value=<%= @activity.id %> >
+      <input type="hidden" name="location" value=<%= @location %> >
+
       <div class="form-show-line">
         <label for="date"></label>
         <input type="date" placeholder="Choose" id="date" name="date" required><br><br>
