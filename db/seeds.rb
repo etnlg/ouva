@@ -163,6 +163,8 @@ activity.photo.attach(io: file3, filename: "snowmobile3.jpg", content_type: "ima
 activity.save!
 
 
+
+
 image1 = Rails.root.join("app", "assets", "images", "iceland", "horse.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "horse2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "iceland", "horse3.jpg")
@@ -170,6 +172,7 @@ file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Horse riding next to a volcano", description: "Saddle up and
+
   discover the unique volcanic landscape at the outskirts of
   Reykjavík on the back of a horse. Ride around the countryside and get to know the friendly Icelandic horse on this
   exciting tour", location: "Reykjavik, Iceland", price: 150)
@@ -215,6 +218,112 @@ activity.photo.attach(io: file1, filename: "glacier1.jpg", content_type: "image/
 activity.photo.attach(io: file2, filename: "glacier2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "glacier3.jpg", content_type: "image/jpg")
 activity.save!
+
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "baobab1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "baobab2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "baobab3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Walking in the world oldest forest", description: "The Baobab tree,
+  also known as the Tree of life, is one of the oldest trees in the world. You will have the chance to walk in the same footsteps
+  as our ancestors and relive more than 2000 years of history while seeing lemurians hoping amongs trees",
+  location: "Baobab Avenue, Madagascar", price: 100)
+activity.photo.attach(io: file1, filename: "baobab1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "baobab2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "baobab3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "snorkel1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "snorkel2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "snorkel3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Snorkeling among sea puppies", description: "Snorkel in the clearest water in
+  the world amongs more than 500 friendly creatures and corals. All the equipments and underwater camera included in the excursion",
+  location: "Nosy Be, Madagascar", price: 200)
+activity.photo.attach(io: file1, filename: "snorkel1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "snorkel2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "snorkel3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "tsingy1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "tsingy2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "tsingy3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Rock climbing in the Rock Forest of Tsingy", description: "Rock climbing
+  in the famous Rock Forest of Tsingy. These rocks were formed during the prehistorical era and you will have the chance to visit
+  Indiana Jones set and feel like a holiday star! From climbing to ziplining, this activity is not for the faint of heart.",
+  location: "Tsingy National Park, Madagascar", price: 200)
+activity.photo.attach(io: file1, filename: "tsingy1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "tsingy2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "tsingy3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "diving1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "diving2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "diving3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Diving in the unknown", description: "Dive in the depth of Madagascar, where
+  you will encounter underwater species that only live in this area.",
+  location: "Nosy Be, Madagascar", price: 300)
+activity.photo.attach(io: file1, filename: "diving1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "diving2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "diving3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "wingsuit1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "wingsuit2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "wingsuit3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Jumping off Maramokotro mountain", description: "Hike to the top of
+  Maramokotro mountain. The journey will take approximately 3 hours. Halfway in the journey, we will do a pitstop where you would
+    taste local food and then resume your journey to the top where a wingsuit will be provided to you. The only thing left, is to jump
+    off and fly!",
+  location: "Maramokotro, Madagascar", price: 600)
+activity.photo.attach(io: file1, filename: "wingsuit1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "wingsuit2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "wingsuit3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "para1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "para2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "para3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Paragliding off Andringitra mountains", description: "For adrenaline seeker,
+  we will go up Andringitra mountains. A very remote area with a spetacular valley and unforgettable landscape, a flat and clear,
+  broad bottom of valley without any electrical line, nor road, facing Tsaranoro cliffs with a dropof more than 800 meters!",
+  location: "Andringitra, Madagascar", price: 600)
+activity.photo.attach(io: file1, filename: "para1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "para2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "para3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "bike1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "bike2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "bike3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking down a volcano", description: "Going down a mountain sounds
+  exciting? How about going down an active volcano? Even better, if you are able to beat the time of world renowned Travis Pastrana,
+  this activity will be on the house! Bike, protection equipment and helicopter airlift included.",
+  location: "Morafenobe, Madagascar", price: 1500)
+activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
+activity.save!
+
 
 image1 = Rails.root.join("app", "assets", "images", "iceland", "dog1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "dog2.jpg")
@@ -274,6 +383,53 @@ activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg
 activity.save!
 
 
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "cave1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "cave2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "cave3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Caving with crocodiles", description: "If you are slightly bored with
+  resort idyll, a visit to the Crocodile Caves located underground in Ankarana National Park will be truly
+  refreshing. This large underground network of caves and rivers is a home to 14 species of squealing bats, giant eels,
+  endemic blind shrimps and crocodiles. Rock spires and dropping water contribute to the scary atmosphere. There is only
+  one way in and one way out.", location: "Morafenobe, Madagascar", price: 1200)
+activity.photo.attach(io: file1, filename: "cave1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "cave2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "cave3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "canyon1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "canyon2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "canyon3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Canyoning in Madagascar", description: "This activity combines
+  hiking, swimming, jumping, abseiling, and sliding through narrow canyon spaces. It is nothing but fun and it is
+  enjoyed by people of all ages and skill levels", location: "Morafenobe, Madagascar", price: 250)
+activity.photo.attach(io: file1, filename: "canyon1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "canyon2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "canyon3.jpg", content_type: "image/jpg")
+activity.save!
+
+image1 = Rails.root.join("app", "assets", "images", "madagascar", "hiking1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "madagascar", "hiking2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "madagascar", "hiking3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Hiking in Isalo National Park", description: "Madagascar's
+  most popular nature destination, Isalo National Park, lies amidst the Jurassic-era highlands of the country's southwest.
+  Established in 1962, it protects over 190,000 acres of land dominated by a dramatic sandstone massif that has been
+  eroded by time and weather into an otherworldly collection of plateaus, canyons, gorges, and pinnacles",
+  location: "Isalo National Park, Madagascar", price: 100)
+activity.photo.attach(io: file1, filename: "hiking1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "hiking2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "hiking3.jpg", content_type: "image/jpg")
+activity.save!
+
 image1 = Rails.root.join("app", "assets", "images", "iceland", "volcano1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "volcano2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "iceland", "volcano3.jpg")
@@ -313,6 +469,7 @@ activity.photo.attach(io: file1, filename: "ski1.jpg", content_type: "image/jpg"
 activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
 activity.save!
+
 
 
 
