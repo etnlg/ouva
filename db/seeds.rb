@@ -17,18 +17,18 @@ Activity.destroy_all
 
 puts "Creating owners and Users"
 
-User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "Snake.03", username: "etnlg")
-User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "Snake.03", username: "flo")
-Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "Snake.03", username: "willy")
-Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "Snake.03", username: "Dan")
+User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "SeedSeed", username: "etnlg")
+User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "SeedSeed", username: "flo")
+Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "SeedSeed", username: "willy")
+Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "SeedSeed", username: "Dan")
 
 puts "Creating trips"
 
-@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
+@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.find_by(username: "etnlg").id)
 @barca.save!
 @paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
 @paris.save!
-@menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.all.sample.id)
+@menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.find_by(username: "etnlg").id)
 @menorca.save!
 @aix = Trip.new(destination: "Aix-en-provence", start_date: Date.new(2023, 8, 15), end_date: Date.new(2023, 8, 22), user_id: User.all.sample.id)
 @aix.save!
@@ -181,6 +181,143 @@ activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jp
 activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
 activity.save!
 
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "swim1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "swim2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "swim3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Swimming in the middle of the desert", description: "Go crazy
+  and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
+  It is an integral part of absorbing calcium", location: "Djibouti, Ethiopie", price: 200)
+activity.photo.attach(io: file1, filename: "swim1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "swim3.jpg", content_type: "image/jpg")
+
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "camping1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "camping2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "camping3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Imagine campinf in the middle of the desert", description:
+  "Go crazy and try this amazing activity that we offer no need to pack your tents we got you", location: "Lalibela,
+  Ethiopie", price: 350)
+activity.photo.attach(io: file1, filename: "camping1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "camping2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "camping3.jpg", content_type: "image/jpg")
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Do you have a competiton spirit? Try this!", description: "This
+  is going to blow your mind, Imagine having different groups that will compete with the group we will assign to you,
+  the winners will go home with big rewards ", location: "Lalibela, Ethiopie", price: 300)
+activity.photo.attach(io: file1, filename: "hunt1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "hunt2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "hunt3.jpg", content_type: "image/jpg")
+
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "sky1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "sky2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "sky3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Skydiving in the middle of the desert", description: "Go crazy
+  and try this unique and amazing activity", location: "Mek'ele, Ethiopie", price: 250)
+activity.photo.attach(io: file1, filename: "sky1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "sky2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "sky3.jpg", content_type: "image/jpg")
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "hike1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "hike2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "hike3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Hiking in the middle of the desert", description: "Go crazy
+  and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
+  It is an integral part of absorbing calcium", location: "Mek'ele, Ethiopie", price: 250)
+activity.photo.attach(io: file1, filename: "hike1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "hike2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "hike3.jpg", content_type: "image/jpg")
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "climb1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "climb2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "climb3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Climbing the mountains of Mek'ele ", description: "Go crazy
+  and offer yourself this amazing experience, to keep you in shape at the same time enjoying the nature", location:
+  "Lalibela, Ethiopie", price: 250)
+activity.photo.attach(io: file1, filename: "climb1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "climb2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "climb3.jpg", content_type: "image/jpg")
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "moto1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "moto2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "moto3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Moto riding in the middle of the desert", description: "Go crazy
+  and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
+  It is an integral part of absorbing calcium", location: "Djibouti, Ethiopie", price: 450)
+activity.photo.attach(io: file1, filename: "moto1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "moto2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "moto3.jpg", content_type: "image/jpg")
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "bike1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "bike2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "bike3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Are you a bike lover try it, have Fun", description: "We want to
+  surprise you, you need nothing as we offer all the equipments during your vacation, stay in shape", location:
+  "Lalibela, Ethiopie", price: 350)
+activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "bbq1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "bbq2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "bbq3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Gather friends and meat and bbq in Djibouti", description: "A
+  once in lifetime experience imagine being connected with the nature and being able to bbq
+  some meat in the middle of nowhere", location: "Lalibela, Ethiopie", price: 150)
+activity.photo.attach(io: file1, filename: "bbq1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "bbq2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "bbq3.jpg", content_type: "image/jpg")
+
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "horse1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "horse2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "horse3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Riding horses in the nature of Dire Dawa ", description:
+   "Offering exceptional experience of riding horse in the nature of Dure Dawa with our our guides", location: "Lalibela
+   , Ethiopie", price: 250)
+activity.photo.attach(io: file1, filename: "horse1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
+
+
+
+
+
+
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "iceland", "quad1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "quad2.jpg")
@@ -469,7 +606,6 @@ activity.photo.attach(io: file1, filename: "ski1.jpg", content_type: "image/jpg"
 activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
 activity.save!
-
 
 
 
