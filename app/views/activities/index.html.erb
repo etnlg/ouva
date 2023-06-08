@@ -2,7 +2,7 @@
 
 <% @activities.each do |a| %>
   <div class = "bg-white shadow border m-3 p-3">
-    <%= cl_image_tag a.photo.key, width: 400, height: 300, crop: :fill %>
+    <%= cl_image_tag a.photo.blobs[0].key, width: 400, height: 300, crop: :fill %>
     <h4><%= a.name %></h4>
     <p><%= a.description %></p>
     <p><%= a.price %></p>

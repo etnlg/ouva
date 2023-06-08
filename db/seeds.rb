@@ -183,12 +183,12 @@ activity.save!
 
 
 
-image1 = Rails.root.join("app", "assets", "images", "swim1.jpg")
-image2 = Rails.root.join("app", "assets", "images", "swim2.jpg")
-image3 = Rails.root.join("app", "assets", "images", "swim3.jpg")
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "swim1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "swim2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "swim3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
-file3 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Swimming in the middle of the desert", description: "Go crazy
   and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
   It is an integral part of absorbing calcium", location: "Djibouti, Ethiopie", price: 200)
