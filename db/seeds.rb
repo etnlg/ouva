@@ -193,7 +193,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Swimming in the middle o
 activity.photo.attach(io: file1, filename: "swim1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "swim3.jpg", content_type: "image/jpg")
-
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "camping1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "camping2.jpg")
@@ -207,6 +207,8 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Imagine campinf in the m
 activity.photo.attach(io: file1, filename: "camping1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "camping2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "camping3.jpg", content_type: "image/jpg")
+activity.save!
+
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt2.jpg")
@@ -220,7 +222,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Do you have a competiton
 activity.photo.attach(io: file1, filename: "hunt1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "hunt2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "hunt3.jpg", content_type: "image/jpg")
-
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "sky1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "sky2.jpg")
@@ -233,6 +235,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Skydiving in the middle 
 activity.photo.attach(io: file1, filename: "sky1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "sky2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "sky3.jpg", content_type: "image/jpg")
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "hike1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "hike2.jpg")
@@ -246,6 +249,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Hiking in the middle of 
 activity.photo.attach(io: file1, filename: "hike1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "hike2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "hike3.jpg", content_type: "image/jpg")
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "climb1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "climb2.jpg")
@@ -259,6 +263,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Climbing the mountains o
 activity.photo.attach(io: file1, filename: "climb1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "climb2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "climb3.jpg", content_type: "image/jpg")
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "moto1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "moto2.jpg")
@@ -272,6 +277,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Moto riding in the middl
 activity.photo.attach(io: file1, filename: "moto1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "moto2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "moto3.jpg", content_type: "image/jpg")
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "bike1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "bike2.jpg")
@@ -285,6 +291,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Are you a bike lover try
 activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "bbq1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "bbq2.jpg")
@@ -298,6 +305,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Gather friends and meat 
 activity.photo.attach(io: file1, filename: "bbq1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "bbq2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "bbq3.jpg", content_type: "image/jpg")
+activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "horse1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "horse2.jpg")
@@ -306,17 +314,11 @@ file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image2))
 activity = Activity.new(owner_id: Owner.last.id, name: "Riding horses in the nature of Dire Dawa ", description:
-   "Offering exceptional experience of riding horse in the nature of Dure Dawa with our our guides", location: "Lalibela
-   , Ethiopie", price: 250)
+   "Offering exceptional experience of riding horse in the nature of Dure Dawa with our our guides",
+   location: "Lalibela, Ethiopie", price: 250)
 activity.photo.attach(io: file1, filename: "horse1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
-
-
-
-
-
-
 activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "iceland", "quad1.jpg")
