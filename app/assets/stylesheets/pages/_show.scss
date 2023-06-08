@@ -1,0 +1,67 @@
+
+.container-activity {
+  display: flex;
+  padding: 40px;
+}
+
+.description-price-activity h2 {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.reviews-show-page {
+ background-color: #F6F1EF;
+ border-style: solid;
+ border-color: #DCCFBB;
+ border-radius: 5px;
+}
+
+.container-add-to-trip-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 550px;
+  height: 300px;
+  gap: 10px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px;
+  position: sticky;
+  top: 30px;
+  margin-left: 100px;
+}
+
+.form-show {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-show-line {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.carousel-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
