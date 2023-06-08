@@ -23,7 +23,6 @@ Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com"
 Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "Snake.03", username: "Dan")
 
 puts "Creating trips"
-
 @barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
 @barca.save!
 @paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
@@ -179,6 +178,22 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Horse riding next to a v
 activity.photo.attach(io: file1, filename: "horse.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
+activity.save!
+
+
+
+image1 = Rails.root.join("app", "assets", "images", "swim1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "swim2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "swim3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image2))
+activity = Activity.new(owner_id: Owner.last.id, name: "Swimming in the middle of the desert", description: "Go crazy
+  and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
+  It is an integral part of absorbing calcium", location: "Djibouti, Ethiopie", price: 200)
+activity.photo.attach(io: file1, filename: "swim1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "swim3.jpg", content_type: "image/jpg")
 activity.save!
 
 
@@ -469,6 +484,7 @@ activity.photo.attach(io: file1, filename: "ski1.jpg", content_type: "image/jpg"
 activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
 activity.save!
+
 
 
 
