@@ -1,11 +1,11 @@
 <%= render "shared/banner" %>
 
-<div class="div-text">
+<%# <div class="div-text">
   <h1>Welcome to OUVA</h1>
   <p>The app that helps you plan the best trip of ur life!</p>
 
   <%= link_to "Planify a trip", new_trip_path %>
-</div>
+<%# </div>
 
 <form action = "/activities">
  <div class="div-input">
@@ -16,7 +16,7 @@
       <label for="arrive_date">From: </label>
     </div>
     <div class="datecalendar">
-      <input type="date" name="arrive_date" min="2023-06-02" value="2023-06-02" id="arrive_date" class="input-home">
+      <input type="date" name="arrive_date" min="2023-06-09" value="2023-06-09" id="arrive_date" class="input-home">
     </div>
  </div>
 
@@ -25,17 +25,19 @@
       <label for="date">To:</label>
     </div>
     <div class="datecalendar">
-      <input type="date" name="date" value="2023-06-03" id="date" class="input-home">
+      <input type="date" name="date" value="2023-06-10" id="date" class="input-home">
     </div>
   </div>
-</form>
+</form> %>
 
-<div class="text-center">
-  <h2>Most Popular Activities</h2>
+<div class="text-center my-5">
+  <h2><strong>Most Popular Activities</strong></h2>
 </div>
 
-<%= render "shared/card" %>
+<%= render "shared/carousel" %>
 
-<div class="text-center">
+<%# <%= render "shared/card" %>
+
+<div class="text-center my-5">
   <h2>Unsure Where To Go? Explore</h2>
 </div>
