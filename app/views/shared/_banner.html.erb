@@ -1,8 +1,16 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
       url(<%= image_path('banner.png') %>)">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
+  <div class="container text-center">
+    <h1>Travel to the unknown</h1>
+    <div>
+      <input type="date" name="date" id="date" class="input-home">
+      <input type="date" name="date" id="date" class="input-home">
+    </div>
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+      </form>
+    </div>
     <a class="btn btn-flat" href="#">Apply now</a>
   </div>
 </div>
