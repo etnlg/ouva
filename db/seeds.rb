@@ -112,17 +112,17 @@ activity.photo.attach(io: file2, filename: "hunt2.jpg", content_type: "image/jpg
 activity.photo.attach(io: file3, filename: "hunt3.jpg", content_type: "image/jpg")
 
 
-image1 = Rails.root.join("app", "assets", "images", "ethiopie", "skydiving1.jpg")
-image2 = Rails.root.join("app", "assets", "images", "ethiopie", "skydiving2.jpg")
-image3 = Rails.root.join("app", "assets", "images", "ethiopie", "skydiving3.jpg")
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "sky1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "sky2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "sky3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image2))
 activity = Activity.new(owner_id: Owner.last.id, name: "Skydiving in the middle of the desert", description: "Go crazy
   and try this unique and amazing activity", location: "Mek'ele, Ethiopie", price: 250)
-activity.photo.attach(io: file1, filename: "skydiving1.jpg", content_type: "image/jpg")
-activity.photo.attach(io: file2, filename: "skydiving2.jpg", content_type: "image/jpg")
-activity.photo.attach(io: file3, filename: "skydiving3.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file1, filename: "sky1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "sky2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "sky3.jpg", content_type: "image/jpg")
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "hike1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "hike2.jpg")
