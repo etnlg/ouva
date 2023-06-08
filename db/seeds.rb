@@ -71,9 +71,9 @@ activity.photo.attach(io: file, filename: "horse.jpg", content_type: "image/jpg"
 activity.save!
 
 
-image1 = Rails.root.join("app", "assets", "images", "ethipie", "swim1.jpg")
-image2 = Rails.root.join("app", "assets", "images", "ethipie", "swim2.jpg")
-image3 = Rails.root.join("app", "assets", "images", "ethipie", "swim3.jpg")
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "swim1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "swim2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "swim3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image2))
@@ -85,9 +85,9 @@ activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg
 activity.photo.attach(io: file3, filename: "swim3.jpg", content_type: "image/jpg")
 
 
-image1 = Rails.root.join("app", "assets", "images", "ethipie", "camping1.jpg")
-image2 = Rails.root.join("app", "assets", "images", "ethipie", "camping2.jpg")
-image3 = Rails.root.join("app", "assets", "images", "ethipie", "camping3.jpg")
+image1 = Rails.root.join("app", "assets", "images", "ethiopie", "camping1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "ethiopie", "camping2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "camping3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image2))
