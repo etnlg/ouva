@@ -7,24 +7,17 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%= cl_image_tag @activity.photo.key, crop: :fill %>
+    <% @activity.photo.blobs.each do |photo| %>
+      <div class="carousel-item active">
+        <%= cl_image_tag photo.key, crop: :fill %>
+      </div>
       <div class="carousel-caption">
         <h2><%= @activity.name %></h2>
       </div>
-    </div>
-    <div class="carousel-item">
-      <%= cl_image_tag @activity.photo.key, crop: :fill %>
-      <div class="carousel-caption">
-        <h2><%= @activity.name %></h2>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <%= cl_image_tag @activity.photo.key, crop: :fill %>
-      <div class="carousel-caption">
-        <h2><%= @activity.name %></h2>
-      </div>
-    </div>
+    <% end %>
+  </div>
+
+
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -58,7 +51,11 @@
     </div>
 
 
-    <form class="form-show", action = "/intermediare">
+    <form class="form-show", action = "/pages/intermediaire">
+      <input type="hidden" name="start_date" value= <%= @start_date %> >
+      <input type="hidden" name="end_date" value= <%= @end_date %>>
+      <input type="hidden" name="activity_id" value=<%= @activity.id %> >
+      <input type="hidden" name="location" value=<%= @location %> >
       <div class="form-show-line">
         <label for="date"></label>
         <input type="date" placeholder="Choose" id="date" name="date" required><br><br>

@@ -2,15 +2,15 @@
       url(<%= image_path('banner.png') %>)">
   <div class="container text-center">
     <h1>Travel to the unknown</h1>
-    <div>
-      <input type="date" name="date" id="date" class="input-home">
-      <input type="date" name="date" id="date" class="input-home">
-    </div>
-    <div class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search.." name="search">
-      </form>
-    </div>
+    <form action="/activities">
+      <div>
+        <input type="date" name="start_date" id="start_date" class="input-home">
+        <input type="date" name="end_date" id="end_date" class="input-home">
+      </div>
+      <div class="search-container">
+          <input type="text" placeholder="Search.." name="search">
+      </div>
+    </form>
     <a class="btn btn-flat" href="#">Apply now</a>
   </div>
 </div>
