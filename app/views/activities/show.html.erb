@@ -1,21 +1,79 @@
-  <h2><%= @activity.name %></h2>
-  <% if @activity.photo.key %>
-    <%= cl_image_tag @activity.photo.key, crop: :fill%>
-  <% end %>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= cl_image_tag @activity.photo.key, crop: :fill %>
+      <div class="carousel-caption">
+        <h2><%= @activity.name %></h2>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= cl_image_tag @activity.photo.key, crop: :fill %>
+      <div class="carousel-caption">
+        <h2><%= @activity.name %></h2>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= cl_image_tag @activity.photo.key, crop: :fill %>
+      <div class="carousel-caption">
+        <h2><%= @activity.name %></h2>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
 <div class="container-activity">
   <div class="description-price-activity">
     <h2><strong>DESCRIPTION</strong></h2>
     <p><%= @activity.description %></p>
+
     <h2><strong>LOCATION</strong></h2>
     <p><%= @activity.location %></p>
     <h2><strong>REVIEWS</strong></h2>
+    <div class="reviews-show-page">
+
+      <p>reviews here</p>
+    </div>
+
   </div>
 
+  <div class="container-add-to-trip-show">
+    <div class="card-add-to-itinerary">
+      <p><strong>$<%= @activity.price%></strong> per traveler</p>
+    </div>
 
-  <div class="card-add-to-itinerary">
-    <p><strong>$<%= @activity.price%></strong> per traveler</p>
+
+    <form class="form-show", action = "/intermediare">
+      <div class="form-show-line">
+        <label for="date"></label>
+        <input type="date" placeholder="Choose" id="date" name="date" required><br><br>
+      </div>
+
+      <div class="form-show-line">
+        <label for="travelers"></label>
+        <input type="number" placeholder="Number of travelers" id="travelers" name="travelers" min="1" required><br><br>
+      </div>
+
+      <div class="form-show-line">
+        <input type="submit" value="Add to Itinerary">
+      </div>
+
+    </form>
   </div>
+
 </div>
-
-<%# intermediare  input date
-simple form %>
