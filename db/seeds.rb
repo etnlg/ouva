@@ -17,18 +17,18 @@ Activity.destroy_all
 
 puts "Creating owners and Users"
 
-User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "Snake.03", username: "etnlg")
-User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "Snake.03", username: "flo")
-Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "Snake.03", username: "willy")
-Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "Snake.03", username: "Dan")
+User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "SeedSeed", username: "etnlg")
+User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "SeedSeed", username: "flo")
+Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "SeedSeed", username: "willy")
+Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "SeedSeed", username: "Dan")
 
 puts "Creating trips"
 
-@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
+@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.find_by(username: "etnlg").id)
 @barca.save!
 @paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
 @paris.save!
-@menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.all.sample.id)
+@menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.find_by(username: "etnlg").id)
 @menorca.save!
 @aix = Trip.new(destination: "Aix-en-provence", start_date: Date.new(2023, 8, 15), end_date: Date.new(2023, 8, 22), user_id: User.all.sample.id)
 @aix.save!

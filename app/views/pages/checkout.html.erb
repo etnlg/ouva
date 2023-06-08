@@ -1,0 +1,14 @@
+<% total_price = 0 %>
+
+<div class = "bg-white shadow border p-2">
+
+  <h2>Checkout cart</h2>
+
+  <% @activity_ids.each_value do |id_trav| %>
+      <% activity = Activity.find(id_trav[0]) %>
+      <% price = activity.price * id_trav[1].to_i %>
+      <p><strong><%= activity.name %>:</strong> <%= price.to_i %> EUR<p>
+      <% total_price += price %>
+  <% end %>
+    <h4><strong>Total price:</strong><%= total_price.to_i %></h4>
+</div>
