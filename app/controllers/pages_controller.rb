@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    number_of_activities = 10
+    @activities = Activity.order('RANDOM()').limit(number_of_activities)
   end
 
   def intermediaire
