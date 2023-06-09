@@ -18,7 +18,7 @@ Activity.destroy_all
 puts "Creating owners and Users"
 
 
-User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "111111", username: "etnlg")
+
 User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "111111", username: "flo")
 User.create!(firstname: "Vincent", lastname: "Hubert", email: "vincent@icloud.com", password: "111111", username: "Vincent")
 User.create!(firstname: "Emily", lastname: "Brown", email: "emily@icloud.com", password: "111111", username: "Emily")
@@ -38,11 +38,11 @@ Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com"
 
 puts "Creating trips"
 
-@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.find_by(username: "etnlg").id)
+@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
 @barca.save!
 @paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
 @paris.save!
-@menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.find_by(username: "etnlg").id)
+@menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.all.sample.id)
 @menorca.save!
 @aix = Trip.new(destination: "Aix-en-provence", start_date: Date.new(2023, 8, 15), end_date: Date.new(2023, 8, 22), user_id: User.all.sample.id)
 @aix.save!
@@ -52,6 +52,8 @@ puts "Creating trips"
 @madrid.save!
 @marseille = Trip.new(destination: "Marseille", start_date: Date.new(2023, 6, 23), end_date: Date.new(2023, 6, 29), user_id: User.all.sample.id)
 @marseille.save!
+
+User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "111111", username: "etnlg")
 
 puts "Creating activities"
 
