@@ -1,0 +1,5 @@
+<h2><%= activity.name %></h2>
+<%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, class: "avatar" %>
+<p><%= activity.location %></p>
+<p>H</p>
+<%= link_to "See this activity", activity_path(activity) %>

@@ -5,7 +5,14 @@ class ActivitiesController < ApplicationController
     @end_date = params[:end_date]
     @location = params[:location]
     @day_date = params[:day_date]
-     @activities = Activity.near(@location, 100)
+    @activities = Activity.near(@location, 100)
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {activity: activity})
+      }
+    end
   end
 
   def show

@@ -1,6 +1,11 @@
 <div class="container">
   <h2 class="act-h2">All the destination to <%= @location.titleize %></h2>
 
+<div class = "shadow border" style="width: 100%; height: 400px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
   <% @activities.each do |a| %>
     <div class = "bg-white shadow border m-3 p-3">
       <%= cl_image_tag a.photo.blobs[0].key, width: 400, height: 300, crop: :fill %>
