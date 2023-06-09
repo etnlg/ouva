@@ -6,28 +6,28 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
-  <div class="carousel-item active" date-bs-interval="10000">
+      <div class="carousel-item active">
+        <%= cl_image_tag @activity.photo.blobs.first.key%>
 
-    <%= cl_image_tag @activity.photo.blobs.first.key %>
-  </div>
-    <% @activity.photo.blobs.each do |photo| %>
-      <div class="carousel-item" date-bs-interval="10000">
-        <%= cl_image_tag photo.key, crop: :fill %>
       </div>
-      <div class="carousel-caption">
-        <h2><%= @activity.name %></h2>
-      </div>
-    <% end %>
-  </div>
+        <% @activity.photo.blobs.each do |photo| %>
+          <div class="carousel-item ">
+            <%= cl_image_tag photo.key, crop: :fill %>
+          </div>
+          <div class="carousel-caption">
+            <h1><strong><%= @activity.name %> </strong></h1>
+          </div>
+        <% end %>
 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
 
 
