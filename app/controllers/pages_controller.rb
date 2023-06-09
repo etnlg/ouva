@@ -22,6 +22,9 @@ class PagesController < ApplicationController
   end
 
   def checkout
-    @activity_ids = params["activitiy_ids"]
+    @location = params[:location]
+    @activity_ids = params[:activitiy_ids]
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
   end
 end

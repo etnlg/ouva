@@ -17,4 +17,4 @@
 <% end %>
 
 <div class = "d-flex">
- <%= link_to "Book this trip", checkout_path(num_traveller: @num_traveller, start_date: @start_date, end_date: @end_date, activitiy_ids: session['act_hash']) %>
+ <%= link_to "Book this trip", checkout_path(location: @location, num_traveller: @num_traveller, start_date: @start_date, end_date: @end_date, activitiy_ids: session['act_hash']) %>
