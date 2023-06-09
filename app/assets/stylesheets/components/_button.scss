@@ -1,0 +1,51 @@
+.btn-login {
+  width: 70px;
+  height: 38px;
+  background-color: #9BBDC5;
+  // border-color: rgb(255, 128, 132);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  color: black;
+}
+
+.btn-login:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: black;
+  background-color: #9BBDC5;
+}
+
+.btn-sign-up, .btn-reset {
+  width: 91px;
+  height: 38px;
+  background-color: #9BBDC5;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  color: black;
+}
+
+.btn-sign-up:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: black;
+  background-color: #9BBDC5;
+}
+
+.btn-reset:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: black;
+  background-color: #9BBDC5;
+}
+
+// .btn-reset {
+//   width: 91px;
+//   height: 38px;
+//   background-color: #9BBDC5;
+//   border-radius: 5px;
+//   box-shadow: 1px 1px 1px;
+//   color: black;
+// }
