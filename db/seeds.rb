@@ -17,10 +17,24 @@ Activity.destroy_all
 
 puts "Creating owners and Users"
 
-User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "SeedSeed", username: "etnlg")
-User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "SeedSeed", username: "flo")
-Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "SeedSeed", username: "willy")
-Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "SeedSeed", username: "Dan")
+
+User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "111111", username: "etnlg")
+User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "111111", username: "flo")
+User.create!(firstname: "Vincent", lastname: "Hubert", email: "vincent@icloud.com", password: "111111", username: "Vincent")
+User.create!(firstname: "Emily", lastname: "Brown", email: "emily@icloud.com", password: "111111", username: "Emily")
+User.create!(firstname: "Tom", lastname: "Shiba", email: "tom@icloud.com", password: "111111", username: "Tom")
+User.create!(firstname: "Chris", lastname: "Australia", email: "chris@icloud.com", password: "111111", username: "chris")
+User.create!(firstname: "Louis", lastname: "Fingers", email: "louis@icloud.com", password: "111111", username: "louis")
+User.create!(firstname: "Jean", lastname: "Poulet", email: "jean@icloud.com", password: "111111", username: "jean")
+User.create!(firstname: "Elon", lastname: "Musk", email: "elon@icloud.com", password: "111111", username: "elon")
+User.create!(firstname: "Stephane", lastname: "Boss", email: "stephane@icloud.com", password: "111111", username: "steph")
+
+Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "111111", username: "willy")
+Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "111111", username: "Dan")
+
+
+# Review.create!(rating: "", comment: "")
+
 
 puts "Creating trips"
 
@@ -181,18 +195,23 @@ activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jp
 activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
 activity.save!
 
+
+
+
+
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "swim1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "swim2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "ethiopie", "swim3.jpg")
+
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
-file3 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Swimming in the middle of the desert", description: "Go crazy
   and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
   It is an integral part of absorbing calcium", location: "Djibouti, Ethiopie", price: 200)
 activity.photo.attach(io: file1, filename: "swim1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg")
-activity.photo.attach(io: file3, filename: "swim3.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "Swim3.jpg", content_type: "image/jpg")
 activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "camping1.jpg")
@@ -608,6 +627,425 @@ activity.photo.attach(io: file1, filename: "ski1.jpg", content_type: "image/jpg"
 activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
 activity.save!
+
+activities = Activity.all.limit(5)
+activities.each do |t_activity|
+  trip_activity = TripActivity.create!(
+    trip: @menorca,
+    activity: t_activity,
+    start_time: Date.today,
+    end_time: Date.today,
+    done: true
+  )
+  Review.create!(
+    rating: 4,
+    comment: "The activity was a thrilling adventure that got my adrenaline pumping.",
+    trip_activity: trip_activity
+  )
+end
+
+
+# Review.create!(rating: "4", comment: "The activity was a thrilling adventure that got my adrenaline pumping.")
+
+# Review.create!(rating: "5", comment: "I was blown away by the breathtaking views and stunning landscapes.")
+
+# Review.create!(rating: "3", comment: "The activity was enjoyable, but I expected a bit more excitement.")
+
+# Review.create!(rating: "4", comment: "I had an amazing time exploring the hidden gems of the area.")
+
+# Review.create!(rating: "5", comment: "The activity exceeded my expectations and left me with unforgettable memories.")
+
+# Review.create!(rating: "4", comment: "I felt a sense of accomplishment after completing the challenging tasks.")
+
+# Review.create!(rating: "5", comment: "The activity allowed me to immerse myself in the local culture and traditions.")
+
+# Review.create!(rating: "3", comment: "While the activity was fun, I felt it lacked a bit of variety.")
+
+# Review.create!(rating: "4", comment: "The guides were knowledgeable and made the activity both educational and entertaining.")
+
+# Review.create!(rating: "5", comment: "I was mesmerized by the beauty of nature and the peacefulness of the surroundings.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect blend of adventure and relaxation.")
+
+# Review.create!(rating: "5", comment: "I had an incredible time exploring the hidden gems of the destination.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me to step out of my comfort zone and try new things.")
+
+# Review.create!(rating: "5", comment: "The activity was a feast for the senses, with delicious food and captivating performances.")
+
+# Review.create!(rating: "3", comment: "I enjoyed the activity, but I felt that it could have been more organized.")
+
+# Review.create!(rating: "4", comment: "The activity offered a unique and immersive experience that I will never forget.")
+
+# Review.create!(rating: "5", comment: "I felt a deep connection with nature and a sense of peace during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-paced, allowing me to savor every moment.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the rich history and fascinating stories shared during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between adventure and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of awe and wonder as I explored the stunning landscapes.")
+
+# Review.create!(rating: "4", comment: "The guides were friendly and knowledgeable, making the activity enjoyable and informative.")
+
+# Review.create!(rating: "5", comment: "The activity awakened my sense of curiosity and sparked a desire for further exploration.")
+
+# Review.create!(rating: "4", comment: "I enjoyed the activity and appreciated the opportunity to learn something new.")
+
+# Review.create!(rating: "5", comment: "The activity allowed me to escape the hustle and bustle of daily life and reconnect with nature.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized and provided a seamless experience from start to finish.")
+
+# Review.create!(rating: "5", comment: "I was fascinated by the local traditions and customs showcased during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity pushed me out of my comfort zone and helped me discover new abilities.")
+
+# Review.create!(rating: "5", comment: "The activity provided a sense of freedom and liberation. I felt alive and energized.")
+
+# Review.create!(rating: "4", comment: "I appreciated the attention to detail and the thoughtfulness that went into the activity.")
+
+# Review.create!(rating: "5", comment: "The activity allowed me to reconnect with my adventurous spirit and embrace the unknown.")
+
+# Review.create!(rating: "4", comment: "I had a great time exploring the natural wonders and marvels of the area.")
+
+# Review.create!(rating: "5", comment: "The activity was a perfect blend of excitement, education, and relaxation.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me physically and mentally, pushing me to overcome my limits.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of gratitude for the opportunity to experience such a unique activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to discover hidden talents and explore new interests.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the beauty and serenity of the surroundings. It was a tranquil escape.")
+
+# Review.create!(rating: "4", comment: "The activity provided a fresh perspective and allowed me to see the world from a different angle.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of connection with the local community and their way of life.")
+
+# Review.create!(rating: "4", comment: "The activity offered a perfect mix of adventure, relaxation, and cultural immersion.")
+
+# Review.create!(rating: "5", comment: "I was enchanted by the magical atmosphere and the enchanting experiences.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me to step out of my comfort zone and embrace new experiences.")
+
+# Review.create!(rating: "5", comment: "This activity allowed me to reconnect with my inner child and experience pure joy.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique insight into the local traditions and customs.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the beauty and grandeur of the natural landscapes.")
+
+# Review.create!(rating: "4", comment: "The activity was well-structured and allowed for moments of reflection and self-discovery.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of joy and fulfillment during this activity. It was a moment of pure happiness.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me physically and mentally, helping me grow as an individual.")
+
+# Review.create!(rating: "5", comment: "This activity allowed me to appreciate the beauty and wonder of the natural world.")
+
+# Review.create!(rating: "4", comment: "The activity was thoughtfully designed, offering a unique and memorable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the vibrant colors and stunning landscapes I encountered during this activity.")
+
+# Review.create!(rating: "4", comment: "The activity fostered a sense of camaraderie and connection among the participants.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of gratitude for the opportunity to experience this activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to break free from routine and experience something extraordinary.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of wonder and awe as I immersed myself in the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized, ensuring a smooth and enjoyable experience for all.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the history and heritage of the place. It was a journey through time.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between adventure and relaxation.")
+
+# Review.create!(rating: "5", comment: "I had an amazing time exploring the hidden gems and cultural treasures of the destination.")
+
+# Review.create!(rating: "4", comment: "The activity pushed me beyond my limits and helped me discover my true potential.")
+
+# Review.create!(rating: "5", comment: "This activity allowed me to disconnect from the outside world and reconnect with myself.")
+
+# Review.create!(rating: "4", comment: "The activity was a perfect blend of adventure, culture, and personal growth.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of awe and reverence for the beauty of the natural world during this activity.")
+
+# Review.create!(rating: "4", comment: "The guides were knowledgeable and passionate, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was completely immersed in the moment, forgetting about everything else.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to learn from local experts and gain a deeper understanding.")
+
+# Review.create!(rating: "5", comment: "I had a fantastic time exploring the hidden gems and immersing myself in the local culture.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique perspective on life and opened my eyes to new possibilities.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of peace and tranquility throughout the activity.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me mentally and expanded my knowledge and understanding.")
+
+# Review.create!(rating: "5", comment: "This activity reminded me of the importance of living in the present moment and appreciating the simple things.")
+
+# Review.create!(rating: "4", comment: "The activity was a perfect combination of adventure, culture, and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of connection with the natural surroundings and the local community.")
+
+# Review.create!(rating: "4", comment: "The guides were friendly and knowledgeable, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was fully present and immersed in the experience. It was a moment of pure bliss.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to learn new skills and discover hidden talents.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the beauty of nature and the serenity of the surroundings.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between excitement and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of appreciation and gratitude throughout the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized and executed with precision.")
+
+# Review.create!(rating: "5", comment: "I was fascinated by the stories and legends shared during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to step out of my comfort zone and embrace new experiences.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of peace and tranquility during the activity. It was a meditative experience.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect mix of adventure, education, and relaxation.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the beauty and grandeur of the natural landscapes.")
+
+# Review.create!(rating: "4", comment: "The activity was well-structured and allowed for moments of introspection and self-reflection.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of joy and fulfillment during this activity. It was a moment of pure happiness.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me physically and mentally, helping me grow and develop as an individual.")
+
+# Review.create!(rating: "5", comment: "This activity allowed me to appreciate the intricate details and hidden treasures of the surroundings.")
+
+# Review.create!(rating: "4", comment: "The activity was thoughtfully designed, offering a unique and memorable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the vibrant colors and the rich cultural heritage during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity fostered a sense of camaraderie and connection among the participants.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of gratitude for the opportunity to experience this activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to break free from my everyday routine and experience something extraordinary.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of wonder and awe as I immersed myself in the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized and provided a seamless and enjoyable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the history and heritage of the place. It was a journey through time.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between adventure and relaxation.")
+
+# Review.create!(rating: "5", comment: "I had an amazing time exploring the hidden gems and cultural wonders of the destination.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me to step out of my comfort zone and embrace new adventures.")
+
+# Review.create!(rating: "5", comment: "The activity was a perfect escape from the daily grind, allowing me to reconnect with nature and myself.")
+
+# Review.create!(rating: "4", comment: "I appreciated the attention to detail and the personal touch in every aspect of the activity.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of exhilaration and freedom as I immersed myself in the activity.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique perspective on the local culture and traditions.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the natural beauty and the sense of tranquility during the activity.")
+
+# Review.create!(rating: "4", comment: "The guides were friendly and passionate, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was fully engaged and present in the moment, experiencing pure bliss.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to learn from experts and gain a deeper understanding of the local customs.")
+
+# Review.create!(rating: "5", comment: "I had an unforgettable experience exploring the hidden gems and immersing myself in the local culture.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique perspective and allowed me to see things from a different angle.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of peace and serenity throughout the activity.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me intellectually and expanded my horizons.")
+
+# Review.create!(rating: "5", comment: "This activity reminded me of the importance of being present and appreciating the beauty of nature.")
+
+# Review.create!(rating: "4", comment: "The activity offered a perfect blend of adventure, culture, and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a deep connection with the natural surroundings and a sense of harmony.")
+
+# Review.create!(rating: "4", comment: "The guides were knowledgeable and enthusiastic, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was completely absorbed in the activity, losing track of time and worries.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to acquire new skills and explore my potential.")
+
+# Review.create!(rating: "5", comment: "I was enchanted by the beauty of nature and the tranquility of the surroundings.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between excitement and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of appreciation and wonder throughout the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized, ensuring a smooth and enjoyable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the stories and legends that unfolded during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to step out of my comfort zone and embrace new experiences.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of peace and tranquility during the activity. It was a meditative experience.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect mix of adventure, education, and relaxation.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the beauty and grandeur of the natural landscapes.")
+
+# Review.create!(rating: "4", comment: "The activity was well-structured and allowed for moments of introspection and self-reflection.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of joy and fulfillment during this activity. It was a moment of pure happiness.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me physically and mentally, helping me grow and develop as an individual.")
+
+# Review.create!(rating: "5", comment: "This activity allowed me to appreciate the beauty and wonder of the natural world.")
+
+# Review.create!(rating: "4", comment: "The activity was thoughtfully designed, offering a unique and memorable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the vibrant colors and the rich cultural heritage during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity fostered a sense of camaraderie and connection among the participants.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of gratitude for the opportunity to experience this activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to break free from my everyday routine and experience something extraordinary.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of wonder and awe as I immersed myself in the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized and provided a seamless and enjoyable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the history and heritage of the place. It was a journey through time.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between adventure and relaxation.")
+
+# Review.create!(rating: "5", comment: "I had an amazing time exploring the hidden gems and cultural wonders of the destination.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me to step out of my comfort zone and embrace new adventures.")
+
+# Review.create!(rating: "5", comment: "The activity was a perfect escape from the daily grind, allowing me to reconnect with nature and myself.")
+
+# Review.create!(rating: "4", comment: "I appreciated the attention to detail and the personal touch in every aspect of the activity.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of exhilaration and freedom as I immersed myself in the activity.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique perspective on the local culture and traditions.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the natural beauty and the sense of tranquility during the activity.")
+
+# Review.create!(rating: "4", comment: "The guides were friendly and passionate, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was fully engaged and present in the moment, experiencing pure bliss.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to learn from experts and gain a deeper understanding of the local customs.")
+
+# Review.create!(rating: "5", comment: "I had an unforgettable experience exploring the hidden gems and immersing myself in the local culture.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique perspective and allowed me to see things from a different angle.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of peace and serenity throughout the activity.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me intellectually and expanded my horizons.")
+
+# Review.create!(rating: "5", comment: "This activity reminded me of the importance of being present and appreciating the beauty of nature.")
+
+# Review.create!(rating: "4", comment: "The activity offered a perfect blend of adventure, culture, and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a deep connection with the natural surroundings and a sense of harmony.")
+
+# Review.create!(rating: "4", comment: "The guides were knowledgeable and enthusiastic, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was completely absorbed in the activity, losing track of time and worries.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to acquire new skills and explore my potential.")
+
+# Review.create!(rating: "5", comment: "I was enchanted by the beauty of nature and the tranquility of the surroundings.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between excitement and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of appreciation and wonder throughout the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized, ensuring a smooth and enjoyable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the stories and legends that unfolded during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to step out of my comfort zone and embrace new experiences.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of peace and tranquility during the activity. It was a meditative experience.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect mix of adventure, education, and relaxation.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the beauty and grandeur of the natural landscapes.")
+
+# Review.create!(rating: "4", comment: "The activity was well-structured and allowed for moments of introspection and self-reflection.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of joy and fulfillment during this activity. It was a moment of pure happiness.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me physically and mentally, helping me grow and develop as an individual.")
+
+# Review.create!(rating: "5", comment: "This activity allowed me to appreciate the beauty and wonder of the natural world.")
+
+# Review.create!(rating: "4", comment: "The activity was thoughtfully designed, offering a unique and memorable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the vibrant colors and the rich cultural heritage during the activity.")
+
+# Review.create!(rating: "4", comment: "The activity fostered a sense of camaraderie and connection among the participants.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of gratitude for the opportunity to experience this activity.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to break free from my everyday routine and experience something extraordinary.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of wonder and awe as I immersed myself in the activity.")
+
+# Review.create!(rating: "4", comment: "The activity was well-organized and provided a seamless and enjoyable experience.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the history and heritage of the place. It was a journey through time.")
+
+# Review.create!(rating: "4", comment: "The activity provided a perfect balance between adventure and relaxation.")
+
+# Review.create!(rating: "5", comment: "I had an amazing time exploring the hidden gems and cultural wonders of the destination.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me to step out of my comfort zone and embrace new adventures.")
+
+# Review.create!(rating: "5", comment: "The activity was a perfect escape from the daily grind, allowing me to reconnect with nature and myself.")
+
+# Review.create!(rating: "4", comment: "I appreciated the attention to detail and the personal touch in every aspect of the activity.")
+
+# Review.create!(rating: "5", comment: "I felt a sense of exhilaration and freedom as I immersed myself in the activity.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique perspective on the local culture and traditions.")
+
+# Review.create!(rating: "5", comment: "I was captivated by the natural beauty and the sense of tranquility during the activity.")
+
+# Review.create!(rating: "4", comment: "The guides were friendly and passionate, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was fully engaged and present in the moment, experiencing pure bliss.")
+
+# Review.create!(rating: "4", comment: "The activity allowed me to learn from experts and gain a deeper understanding of the local customs.")
+
+# Review.create!(rating: "5", comment: "I had an unforgettable experience exploring the hidden gems and immersing myself in the local culture.")
+
+# Review.create!(rating: "4", comment: "The activity provided a unique perspective and allowed me to see things from a different angle.")
+
+# Review.create!(rating: "5", comment: "I felt a deep sense of peace and serenity throughout the activity.")
+
+# Review.create!(rating: "4", comment: "The activity challenged me intellectually and expanded my horizons.")
+
+# Review.create!(rating: "5", comment: "This activity reminded me of the importance of being present and appreciating the beauty of nature.")
+
+# Review.create!(rating: "4", comment: "The activity offered a perfect blend of adventure, culture, and relaxation.")
+
+# Review.create!(rating: "5", comment: "I felt a deep connection with the natural surroundings and a sense of harmony.")
+
+# Review.create!(rating: "4", comment: "The guides were knowledgeable and enthusiastic, making the activity even more enjoyable.")
+
+# Review.create!(rating: "5", comment: "I was completely absorbed in the activity, losing track of time and worries.")
 
 
 
