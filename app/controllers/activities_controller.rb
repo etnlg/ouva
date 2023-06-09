@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
     @end_date = params[:end_date]
     @location = params[:location]
     @day_date = params[:day_date]
-    @activities = Activity.near(@location, 100)
+     @activities = Activity.near(@location, 100)
   end
 
   def show
