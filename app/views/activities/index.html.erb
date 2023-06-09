@@ -6,7 +6,7 @@
     <h4><%= a.name %></h4>
     <p><%= a.description %></p>
     <p><%= a.price %></p>
-    <p><%= link_to "See details", activity_path(start_date: @start_date, end_date: @end_date, id: a.id, location: @location) %>
+    <p><%= link_to "See details", activity_path(start_date: @start_date, end_date: @end_date, id: a.id, location: @location, day_date: @day_date) %>
     <%= link_to "Add them to the valise", intermediaire_path(start_date: @start_date, end_date: @end_date, activity_id: a.id)%>
   </div>
 <% end %>

@@ -61,11 +61,14 @@
       <input type="hidden" name="end_date" value= <%= @end_date %>>
       <input type="hidden" name="activity_id" value=<%= @activity.id %> >
       <input type="hidden" name="location" value=<%= @location %> >
-
-      <div class="form-show-line">
-        <label for="date"></label>
-        <input type="date" placeholder="Choose" id="date" name="date" required><br><br>
-      </div>
+      <% if @day_date.nil? %>
+        <div class="form-show-line">
+          <label for="date"></label>
+          <input type="date" placeholder="Choose" id="date" name="date" required><br><br>
+        </div>
+      <% else %>
+        <input type="hidden" name="date" value= <%= @day_date %>>
+      <% end %>
 
       <div class="form-show-line">
         <label for="travelers"></label>
