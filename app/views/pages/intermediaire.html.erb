@@ -11,7 +11,7 @@
       <p><strong>Name:</strong> <%= Activity.find(id).name %></p>
       <p><strong>Description:</strong> <%= Activity.find(id).description %></p>
     <% else %>
-      <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, search: @location) %>
+      <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location) %>
     <% end %>
   </div>
 <% end %>
