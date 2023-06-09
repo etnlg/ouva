@@ -12,3 +12,7 @@
   <% end %>
     <h4><strong>Total price:</strong><%= total_price.to_i %></h4>
 </div>
+
+<%= link_to "Book now!", trips_path(trip: Trip.new, destination: @location, #activity_id: @activity_ids,
+ end_date: @end_date, start_date: @start_date),
+      data: {turbo_method: :post} %>

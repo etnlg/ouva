@@ -9,10 +9,15 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new
+    @trip = Trip.new(trip_params)
     @trip.user_id = current_user.id
     @trip.save!
-    redirect_to root_path
+    @activity_ids = session[:act_hash]
+    @activity_ids.each do |day, array|
+      trip_activity = TripActivity.new(trip_id: @trip.id, activity_id: array[0], day: day.to_i, done: false)
+      trip_activity.save!
+    end
+    redirect_to trip_trip_activities_path(@trip)
   end
 
   def which
@@ -23,7 +28,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:destination, :start_date, :end_date)
+    params.permit(:destination, :start_date, :end_date)
   end
 
 end
