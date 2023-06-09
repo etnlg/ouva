@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     @num_traveller = params[:travelers]
     @start_date = params[:start_date]
     @end_date = params[:end_date]
-    if session['act_hash'] == nil
+    if session['act_hash'].nil?
       session['act_hash'] = {}
     end
     x = (Date.parse(@date) - Date.parse(@start_date)) * 1.0
