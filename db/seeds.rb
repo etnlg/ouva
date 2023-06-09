@@ -201,18 +201,18 @@ activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "swim1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "swim2.jpg")
-image3 = Rails.root.join("app", "assets", "images", "ethiopie", "swim3.jpg")
-
+image3 = Rails.root.join("app", "assets", "images", "ethiopie", "Swim3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Swimming in the middle of the desert", description: "Go crazy
   and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
-  It is an integral part of absorbing calcium", location: "Djibouti, Ethiopie", price: 200)
+  It is an integral part of absorbing calcium", location: "Djibouti, Ethiopia", price: 200)
 activity.photo.attach(io: file1, filename: "swim1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "Swim3.jpg", content_type: "image/jpg")
 activity.save!
+
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "camping1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "camping2.jpg")
@@ -220,9 +220,9 @@ image3 = Rails.root.join("app", "assets", "images", "ethiopie", "camping3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image2))
-activity = Activity.new(owner_id: Owner.last.id, name: "Imagine campinf in the middle of the desert", description:
-  "Go crazy and try this amazing activity that we offer no need to pack your tents we got you", location: "Lalibela,
-  Ethiopie", price: 350)
+activity = Activity.new(owner_id: Owner.last.id, name: "Imagine camping in the middle of the desert", description: "Be
+  adventurous and try this amazing activity that we offer no need to pack your tents we got everything that is needed",
+  location: "Lalibela, Ethiopie", price: 350)
 activity.photo.attach(io: file1, filename: "camping1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "camping2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "camping3.jpg", content_type: "image/jpg")
@@ -354,7 +354,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Quad tour", description:
    range, and the Hellisheiði geothermal power plant that provides energy to the capital. From this vantage point, you'll
    witness the beauty of Faxaflói bay, the entire capital region, the Bláfjöll mountain range, and the iconic Esja..
   Don't miss out on this once-in-a-lifetime experience to see Reykjavik from a whole new perspective.",
-   location: "Reykjavik, Iceland", price: 189)
+  location: "Reykjavik, Iceland", price: 189)
 activity.photo.attach(io: file1, filename: "quad1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "quad2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "quad3.jpg", content_type: "image/jpg")
@@ -370,8 +370,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Glacier tour", descripti
   hiking tour will take you to the magnificent Falljökull glacier. Falljokull is an outlet glacier from Vatnajokull,
    the largest glacier in Europe and the King of natural ice sculptures. As you hike around this magical ice setting,
    you will get all the information about this enchanting place from your friendly and knowledgeable guide, taking you
-   to all the best spots to deeply enjoy the glacier.",
-   location: "Hof, Iceland", price: 143)
+   to all the best spots to deeply enjoy the glacier.", location: "Hof, Iceland", price: 143)
 activity.photo.attach(io: file1, filename: "glacier1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "glacier2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "glacier3.jpg", content_type: "image/jpg")
@@ -385,9 +384,9 @@ file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Walking in the world oldest forest", description: "The Baobab tree,
-  also known as the Tree of life, is one of the oldest trees in the world. You will have the chance to walk in the same footsteps
-  as our ancestors and relive more than 2000 years of history while seeing lemurians hoping amongs trees",
-  location: "Baobab Avenue, Madagascar", price: 100)
+  also known as the Tree of life, is one of the oldest trees in the world. You will have the chance to walk in the same
+  footsteps as our ancestors and relive more than 2000 years of history ", location: "Baobab Avenue, Madagascar", price:
+   100)
 activity.photo.attach(io: file1, filename: "baobab1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "baobab2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "baobab3.jpg", content_type: "image/jpg")
@@ -399,9 +398,9 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "snorkel3.jpg"
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Snorkeling among sea puppies", description: "Snorkel in the clearest water in
-  the world amongs more than 500 friendly creatures and corals. All the equipments and underwater camera included in the excursion",
-  location: "Nosy Be, Madagascar", price: 200)
+activity = Activity.new(owner_id: Owner.last.id, name: "Snorkeling among sea puppies", description: "Snorkel in the
+  clearest water in the world amongs more than 500 friendly creatures and corals. All the equipments and underwater
+  camera included in the excursion", location: "Nosy Be, Madagascar", price: 200)
 activity.photo.attach(io: file1, filename: "snorkel1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "snorkel2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "snorkel3.jpg", content_type: "image/jpg")
@@ -413,10 +412,10 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "tsingy3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Rock climbing in the Rock Forest of Tsingy", description: "Rock climbing
-  in the famous Rock Forest of Tsingy. These rocks were formed during the prehistorical era and you will have the chance to visit
-  Indiana Jones set and feel like a holiday star! From climbing to ziplining, this activity is not for the faint of heart.",
-  location: "Tsingy National Park, Madagascar", price: 200)
+activity = Activity.new(owner_id: Owner.last.id, name: "Rock climbing in the Rock Forest of Tsingy", description: "Rock
+  climbing in the famous Rock Forest of Tsingy. These rocks were formed during the prehistorical era and you will have
+  the chance to visit Indiana Jones set and feel like a holiday star! From climbing to ziplining, this activity is not
+  for the faint of heart.", location: "Tsingy National Park, Madagascar", price: 200)
 activity.photo.attach(io: file1, filename: "tsingy1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "tsingy2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "tsingy3.jpg", content_type: "image/jpg")
@@ -428,9 +427,9 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "diving3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Diving in the unknown", description: "Dive in the depth of Madagascar, where
-  you will encounter underwater species that only live in this area.",
-  location: "Nosy Be, Madagascar", price: 300)
+activity = Activity.new(owner_id: Owner.last.id, name: "Diving in the unknown", description: "Dive in the depth of
+  Madagascar, where you will encounter underwater species that only live in this area.", location: "Nosy Be,
+  Madagascar", price: 300)
 activity.photo.attach(io: file1, filename: "diving1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "diving2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "diving3.jpg", content_type: "image/jpg")
@@ -442,11 +441,10 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "wingsuit3.jpg
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Jumping off Maramokotro mountain", description: "Hike to the top of
-  Maramokotro mountain. The journey will take approximately 3 hours. Halfway in the journey, we will do a pitstop where you would
-    taste local food and then resume your journey to the top where a wingsuit will be provided to you. The only thing left, is to jump
-    off and fly!",
-  location: "Maramokotro, Madagascar", price: 600)
+activity = Activity.new(owner_id: Owner.last.id, name: "Jumping off Maramokotro mountain", description: "Hike to the top
+  of Maramokotro mountain. The journey will take approximately 3 hours. Halfway in the journey, we will do a pitstop
+  where you would taste local food and then resume your journey to the top where a wingsuit will be provided to you.
+  The only thing left, is to jump off and fly!", location: "Maramokotro, Madagascar", price: 600)
 activity.photo.attach(io: file1, filename: "wingsuit1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "wingsuit2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "wingsuit3.jpg", content_type: "image/jpg")
@@ -458,10 +456,10 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "para3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Paragliding off Andringitra mountains", description: "For adrenaline seeker,
-  we will go up Andringitra mountains. A very remote area with a spetacular valley and unforgettable landscape, a flat and clear,
-  broad bottom of valley without any electrical line, nor road, facing Tsaranoro cliffs with a dropof more than 800 meters!",
-  location: "Andringitra, Madagascar", price: 600)
+activity = Activity.new(owner_id: Owner.last.id, name: "Paragliding off Andringitra mountains", description: "For
+  adrenaline seeker, we will go up Andringitra mountains. A very remote area with a spetacular valley and unforgettable
+  landscape, a flat and clear, broad bottom of valley without any electrical line, nor road, facing Tsaranoro cliffs
+  with a dropof more than 800 meters!", location: "Andringitra, Madagascar", price: 600)
 activity.photo.attach(io: file1, filename: "para1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "para2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "para3.jpg", content_type: "image/jpg")
@@ -473,10 +471,10 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "bike3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking down a volcano", description: "Going down a mountain sounds
-  exciting? How about going down an active volcano? Even better, if you are able to beat the time of world renowned Travis Pastrana,
-  this activity will be on the house! Bike, protection equipment and helicopter airlift included.",
-  location: "Morafenobe, Madagascar", price: 1500)
+activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking down a volcano", description: "Going down a
+  mountain sounds exciting? How about going down an active volcano? Even better, if you are able to beat the time of
+  world renowned Travis Pastrana, this activity will be on the house! Bike, protection equipment and helicopter airlift
+  included.", location: "Morafenobe, Madagascar", price: 1500)
 activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
@@ -489,14 +487,13 @@ image3 = Rails.root.join("app", "assets", "images", "iceland", "dog3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Dog Sledding", description: "Dog sledding can be done year round,
-  although you will only go dog sledding on a glacier during the summertime.
-  In winter, the weather on the glaciers can be too harsh so the dogs are kept on the South Coast of Iceland where the
-  weather is milder, so there's actually not a guarantee that you will go dog sledding on snow during wintertime—but
-  it's guaranteed during summer!
-  Dog sledding is a fun activity for all ages, and kids as young as 2 years old can go on the dog sleds. You also get
-   plenty of time to fuss over the cute and fun dogs, in amidst travelling in a beautiful landscape in style. ",
-   location: "Reykjavik, Iceland", price: 177)
+activity = Activity.new(owner_id: Owner.last.id, name: "Dog Sledding", description: "Dog sledding can be done year round
+  although you will only go dog sledding on a glacier during the summertime.In winter, the weather on the glaciers can
+  be too harsh so the dogs are kept on the South Coast of Iceland where the weather is milder, so there's actually not
+  a guarantee that you will go dog sledding on snow during wintertime—but it's guaranteed during summer!Dog sledding is
+  a fun activity for all ages, and kids as young as 2 years old can go on the dog sleds. You also get plenty of time
+  to fuss over the cute and fun dogs, in amidst travelling in a beautiful landscape in style. ", location: "Reykjavik,
+  Iceland", price: 177)
 activity.photo.attach(io: file1, filename: "dog1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "dog2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "dog3.jpg", content_type: "image/jpg")
@@ -508,15 +505,14 @@ image3 = Rails.root.join("app", "assets", "images", "iceland", "surf3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Surfing in Iceland", description: "Surfing in Iceland is not only
-  for hardcore surfers but for anyone looking for something a little different during their stay. Although the waves can
-     be big and the sea is ice cold, surfing here presents some unique benefits, such as incredible surroundings, endurance
-     training and some fantastic surf breaks. Without a doubt, the best time to go surfing in Iceland is between October and
-     March, when most of the country is battered by rain, storms and strong winds. Of course, strong winds means strong waves
-     along the coastlines, thus a better and more challenging experience.
-     The majority of surfing in Iceland is done off the moon-like landscapes of the Reykjanes Peninsula, home to such
-     attractions as Lake Kleifarvatn and the Bridge Between the Continents.    ",
-   location: "Garour, Iceland", price: 100)
+activity = Activity.new(owner_id: Owner.last.id, name: "Surfing in Iceland", description: "Surfing in Iceland is
+  not only for hardcore surfers but for anyone looking for something a little different during their stay. Although
+  the waves can be big and the sea is ice cold, surfing here presents some unique benefits, such as incredible
+  surroundings, endurance training and some fantastic surf breaks. Without a doubt, the best time to go surfing in
+  Iceland is between October and March, when most of the country is battered by rain, storms and strong winds Of course,
+  strong winds means strong waves along the coastlines, thus a better and more challenging experience.  The majority of
+  surfing in Iceland is done off the moon-like landscapes of the Reykjanes Peninsula, home to such attractions as Lake
+  Kleifarvatn and the Bridge Between the Continents.", location: "Garour, Iceland", price: 100)
 activity.photo.attach(io: file1, filename: "surf1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "surf2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "surf3.jpg", content_type: "image/jpg")
@@ -528,13 +524,12 @@ image3 = Rails.root.join("app", "assets", "images", "iceland", "bike3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking in Iceland", description: "Everyone loves a cyclist.
-   Pedalling away on their two-wheelers, this interesting breed of sportsman has long found Iceland to be particularly suited
-   to cycling; the roads are long, scenic and hold little traffic, and most of the major attractions can be accessed from
-   the island's Ring Road.
-  This has allowed cyclists to merge their passion with traditional sightseeing, extending the process over a number of
-  days in order to allow passage from destination to the next. ",
-   location: "Hengill, Iceland", price: 130)
+activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking in Iceland", description: "Everyone loves
+  a cyclist. Pedalling away on their two-wheelers, this interesting breed of sportsman has long found Iceland to be
+  particularly suited to cycling; the roads are long, scenic and hold little traffic, and most of the major attractions
+  can be accessed from the island's Ring Road. This has allowed cyclists to merge their passion with traditional
+  sightseeing, extending the process over a number of days in order to allow passage from destination
+  to the next. ", location: "Hengill, Iceland", price: 130)
 activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
@@ -548,8 +543,8 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "cave3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Caving with crocodiles", description: "If you are slightly bored with
-  resort idyll, a visit to the Crocodile Caves located underground in Ankarana National Park will be truly
+activity = Activity.new(owner_id: Owner.last.id, name: "Caving with crocodiles", description: "If you are slightly bored
+  with resort idyll, a visit to the Crocodile Caves located underground in Ankarana National Park will be truly
   refreshing. This large underground network of caves and rivers is a home to 14 species of squealing bats, giant eels,
   endemic blind shrimps and crocodiles. Rock spires and dropping water contribute to the scary atmosphere. There is only
   one way in and one way out.", location: "Morafenobe, Madagascar", price: 1200)
@@ -579,10 +574,10 @@ file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Hiking in Isalo National Park", description: "Madagascar's
-  most popular nature destination, Isalo National Park, lies amidst the Jurassic-era highlands of the country's southwest.
-  Established in 1962, it protects over 190,000 acres of land dominated by a dramatic sandstone massif that has been
-  eroded by time and weather into an otherworldly collection of plateaus, canyons, gorges, and pinnacles",
-  location: "Isalo National Park, Madagascar", price: 100)
+  most popular nature destination, Isalo National Park, lies amidst the Jurassic-era highlands of the country's
+  southwest. Established in 1962, it protects over 190,000 acres of land dominated by a dramatic sandstone massif that has been
+  eroded by time and weather into an otherworldly collection of plateaus, canyons, gorges, and pinnacles", location:
+  "Isalo National Park, Madagascar", price: 100)
 activity.photo.attach(io: file1, filename: "hiking1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "hiking2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "hiking3.jpg", content_type: "image/jpg")
@@ -594,13 +589,12 @@ image3 = Rails.root.join("app", "assets", "images", "iceland", "volcano3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Volcano Tour", description: "Although infinitely more exciting when
-  they are erupting, this tour inside a volcano is still a pretty impressive caving tour available in the summertime.
-   Fear not, you won't see any flowing magma, but instead, a dazzling caldera made up colourful inner rock faces.
-
-  Volcano tours provide a fascinating insight into the geothermally active nature of Iceland's landscape, as well as
-   presenting one of the more unique activities on earth—actually being inside a volcano!  ",
-   location: "Grindavik, Iceland", price: 145)
+activity = Activity.new(owner_id: Owner.last.id, name: "Volcano Tour", description: "Although infinitely more exciting
+  when they are erupting, this tour inside a volcano is still a pretty impressive caving tour available in the
+  summertime. Fear not, you won't see any flowing magma, but instead, a dazzling caldera made up colourful inner rock
+  faces, Volcano tours provide a fascinating insight into the geothermally active nature of Iceland's landscape,
+  as well as presenting one of the more unique activities on earth—actually being inside a volcano! ", location:
+  "Grindavik, Iceland", price: 145)
 activity.photo.attach(io: file1, filename: "volcano1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "volcano2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "volcano3.jpg", content_type: "image/jpg")
@@ -614,15 +608,13 @@ file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Heli-skiing and Heli-snowboarding", description: "Heli-skiing
   and Heli-snowboarding are two of the ultimate extreme sports you can experience in Iceland. They are also one of the
-   priciest, unfortunately, but then again, whenever did something so spectacular come cheap?
-
-  Heli-skiing and Heli-snowboarding are, quite obviously, more extreme than their usual counterpart, meaning that a
-  higher level of experience and skill is required in order to participate in this type of tour. For those who fit the
-  description, you will have the rare opportunity to ski/snowboard from the summit of a mountain all way down to the
-   coastlines of the Atlantic. Nothing beats the feeling of skiing or snowboarding down a steep hill with fresh powder.
-   Such an experience is only complimented by being the only one on the slope. Not to mention when you have breathtaking
-   views all the way down and get to fly around in a helicopter on your way up.",
-   location: "Dalvik, Iceland", price: 200)
+  priciest, unfortunately, but then again, whenever did something so spectacular come cheap? Heli-skiing and
+  Heli-snowboarding are, quite obviously, more extreme than their usual counterpart, meaning that a higher level of
+  experience and skill is required in order to participate in this type of tour. For those who fit the description,
+  you will have the rare opportunity to ski/snowboard from the summit of a mountain all way down to the coastlines of
+  the Atlantic. Nothing beats the feeling of skiing or snowboarding down a steep hill with fresh powder. Such an
+  experience is only complimented by being the only one on the slope. Not to mention when you have breathtaking views
+  all the way down and get to fly around in a helicopter on your way up.", location: "Dalvik, Iceland", price: 200)
 activity.photo.attach(io: file1, filename: "ski1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
@@ -643,7 +635,6 @@ activities.each do |t_activity|
     trip_activity: trip_activity
   )
 end
-
 
 # Review.create!(rating: "4", comment: "The activity was a thrilling adventure that got my adrenaline pumping.")
 
