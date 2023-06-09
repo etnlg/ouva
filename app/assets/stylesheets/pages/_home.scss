@@ -14,15 +14,8 @@
 }
 
 .datecalendar > label {
-  color: white;
+  color: rgb(0, 0, 0);
 }
-
-// .banner p {
-//   font-size: 20px;
-//   color: white;
-//   opacity: .7;
-//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-// }
 
 body {
   background-color: #F6F1EF ;
@@ -33,15 +26,9 @@ body {
   margin-right: 11px;
 }
 
-div.div-input {
-  margin-left: 67px;
-  justify-content: center;
-}
+.input-to-home {
+  margin-right: 5px;
 
-.div-input {
-  display: flex;
-  // justify-content: center;
-  margin-right: 6px;
 }
 
 .btn-banner {
@@ -53,9 +40,31 @@ div.div-input {
   color: black;
 }
 
+.btn-banner:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: white;
+}
+
 
 .carousel-inner {
   padding-left: 40px;
   padding-right: 40px;
 }
 
+.date-home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px 0;
+  width: 390px;
+  height: 35px;
+}
+
+.container-date {
+   display: flex;
+  justify-content: center;
+}
+  // align-items: center;

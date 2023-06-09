@@ -1,13 +1,4 @@
-.card-container {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-gap: 16px;
-  // width: 75%;
-//   border-radius: 10px;
-//   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
-  // width: 435px;
-  // margin-left: 100px; // Not necessary, can be removed
-}
+
 
 #card-image-top {
   // background-repeat: no-repeat;
@@ -25,7 +16,6 @@
 }
 
 .card-home {
-
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
   width: 50%;
   margin: 40px;
@@ -42,6 +32,7 @@
 .cards-location p {
   text-align: right;
   margin-right: 10px;
+  width: 100%;
 }
 
 
@@ -53,7 +44,10 @@
 
 .card-home h4 {
   margin-left: 10px;
+  width: 80%;
 }
+
+
 // .card-info {
 //   height: 104px;
 // }

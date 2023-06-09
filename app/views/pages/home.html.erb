@@ -1,35 +1,5 @@
 <%= render "shared/banner" %>
 
-<%# <div class="div-text">
-  <h1>Welcome to OUVA</h1>
-  <p>The app that helps you plan the best trip of ur life!</p>
-
-  <%= link_to "Planify a trip", new_trip_path %>
-<%# </div>
-
-<form action = "/activities">
- <div class="div-input">
-  <input placeholder="Where?" type="location" name="location" id="location">
- </div>
- <div class = "form-banner d-flex justify-content-center my-1 form-from-home" >
-    <div class = "datecalendar">
-      <label for="arrive_date">From: </label>
-    </div>
-    <div class="datecalendar">
-      <input type="date" name="arrive_date" min="2023-06-09" value="2023-06-09" id="arrive_date" class="input-home">
-    </div>
- </div>
-
-  <div class = "form-banner d-flex justify-content-center mb-1 px-2">
-    <div class = "datecalendar m-1">
-      <label for="date">To:</label>
-    </div>
-    <div class="datecalendar">
-      <input type="date" name="date" value="2023-06-10" id="date" class="input-home">
-    </div>
-  </div>
-</form> %>
-
 <div class="text-center my-5">
   <h2><strong>Most Popular Activities</strong></h2>
 </div>
@@ -44,7 +14,7 @@
           <div class="card-home">
             <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
             <div class="inner-text-card">
-              <div>
+              <div class="name-activity-home-page">
                 <h4 class="name"><strong><%= activity.name %></strong></h4>
               </div>
 
