@@ -34,7 +34,164 @@
   <h2><strong>Most Popular Activities</strong></h2>
 </div>
 
-<%= render "shared/carousel" %>
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" >
+    <div class="carousel-item active " data-bs-interval="4000">
+      <div class="carousel-flex d-flex ">
+        <% @activities[0..1].each do |activity| %>
+
+          <div class="card-home">
+            <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+            <div class="inner-text-card">
+              <div>
+                <h4 class="name"><strong><%= activity.name %></strong></h4>
+              </div>
+
+              <div class="location-price-card-home">
+                <div class="cards-location">
+                  <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+                </div>
+
+                <div class="cards-price">
+                  <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %> CAD</strong></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+      <div class="carousel-item " data-bs-interval="4000">
+        <div class="carousel-flex d-flex">
+
+          <% @activities[2..3].each do |activity| %>
+
+            <div class="card-home">
+              <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+              <div class="inner-text-card">
+                <div>
+                  <h4 class="name"><strong><%= activity.name %></strong></h4>
+                </div>
+
+                <div class="location-price-card-home">
+                  <div class="cards-location">
+                    <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+                  </div>
+
+                  <div class="cards-price">
+                    <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %> CAD</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+
+      <div class="carousel-item" data-bs-interval="4000">
+        <div class="carousel-flex d-flex">
+
+          <% @activities[4..5].each do |activity| %>
+
+            <div class="card-home">
+              <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+              <div class="inner-text-card">
+                <div>
+                  <h4 class="name"><strong><%= activity.name %></strong></h4>
+                </div>
+
+                <div class="location-price-card-home">
+                  <div class="cards-location">
+                    <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+                  </div>
+
+                  <div class="cards-price">
+                    <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %> CAD</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="4000">
+        <div class="carousel-flex d-flex">
+
+          <% @activities[6..7].each do |activity| %>
+
+           <div class="card-home">
+              <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+              <div class="inner-text-card">
+                <div>
+                  <h4 class="name"><strong><%= activity.name %></strong></h4>
+                </div>
+
+                <div class="location-price-card-home">
+                  <div class="cards-location">
+                    <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+                  </div>
+
+                  <div class="cards-price">
+                    <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %> CAD</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="carousel-item" data-bs-interval="4000">
+        <div class="carousel-flex d-flex">
+
+          <% @activities[8..9].each do |activity| %>
+
+            <div class="card-home">
+              <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+              <div class="inner-text-card">
+                <div>
+                  <h4 class="name"><strong><%= activity.name %></strong></h4>
+                </div>
+
+                <div class="location-price-card-home">
+                  <div class="cards-location">
+                    <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+                  </div>
+
+                  <div class="cards-price">
+                    <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %> CAD</strong></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+
+
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+<%#= render "shared/carousel" %>
+
+
 
 <%# <%= render "shared/card" %>
 
