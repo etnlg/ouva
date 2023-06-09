@@ -6,19 +6,23 @@
 }
 
 .banner h1 {
-  margin: 0;
+  margin-bottom: 50px;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 50px;
   font-weight: bold;
 }
 
-.banner p {
-  font-size: 20px;
+.datecalendar > label {
   color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+// .banner p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .7;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// }
 
 body {
   background-color: #F6F1EF ;
@@ -29,17 +33,29 @@ body {
   margin-right: 11px;
 }
 
+div.div-input {
+  margin-left: 67px;
+  justify-content: center;
+}
+
 .div-input {
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   margin-right: 6px;
 }
 
-.div-text {
-  text-align: center;
+.btn-banner {
+  width: 70px;
+  height: 38px;
+  background-color: #9BBDC5;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  color: black;
 }
+
 
 .carousel-inner {
   padding-left: 40px;
   padding-right: 40px;
 }
+

@@ -1,7 +1,7 @@
 <h2>Here are all your trip activities!</h2>
 
 <% @trip_activities.each do |act| %>
-  <div class = "d-flex bg-white shadow">
+  <div class = "d-flex bg-white shadow p-3">
     <div class = "m-3 p-3">
       <% activity = Activity.find(act.activity_id) %>
       <h2><%= activity.name %></h2>

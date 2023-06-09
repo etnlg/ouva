@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     number_of_activities = 10
     @activities = Activity.order('RANDOM()').limit(number_of_activities)
-    reset_session
+    session["act_hash"] = {}
   end
 
   def intermediaire
@@ -22,6 +22,9 @@ class PagesController < ApplicationController
   end
 
   def checkout
-    @activity_ids = params["activitiy_ids"]
+    @location = params[:location]
+    @activity_ids = params[:activitiy_ids]
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
   end
 end
