@@ -1,23 +1,26 @@
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= cl_image_tag @activity.photo.blobs.first.key%>
+  <div class="carousel-inner" data-wrap="true" >
+    <div class="carousel-item active" data-bs-interval="5000">
+      <%= cl_image_tag @activity.photo.blobs.first.key%>
+    </div>
 
+
+    <% @activity.photo.blobs[1..].each do |photo| %>
+      <div class="carousel-item" data-bs-interval="5000">
+        <%= cl_image_tag photo.key%>
       </div>
-        <% @activity.photo.blobs.each do |photo| %>
-          <div class="carousel-item ">
-            <%= cl_image_tag photo.key, crop: :fill %>
-          </div>
-          <div class="carousel-caption">
-            <h1><strong><%= @activity.name %> </strong></h1>
-          </div>
-        <% end %>
+      <div class="carousel-caption">
+        <h1><strong><%= @activity.name %> </strong></h1>
+      </div>
+    <% end %>
+  </div>
+
 
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -27,7 +30,6 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
 </div>
 
 
@@ -51,7 +53,7 @@
   </div>
 
   <div class="container-add-to-trip-show">
-    <div class="card-add-to-itinerary">
+    <div class="price-show-page">
       <p><strong>$<%= @activity.price%></strong> per traveler</p>
     </div>
 
