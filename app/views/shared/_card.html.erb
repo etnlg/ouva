@@ -3,7 +3,7 @@
     <%# <%= link_to activity_path(activity) do %>
 
       <div class="card-home">
-        <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, class: "card-image-top" %>
+        <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
         <h3 class="name"><strong><%= activity.name %></strong></h3>
 
         <div class="cards-location">

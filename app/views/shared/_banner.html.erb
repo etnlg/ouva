@@ -1,35 +1,37 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
       url(<%= image_path('banner.png') %>)">
-  <div class="container text-center">
-    <h1>Travel to the unknown</h1>
+  <div class="circle-home">
+    <div class="container-home-page text-center">
+      <h1>Travel to the Unknown</h1>
 
-    <form action = "/activities">
-      <div class="container-date">
-        <div class="date-home-page mb-2">
-          <div class = "form-banner d-flex justify-content-center form-from-home" >
+      <form action = "/activities">
+        <div class="container-date">
+          <div class="date-home-page d-flex mb-2">
+            <div class = "form-banner d-flex justify-content-center form-from-home" >
+                <div class = "datecalendar">
+                  <label for="start_date" class="input-to-home">From: </label>
+                </div>
+                <div class="datecalendar">
+                  <input type="date" name="start_date" min="2023-06-09" value="2023-06-09" id="start_date" class="input-home">
+                </div>
+            </div>
+
+            <div class = "form-banner d-flex justify-content-center">
               <div class = "datecalendar">
-                <label for="start_date" class="input-to-home">From: </label>
+                <label for="end_date" class="input-to-home">To:</label>
               </div>
               <div class="datecalendar">
-                <input type="date" name="start_date" min="2023-06-09" value="2023-06-09" id="start_date" class="input-home">
+                <input type="date" name="end_date" value="2023-06-10" id="end_date" class="input-home">
               </div>
-          </div>
-
-          <div class = "form-banner d-flex justify-content-center">
-            <div class = "datecalendar">
-              <label for="end_date" class="input-to-home">To:</label>
-            </div>
-            <div class="datecalendar">
-              <input type="date" name="end_date" value="2023-06-10" id="end_date" class="input-home">
             </div>
           </div>
         </div>
-      </div>
-      <div class="div-input">
-        <%# <input type="submit" value="Search →" class="btn"> %>
-        <input placeholder="Where?" type="location" name="location" id="location">
-        <button class="btn-banner">Go</button>
-      </div>
-    </form>
+        <div class="div-input">
+          <%# <input type="submit" value="Search →" class="btn"> %>
+          <input placeholder="Enter your destination" type="location" name="location" id="location">
+          <button class="btn-banner">Go</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
