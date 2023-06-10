@@ -70,6 +70,13 @@ body {
   padding-right: 40px;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 0% 15%;
+}
+
 .date-home-page {
   display: flex;
   justify-content: center;
@@ -83,10 +90,4 @@ body {
 .container-date {
   display: flex;
   justify-content: center;
-}
-  // align-items: center;
-
-.input-to-home {
-  // align-self: flex-end;
-  // background-color: red;
 }
