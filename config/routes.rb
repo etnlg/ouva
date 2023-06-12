@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :owners
   devise_for :users
+  namespace :business do
+    get "chats/index", to: "chats#index", as: "chats"
+    get "chats/:id", to: "chats#show", as: "chat"
+    resources :activities
+  end
   root to: "pages#home"
   get "pages/intermediaire", to: "pages#intermediaire", as: "intermediaire"
   get "pages/checkout", to: "pages#checkout", as: "checkout"
@@ -9,6 +14,9 @@ Rails.application.routes.draw do
   get "trips/which", to: "trips#which", as: 'which_trip'
   resources :trips do
     resources :trip_activities
+  end
+  resources :chatrooms do
+    resources :messages, only: :create
   end
 
 

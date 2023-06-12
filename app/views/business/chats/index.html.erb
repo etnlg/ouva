@@ -1,0 +1,7 @@
+<h4>All your chatrooms!</h4>
+
+<% @chats.each do |chat| %>
+  <% user = User.find(chat.user_id) %>
+  <p>Chat with <%= user.firstname %> <%= user.lastname %></p>
+  <p><%= link_to "See chat", business_chat_path(chat) %>
+<% end %>

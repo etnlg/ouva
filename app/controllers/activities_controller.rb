@@ -1,7 +1,6 @@
 class ActivitiesController < ApplicationController
 
   def index
-
     dates = params[:dates]
     dates_splited = dates.split
     @start_date = dates_splited[0]

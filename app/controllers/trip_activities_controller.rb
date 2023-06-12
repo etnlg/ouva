@@ -3,7 +3,9 @@ class TripActivitiesController < ApplicationController
   def index
     trip_id = params[:trip_id]
     @trip_activities = TripActivity.where(trip_id: trip_id)
+    @trip = Trip.find(trip_id)
   end
+
 
   def create
     @trip_activity = TripActivity.new

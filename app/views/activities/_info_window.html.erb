@@ -1,4 +1,4 @@
 <h2><%= activity.name %></h2>
 <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, class: "avatar" %>
 <p><%= activity.location %></p>
-<%= link_to "See this activity", activity_path(activity) %>
+<%= link_to "See this activity", activity_path(start_date: @start_date, end_date: @end_date, id: activity.id, location: @location, day_date: @day_date) %>
