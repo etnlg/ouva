@@ -66,7 +66,7 @@
       <% if @day_date.nil? %>
         <div class="form-show-line">
           <label for="date"></label>
-          <input type="date" placeholder="Choose" id="date" name="date" required><br><br>
+          <input type="date" placeholder="Choose" id="date" min = <%= Date.parse(@start_date) + 1 %> max = <%= Date.parse(@end_date) - 1 %> name="date" required><br><br>
         </div>
       <% else %>
         <input type="hidden" name="date" value= <%= @day_date %>>
