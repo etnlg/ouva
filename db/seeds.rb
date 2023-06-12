@@ -30,7 +30,7 @@ User.create!(firstname: "Elon", lastname: "Musk", email: "elon@icloud.com", pass
 User.create!(firstname: "Stephane", lastname: "Boss", email: "stephane@icloud.com", password: "111111", username: "steph")
 
 Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "111111", username: "willy")
-Owner.create!(firstname: "Danella", lastname: "famille", email: "dan@icloud.com", password: "111111", username: "Dan")
+Owner.create!(firstname: "Danella", lastname: "Kababanda", email: "dan@icloud.com", password: "111111", username: "Dan")
 
 
 # Review.create!(rating: "", comment: "")
@@ -356,7 +356,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Quad tour", description:
    range, and the Hellisheiði geothermal power plant that provides energy to the capital. From this vantage point, you'll
    witness the beauty of Faxaflói bay, the entire capital region, the Bláfjöll mountain range, and the iconic Esja..
   Don't miss out on this once-in-a-lifetime experience to see Reykjavik from a whole new perspective.",
-  location: "Reykjavik, Iceland", price: 189)
+  location: "Reykjavik, Iceland", price: 180)
 activity.photo.attach(io: file1, filename: "quad1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "quad2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "quad3.jpg", content_type: "image/jpg")
@@ -372,7 +372,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Glacier tour", descripti
   hiking tour will take you to the magnificent Falljökull glacier. Falljokull is an outlet glacier from Vatnajokull,
    the largest glacier in Europe and the King of natural ice sculptures. As you hike around this magical ice setting,
    you will get all the information about this enchanting place from your friendly and knowledgeable guide, taking you
-   to all the best spots to deeply enjoy the glacier.", location: "Hof, Iceland", price: 143)
+   to all the best spots to deeply enjoy the glacier.", location: "Hof, Iceland", price: 140)
 activity.photo.attach(io: file1, filename: "glacier1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "glacier2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "glacier3.jpg", content_type: "image/jpg")
@@ -461,7 +461,7 @@ file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Paragliding off Andringitra mountains", description: "For
   adrenaline seeker, we will go up Andringitra mountains. A very remote area with a spetacular valley and unforgettable
   landscape, a flat and clear, broad bottom of valley without any electrical line, nor road, facing Tsaranoro cliffs
-  with a dropof more than 800 meters!", location: "Andringitra, Madagascar", price: 600)
+  with a dropof more than 800 meters!", location: "Andringitra, Madagascar", price: 500)
 activity.photo.attach(io: file1, filename: "para1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "para2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "para3.jpg", content_type: "image/jpg")
@@ -495,7 +495,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Dog Sledding", descripti
   a guarantee that you will go dog sledding on snow during wintertime—but it's guaranteed during summer!Dog sledding is
   a fun activity for all ages, and kids as young as 2 years old can go on the dog sleds. You also get plenty of time
   to fuss over the cute and fun dogs, in amidst travelling in a beautiful landscape in style. ", location: "Reykjavik,
-  Iceland", price: 177)
+  Iceland", price: 200)
 activity.photo.attach(io: file1, filename: "dog1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "dog2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "dog3.jpg", content_type: "image/jpg")
@@ -514,7 +514,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Surfing in Iceland", des
   Iceland is between October and March, when most of the country is battered by rain, storms and strong winds Of course,
   strong winds means strong waves along the coastlines, thus a better and more challenging experience.  The majority of
   surfing in Iceland is done off the moon-like landscapes of the Reykjanes Peninsula, home to such attractions as Lake
-  Kleifarvatn and the Bridge Between the Continents.", location: "Garour, Iceland", price: 100)
+  Kleifarvatn and the Bridge Between the Continents.", location: "Garour, Iceland", price: 300)
 activity.photo.attach(io: file1, filename: "surf1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "surf2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "surf3.jpg", content_type: "image/jpg")
@@ -531,7 +531,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking in Icela
   particularly suited to cycling; the roads are long, scenic and hold little traffic, and most of the major attractions
   can be accessed from the island's Ring Road. This has allowed cyclists to merge their passion with traditional
   sightseeing, extending the process over a number of days in order to allow passage from destination
-  to the next. ", location: "Hengill, Iceland", price: 130)
+  to the next. ", location: "Hengill, Iceland", price: 200)
 activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
@@ -579,7 +579,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Hiking in Isalo National
   most popular nature destination, Isalo National Park, lies amidst the Jurassic-era highlands of the country's
   southwest. Established in 1962, it protects over 190,000 acres of land dominated by a dramatic sandstone massif that has been
   eroded by time and weather into an otherworldly collection of plateaus, canyons, gorges, and pinnacles", location:
-  "Isalo National Park, Madagascar", price: 100)
+  "Isalo National Park, Madagascar", price: 500)
 activity.photo.attach(io: file1, filename: "hiking1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "hiking2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "hiking3.jpg", content_type: "image/jpg")
@@ -596,7 +596,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Volcano Tour", descripti
   summertime. Fear not, you won't see any flowing magma, but instead, a dazzling caldera made up colourful inner rock
   faces, Volcano tours provide a fascinating insight into the geothermally active nature of Iceland's landscape,
   as well as presenting one of the more unique activities on earth—actually being inside a volcano! ", location:
-  "Grindavik, Iceland", price: 145)
+  "Grindavik, Iceland", price: 400)
 activity.photo.attach(io: file1, filename: "volcano1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "volcano2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "volcano3.jpg", content_type: "image/jpg")
@@ -616,7 +616,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Heli-skiing and Heli-sno
   you will have the rare opportunity to ski/snowboard from the summit of a mountain all way down to the coastlines of
   the Atlantic. Nothing beats the feeling of skiing or snowboarding down a steep hill with fresh powder. Such an
   experience is only complimented by being the only one on the slope. Not to mention when you have breathtaking views
-  all the way down and get to fly around in a helicopter on your way up.", location: "Dalvik, Iceland", price: 200)
+  all the way down and get to fly around in a helicopter on your way up.", location: "Dalvik, Iceland", price: 600)
 activity.photo.attach(io: file1, filename: "ski1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
