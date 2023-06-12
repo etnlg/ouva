@@ -1,8 +1,10 @@
 // Specific CSS for your home-page
+
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 500px;
 }
 
 .banner h1 {
@@ -13,13 +15,29 @@
   font-weight: bold;
 }
 
+
+.circle-home {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: linear-gradient(309deg, #23180b94 23.96%, #23180b6f 51.56%, #23180b36 79.69%);
+  // background-color: #23180b ;
+  // opacity: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .datecalendar > label {
   color: rgb(0, 0, 0);
 }
 
 body {
-  background-color: #F6F1EF ;
-
+  background-color: #F6F1EF;
 }
 
 .form-from-home {
@@ -28,7 +46,6 @@ body {
 
 .input-to-home {
   margin-right: 5px;
-
 }
 
 .btn-banner {
@@ -53,6 +70,13 @@ body {
   padding-right: 40px;
 }
 
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 0% 15%;
+}
+
 .date-home-page {
   display: flex;
   justify-content: center;
@@ -64,7 +88,6 @@ body {
 }
 
 .container-date {
-   display: flex;
+  display: flex;
   justify-content: center;
 }
-  // align-items: center;
