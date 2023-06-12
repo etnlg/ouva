@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_09_164816) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_12_160320) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_164816) do
     t.float "latitude"
     t.float "longitude"
     t.index ["owner_id"], name: "index_activities_on_owner_id"
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "owner_id", null: false
+    t.index ["owner_id"], name: "index_chatrooms_on_owner_id"
+    t.index ["user_id"], name: "index_chatrooms_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["owner_id"], name: "index_messages_on_owner_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -120,6 +142,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_09_164816) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "owners"
+  add_foreign_key "chatrooms", "owners"
+  add_foreign_key "chatrooms", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "owners"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "trip_activities"
   add_foreign_key "trip_activities", "activities"
   add_foreign_key "trip_activities", "trips"
