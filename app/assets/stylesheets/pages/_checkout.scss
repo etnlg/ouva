@@ -3,14 +3,9 @@
   justify-content: space-around;
 }
 
-
-  // .div-checkout {
-  // border: 2px solid black;
-  // padding: 20px;
-  // border-radius: 15px;
-  // background-color: white;
-  // }
-
+.h2-checkout, .h2-payment {
+  margin-bottom: 20px;
+}
 
 .div-column-name {
   display: flex;
@@ -21,6 +16,11 @@
 hr {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.div-payment hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .div-act-name-price {

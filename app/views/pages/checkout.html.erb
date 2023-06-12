@@ -1,7 +1,7 @@
 <div class="div-checkout-payment-container">
 
   <div class="div-checkout">
-    <h2><strong>Checkout Cart</strong></h2>
+    <h2 class="h2-checkout"><strong>Checkout Cart</strong></h2>
 
     <div class="div-column-name">
       <h6><strong>Activities</strong></h6>
@@ -25,7 +25,7 @@
           <% @activity_ids.each_value do |id_trav| %>
             <% activity = Activity.find(id_trav[0]) %>
             <% price = activity.price * id_trav[1].to_i %>
-            <p><%= price = activity.price.to_i %> <strong>CAD</strong></p>
+            <p><%= price.to_i %> <strong>CAD</strong></p>
             <% total_price += price %>
           <% end %>
         </div>
@@ -34,7 +34,7 @@
       <hr>
 
       <div class="div-total-price">
-        <p><%= total_price %> <strong>CAD</strong></p>
+        <p><%= total_price.to_i %> <strong>CAD</strong></p>
       </div>
     </div>
 
@@ -42,7 +42,7 @@
 
   <div class="div-payment">
 
-    <h2><strong>Payment Info</strong></h2>
+    <h2 class="h2-payment"><strong>Payment Info</strong></h2>
 
     <hr>
 
@@ -96,22 +96,3 @@
   </div>
 
 </div>
-
-<% total_price = 0 %>
-
-<div class = "bg-white shadow border p-2">
-
-  <h2>Checkout cart</h2>
-
-  <% @activity_ids.each_value do |id_trav| %>
-      <% activity = Activity.find(id_trav[0]) %>
-      <% price = activity.price * id_trav[1].to_i %>
-      <p><strong><%= activity.name %>:</strong> <%= price.to_i %> CAD<p>
-      <% total_price += price %>
-  <% end %>
-    <h4><strong>Total price:</strong><%= total_price.to_i %></h4>
-</div>
-
-<%= link_to "Book now!", trips_path(trip: Trip.new, destination: @location, #activity_id: @activity_ids,
- end_date: @end_date, start_date: @start_date),
-      data: {turbo_method: :post} %>
