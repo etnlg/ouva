@@ -12,6 +12,12 @@
     <div class = "m-3 p-3">
       <% owner = Owner.find(activity.owner_id) %>
       <h5>This activity is proposed by <%= owner.firstname %> <%= owner.lastname %></h5>
+      <% if Chatroom.where(owner_id: owner.id, user_id: current_user.id) == [] %>
+        <p><%= link_to "Chat with him/her", chatrooms_path(name: "Chatroom", owner_id: owner.id),
+        data: {turbo_method: :post} %></p>
+      <% else %>
+        <p><%= link_to "Chat with him/her", chatroom_path(Chatroom.where(owner_id: owner.id, user_id: current_user.id)[0])%></p>
+      <% end %>
     </div>
   </div>
 <% end %>

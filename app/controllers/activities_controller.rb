@@ -1,7 +1,6 @@
 class ActivitiesController < ApplicationController
 
   def index
-    raise
     @start_date = params[:start_date]
     @end_date = params[:end_date]
     @location = params[:location]
