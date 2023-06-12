@@ -12,6 +12,3 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
-
-import FlatpickrController from "./flatpickr_controller"
-application.register("flatpickr", FlatpickrController)

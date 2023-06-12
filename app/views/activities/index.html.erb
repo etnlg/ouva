@@ -1,5 +1,4 @@
 <div class="container-index">
-  <h2 class="act-h2">All the destination to <%= @location.titleize %></h2>
 
 
   <div class = "shadow border" style="width: 100%; height: 400px;"
@@ -8,6 +7,7 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
+  <h2 class="act-h2"><strong>All the Activities in <%= @location.titleize %></strong></h2>
   <div class="activity-index-page">
     <% @activities.each do |activity| %>
       <div class="card-home-index-page">
