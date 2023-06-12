@@ -1,10 +1,16 @@
 class ActivitiesController < ApplicationController
 
   def index
+
     dates = params[:dates]
     dates_splited = dates.split
     @start_date = dates_splited[0]
     @end_date = dates_splited[2]
+
+    
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+
     @location = params[:location]
     @day_date = params[:day_date]
     @activities = Activity.near(@location, 100)

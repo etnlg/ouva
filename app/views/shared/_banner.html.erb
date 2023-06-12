@@ -7,14 +7,21 @@
       <form action = "/activities">
         <div class="container-date">
           <div class="date-home-page d-flex mb-2">
+
             <div class = "form-banner d-flex justify-content-center form-from-home" >
                 <div class = "datecalendar" >
                   <label for="dates" class="input-to-home"></label>
                 </div>
                 <div class="datecalendar" >
-                  <input data-controller="flatpickr" name="dates" min="2023-06-09" value="2023-06-09" id="start_date" class="input-home">
+                  <input data-controller="flatpickr" name="dates" min= <%= Date.today %> value= <%= Date.today%> id="start_date" class="input-home">
+
+      
                 </div>
+                <%# <div data-controller = "flatpickr"> %>
+                  <%# <input type="date" name="start_date" min="2023-06-09" value="2023-06-09" id="start_date" class="input-home"> %>
+                <%# </div> %>
             </div>
+
           </div>
         </div>
 

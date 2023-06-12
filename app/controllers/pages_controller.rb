@@ -7,6 +7,13 @@ class PagesController < ApplicationController
     session["act_hash"] = {}
   end
 
+  def add
+    @location = params[:location]
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
+    @activity_id = params[:activity_id]
+  end
+
   def intermediaire
     @location = params[:location]
     @date = params[:date]
