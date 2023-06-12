@@ -11,15 +11,21 @@
   color:  black;
 }
 
-// .link-p > a {
-//   text-decoration: none;
-//   color: #9BBDC5;
-// }
+.container-index h2 {
+  text-align: center;
+  margin-top: 20px;
+}
 
-// .link-p > a:hover {
-//   color:  black;
-// }
+.link-back-home {
+  text-decoration: none;
+  color: #9BBDC5;
+  text-align: center;
+  margin-top: 40px;
+}
 
+.link-back-home:hover {
+  color:  black;
+}
 
 .card-home-index-page {
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
@@ -44,7 +50,10 @@
 
 .inner-text-card {
   color: black;
-  text-decoration: none;
+  text-decoration-line: none!important;
+}
+a {
+  text-decoration-line: none!important;
 }
 
 .card-home-index-page:hover {
