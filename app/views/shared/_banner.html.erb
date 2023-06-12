@@ -8,24 +8,21 @@
         <div class="container-date">
           <div class="date-home-page d-flex mb-2">
             <div class = "form-banner d-flex justify-content-center form-from-home" >
-                <div class = "datecalendar">
-                  <label for="start_date" class="input-to-home">From: </label>
+                <div class = "datecalendar" >
+                  <label for="dates" class="input-to-home"></label>
                 </div>
-                <div class="datecalendar">
-                  <input type="date" name="start_date" min="2023-06-09" value="2023-06-09" id="start_date" class="input-home">
+                <div class="datecalendar" >
+                  <input data-controller="flatpickr" name="dates" min="2023-06-09" value="2023-06-09" id="start_date" class="input-home">
                 </div>
-            </div>
-
-            <div class = "form-banner d-flex justify-content-center">
-              <div class = "datecalendar">
-                <label for="end_date" class="input-to-home">To:</label>
-              </div>
-              <div class="datecalendar">
-                <input type="date" name="end_date" value="2023-06-10" id="end_date" class="input-home">
-              </div>
             </div>
           </div>
         </div>
+
+
+
+
+
+
         <div class="div-input">
           <%# <input type="submit" value="Search →" class="btn"> %>
           <input placeholder="Enter your destination" type="location" name="location" id="location">
