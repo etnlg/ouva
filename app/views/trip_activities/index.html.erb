@@ -26,13 +26,16 @@
                 <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %>CAD</strong></p>
               </div>
             </div>
+            <div class = "m-2">
+              <% owner = Owner.find(activity.owner_id) %>
+              <% if Chatroom.where(owner_id: owner.id, user_id: current_user.id) == [] %>
+                <p><%= link_to "Chat with him/her", chatrooms_path(name: "Chatroom", owner_id: owner.id),
+                data: {turbo_method: :post} %></p>
+              <% else %>
+                <p><%= link_to "Chat with him/her", chatroom_path(Chatroom.where(owner_id: owner.id, user_id: current_user.id)[0])%></p>
+              <% end %>
+            </div>
           </div>
-        <% if Chatroom.where(owner_id: owner.id, user_id: current_user.id) == [] %>
-          <p><%= link_to "Chat with him/her", chatrooms_path(name: "Chatroom", owner_id: owner.id),
-          data: {turbo_method: :post} %></p>
-        <% else %>
-          <p><%= link_to "Chat with him/her", chatroom_path(Chatroom.where(owner_id: owner.id, user_id: current_user.id)[0])%></p>
-        <% end %>
       </div>
     <% end %>
   </div>
