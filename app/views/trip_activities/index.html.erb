@@ -1,23 +1,43 @@
 <h2>Here are all your trip activities!</h2>
 
-<% @trip_activities.each do |act| %>
-  <div class = "d-flex bg-white shadow p-3">
-    <div class = "m-3 p-3">
-      <% activity = Activity.find(act.activity_id) %>
-      <h2><%= activity.name %></h2>
-      <p><%= activity.description %></p>
-      <p><%= activity.location %></p>
-      <p><%= activity.price %> <strong>EUR</strong></p>
-    </div>
-    <div class = "m-3 p-3">
-      <% owner = Owner.find(activity.owner_id) %>
-      <h5>This activity is proposed by <%= owner.firstname %> <%= owner.lastname %></h5>
-      <% if Chatroom.where(owner_id: owner.id, user_id: current_user.id) == [] %>
-        <p><%= link_to "Chat with him/her", chatrooms_path(name: "Chatroom", owner_id: owner.id),
-        data: {turbo_method: :post} %></p>
-      <% else %>
-        <p><%= link_to "Chat with him/her", chatroom_path(Chatroom.where(owner_id: owner.id, user_id: current_user.id)[0])%></p>
-      <% end %>
-    </div>
+
+<div class = "shadow border" style="width: 100%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<h3 class="name-valise"><%= @trip.destination.titleize %></h3>
+
+<div class="activity-index-page">
+    <% @trip_activities.each do |trip_activity| %>
+      <% activity = Activity.find(trip_activity.activity_id) %>
+      <div class="card-home-valise-page">
+          <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+          <div class="inner-text-card">
+            <div class="name-activity-home-page">
+              <h4 class="name"><strong><%= activity.name %></strong></h4>
+            </div>
+            <div class="location-price-card-home">
+              <div class="cards-location">
+                <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+              </div>
+              <div class="cards-price">
+                <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %>CAD</strong></p>
+              </div>
+            </div>
+          </div>
+        <% if Chatroom.where(owner_id: owner.id, user_id: current_user.id) == [] %>
+          <p><%= link_to "Chat with him/her", chatrooms_path(name: "Chatroom", owner_id: owner.id),
+          data: {turbo_method: :post} %></p>
+        <% else %>
+          <p><%= link_to "Chat with him/her", chatroom_path(Chatroom.where(owner_id: owner.id, user_id: current_user.id)[0])%></p>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="link-back-home">
+    <%= link_to "Back to home page", root_path %>
+  </div>
+</div>
