@@ -13,7 +13,7 @@
       <p><%= a.description %></p>
       <p><strong><%= a.price.to_i %> CAD</strong></p>
       <p class="link-p"><%= link_to "See details", activity_path(start_date: @start_date, end_date: @end_date, id: a.id, location: @location, day_date: @day_date) %> |
-      <%= link_to "Add to the valise", intermediaire_path(start_date: @start_date, end_date: @end_date, activity_id: a.id)%></p>
+      <%= link_to "Add to the valise", add_path(start_date: @start_date, end_date: @end_date, activity_id: a.id, location: @location)%></p>
     </div>
   <% end %>
 

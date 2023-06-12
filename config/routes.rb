@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "pages/intermediaire", to: "pages#intermediaire", as: "intermediaire"
   get "pages/checkout", to: "pages#checkout", as: "checkout"
+  get "pages/add", to: "pages#add", as: "add"
   resources :activities
   get "trips/which", to: "trips#which", as: 'which_trip'
   resources :trips do

@@ -1,0 +1,24 @@
+<form class="form-show", action = "/pages/intermediaire">
+      <input type="hidden" name="start_date" value= <%= @start_date %> >
+      <input type="hidden" name="end_date" value= <%= @end_date %>>
+      <input type="hidden" name="activity_id" value=<%= @activity_id %> >
+      <input type="hidden" name="location" value=<%= @location %> >
+      <% if @day_date.nil? %>
+        <div class="form-show-line">
+          <label for="date"></label>
+          <input type="date" placeholder="Choose" id="date" min = <%= Date.parse(@start_date) + 1 %> max = <%= Date.parse(@end_date) - 1 %> name="date" required><br><br>
+        </div>
+      <% else %>
+        <input type="hidden" name="date" value= <%= @day_date %>>
+      <% end %>
+
+      <div class="form-show-line">
+        <label for="travelers"></label>
+        <input type="number" placeholder="Number of travelers" id="travelers" name="travelers" min="1" required><br><br>
+      </div>
+
+      <div class="form-show-line">
+        <input type="submit" value="Add to Itinerary">
+      </div>
+
+    </form>
