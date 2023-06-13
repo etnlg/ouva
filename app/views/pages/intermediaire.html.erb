@@ -1,15 +1,34 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-                    <%= cl_image_tag @activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
-">
-
+                    url('<%= cl_image_path @activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>')">
+<h1 id="title-banner-intermediaire"> <strong><%= @location.titleize %> </strong> </h1>
 </div>
 
 
-
-
+<hr class="my-4 bg-dark">
 
 <div id=container-intermediaire>
-  <h2>Your trip!</h2>
+
+  <h2 class="your-trip">Your trip</h2>
+
+  <hr />
+
+  <div class="scrolling">
+      <p class="text-center"><%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em>
+      </p>
+  </div>
+
+  <hr />
+
+
   <% date = Date.parse(@start_date) %>
  <div class="main-container-intermediaire">
     <% (1..@trip_length).each do |n| %>
@@ -19,23 +38,70 @@
         <div class="container-intermediaire-page">
           <div class="date-intermediaire-page">
               <p><strong>Day <%= n.to_i %><p>
-              <p></strong> (<%=date%>)<p>
+              <p></strong> <%=date%><p>
           </div>
             <% if session['act_hash'][n] != nil %>
-              <% id = session['act_hash'][n][0] %>
-              <div class="name-activity-intermediaire-page">
+
+            <% id = session['act_hash'][n][0] %>
+            <div class="name-activity-intermediaire-page" data-controller="activity">
                 <p class="name-centered"><%= Activity.find(id).name %></p>
+              <% else %>
+              <div class="button-break-add d-flex" data-activity-target="Div" data-controller="activity">
+                <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "btn-intermediaire" %>
+                <button type="button" class="btn-intermediaire-break" data-action="click->activity#disablediv">Take a break</button>
               </div>
-            <% else %>
-              <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "add-activity-intermediaire" %>
-            <% end %>
-          </div>
+                <div class="name-centered d-none" data-activity-target="noact" data-controller="activity">
+                  <h2>No activity this day</h2>
+                </div>
+              </div>
+              <% end %>
+            </div>
+
         </div>
 
     <% end %>
   </div>
-
-  <div class = "">
+  <div class = "btn-intermediaire-book">
     <%= link_to "Book this trip", checkout_path(location: @location, num_traveller: @num_traveller, start_date: @start_date, end_date: @end_date, activitiy_ids: session['act_hash']) %>
   </div>
+
+
+</div>
+
+
+<div class="first-image-intermediaire d-flex">
+  <%= cl_image_tag @activity.photo.blobs[1].key, crop: :fill, id: "card-image-top" %>
+  <div class="text-first-image">
+    <div>
+      <h2 class="text-center-first">Discover <em><%= @location.titleize %></em> like never before</h2>
+    </div>
+    <p>
+    <i class="fa-solid fa-quote-left"></i>
+        Don't just learn, experience. <br>
+        Don't just read, absorb. <br>
+        Don't just change, transform. <br>
+        Don't just relate, advocate. <br>
+        Don't just criticize, encourage. <br>
+        Don't just take, give. <br>
+        Don't just see, feel. <br>
+        Don't just dream, do. <br>
+        Don't just hear, listen. <br>
+        Don't just talk, act. <br>
+        Don't just tell, show. <br>
+        Don't just exist, live.<i class="fa-solid fa-quote-right"></i><br>
+        <strong>Roy T. Bennett, The Light in the Heart</strong> </p>
+  </div>
+</div>
+
+<div class="second-image-intermediaire d-flex">
+  <div class="text-second-image">
+    <div>
+      <h2 class="text-center">Make memories in <em><%= @location.titleize %> </em></h2>
+    </div>
+    <p>Memories are like treasure because they allow us to relive delightful times in our lives.
+    Memories become stories that we tell hundreds and thousands of times throughout our life.
+    The beautiful thing about our memories is that, not only are they beautiful to us, they are also beautiful to others.
+    Book your trip and make</p>
+  </div>
+  <%= cl_image_tag @activity.photo.blobs[2].key, crop: :fill, id: "card-image-top" %>
 </div>

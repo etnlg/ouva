@@ -1,3 +1,19 @@
+.your-trip {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#title-banner-intermediaire {
+  color: white ;
+  font-size: 130px;
+}
+
+.scrolling p {
+  margin-top: 15px;
+}
+
+
+
 .main-container-intermediairee {
   display: flex;
   justify-content: center;
@@ -6,17 +22,12 @@
 
 
 .container-intermediaire-page {
-  // display: flex;
-  // // justify-content: space-around;
-  // margin: auto;
-  // width: 50%;
   display: flex;
-  // flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  // background-color: blue;
   gap: 80px;
+  margin-top: 50px;
 }
 
 .date-intermediaire-page{
@@ -28,9 +39,76 @@
 
 .date-intermediaire-page p {
   justify-content: end;
+  font-size: 18px;
 }
 
-.add-activity-intermediaire {
+.btn-intermediaire {
+  width: 140px;
+  height: 38px;
+  background-color: #9BBDC5;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.btn-intermediaire-break {
+  width: 140px;
+  height: 38px;
+  background-color: #ffffff;
+  border: solid #9BBDC5;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.btn-intermediaire-break:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+}
+
+.btn-intermediaire:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: rgb(255, 255, 255);
+  background-color: #9BBDC5;
+}
+
+.name-activity-intermediaire-page {
+  background-color: rgb(255, 255, 255);
+  border: solid #DCCFBB;
+  text-align: center;
+}
+
+
+.name-activity-intermediaire-page p {
+  width: 300px;
+}
+
+.name-centered {
+  margin: auto;
+}
+
+.btn-intermediaire-book {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+
+.btn-intermediaire-book a {
   width: 300px;
   height: 38px;
   background-color: #9BBDC5;
@@ -40,31 +118,60 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
-.add-activity-intermediaire:hover {
+.btn-intermediaire-book a:hover {
   transform: scale(105%);
   transition: all ease-in-out 200ms;
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
   color: rgb(255, 255, 255);
   background-color: #9BBDC5;
-
-}
-
-.name-activity-intermediaire-page {
-  background-color: rgb(255, 255, 255);
-  border: solid #DCCFBB;
-  text-align: center;
-
-
 }
 
 
-.name-activity-intermediaire-page p {
-  width: 300px;
+.quotes {
+  font-size: 30px;
+}
+
+.second-image-intermediaire {
+  margin-bottom: 40px;
 }
 
 
-.name-centered {
-  margin: auto;
+.second-image-intermediaire img {
+  margin-right: 20px;
+}
+
+
+.first-image-intermediaire img {
+  margin-left: 25px;
+}
+
+.first-image-intermediaire {
+  margin-bottom: 50px;
+  margin-right: 116px;
+  text-align: right;
+}
+
+.text-center-first {
+  text-align: right !important;
+}
+
+.text-first-image{
+  width: 100%;
+}
+
+.text-second-image{
+  width: 100%;
+}
+
+
+.text-second-image p {
+  width: 75%;
+  margin-top: 60px;
+  margin-left: 35px;
+  text-align: right;
+
+
 }
