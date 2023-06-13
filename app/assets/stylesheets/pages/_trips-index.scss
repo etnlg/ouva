@@ -1,0 +1,46 @@
+.trips-card {
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  margin: 40px;
+  height: 500px;
+  width: 624px;
+  background-color: white;
+}
+
+.trips-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: 0% 15%;
+}
+
+.h4-destination, .p-date, .p-link-trip-activities {
+  margin: 0;
+}
+
+// .p-start-date, .p-end-date, .p-link-trip-activities {
+//   margin-bottom: 10px;
+// }
+
+.div-card-description {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  // align-items: center;
+}
+
+.h4-destination {
+  font-size: 1.5rem;
+  margin-left: 10px;
+}
+
+.p-date, .p-link-trip-activities {
+  margin: 0 10px 16px 0;
+}
+
+// .div-start-end-date {
+//   display: flex;
+// }
+
+// .div-date-link {
+//   margin: 0px 10px 16px 0px;
+// }
