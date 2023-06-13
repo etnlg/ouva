@@ -26,6 +26,13 @@ class PagesController < ApplicationController
     activity_day = (Date.parse(@date) - Date.parse(@start_date)) * 1.0
     session['act_hash'][activity_day] = [Activity.find(params[:activity_id]).id, @num_traveller]
     @trip_length =(Date.parse(@end_date) - Date.parse(@start_date)) - 1
+    arr = []
+    session['act_hash'].each_value do |v|
+      arr.push(v[0])
+    end
+    id = arr.sample
+    @activity = Activity.find(id)
+
   end
 
   def checkout

@@ -1,27 +1,40 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                    <%= cl_image_tag @activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+">
+
+</div>
+
+
+
+
+
 <div id=container-intermediaire>
-<h2>Your trip!</h2>
-<% date = Date.parse(@start_date) %>
+  <h2>Your trip!</h2>
+  <% date = Date.parse(@start_date) %>
+ <div class="main-container-intermediaire">
+    <% (1..@trip_length).each do |n| %>
+      <% n = (n * 1.0 ).to_s %>
 
-<% (1..@trip_length).each do |n| %>
-  <% n = (n * 1.0 ).to_s %>
-  <div class ="">
-      <% date += 1 %>
-    <div class="container-intermediaire-page">
-      <div class="date-intermediaire-page">
-          <p><strong>Day <%= n.to_i %></strong> (<%=date%>)<p>
-      </div>
-        <% if session['act_hash'][n] != nil %>
-        <% id = session['act_hash'][n][0] %>
-        <div class="name-activity-intermediaire-page">
-            <p><strong>Name:</strong> <%= Activity.find(id).name %></p>
-          <% else %>
-            <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date) %>
-          <% end %>
+          <% date += 1 %>
+        <div class="container-intermediaire-page">
+          <div class="date-intermediaire-page">
+              <p><strong>Day <%= n.to_i %><p>
+              <p></strong> (<%=date%>)<p>
+          </div>
+            <% if session['act_hash'][n] != nil %>
+            <% id = session['act_hash'][n][0] %>
+            <div class="name-activity-intermediaire-page">
+                <p class="name-centered"><%= Activity.find(id).name %></p>
+              <% else %>
+                <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "add-activity-intermediaire" %>
+              <% end %>
+            </div>
         </div>
-      </div>
-  </div>
-<% end %>
 
-<div class = "d-flex">
- <%= link_to "Book this trip", checkout_path(location: @location, num_traveller: @num_traveller, start_date: @start_date, end_date: @end_date, activitiy_ids: session['act_hash']) %>
+    <% end %>
+  </div>
+
+  <div class = "">
+    <%= link_to "Book this trip", checkout_path(location: @location, num_traveller: @num_traveller, start_date: @start_date, end_date: @end_date, activitiy_ids: session['act_hash']) %>
+  </div>
 </div>
