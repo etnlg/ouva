@@ -8,6 +8,8 @@
 
 puts "Destroying everything"
 
+Message.destroy_all
+Chatroom.destroy_all
 TripActivity.destroy_all
 User.destroy_all
 Owner.destroy_all
@@ -678,21 +680,101 @@ activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg"
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
 activity.save!
 
-activities = Activity.all.limit(5)
-activities.each do |t_activity|
-  trip_activity = TripActivity.create!(
-    trip: @menorca,
-    activity: t_activity,
-    start_time: Date.today,
-    end_time: Date.today,
-    done: true
-  )
-  Review.create!(
-    rating: 4,
-    comment: "The activity was a thrilling adventure that got my adrenaline pumping.",
-    trip_activity: trip_activity
-  )
-end
+trip_activity = TripActivity.create!(
+  trip: @menorca,
+  activity: Activity.all.sample,
+  start_time: Date.today,
+  end_time: Date.today,
+  done: true
+)
+
+reviews_array = [
+  "This was a great activity, just insane!",
+  "Good and nice activity",
+  "I had so much fun doing this activity!",
+  "Absolutely amazing experience!",
+  "Highly recommended activity!",
+  "The best activity I've ever tried!",
+  "I can't wait to do this activity again!",
+  "Incredible and thrilling adventure!",
+  "I had a blast participating in this activity!",
+  "Such a unique and enjoyable experience!",
+  "This activity exceeded my expectations!",
+  "Fantastic activity with friendly staff!",
+  "Great activity for all ages!",
+  "I can't believe how much I enjoyed this activity!",
+  "Well worth the price, I loved it!",
+  "The instructors were knowledgeable and helpful.",
+  "This activity is a must-try!",
+  "I can't stop raving about this activity!",
+  "So much adrenaline rush during this activity!",
+  "I felt safe and secure throughout the entire activity.",
+  "Awesome activity that left me wanting more!",
+  "I can't recommend this activity enough!",
+  "A fun and thrilling way to spend the day!",
+  "This activity is perfect for adventure seekers!",
+  "I was blown away by this activity!",
+  "Such an exhilarating experience!",
+  "The views during this activity were breathtaking!",
+  "I had an absolute blast!",
+  "Unforgettable memories made during this activity!",
+  "This activity is worth every penny!",
+  "I can't wait to bring my friends next time!",
+  "The guides were friendly and knowledgeable.",
+  "I felt an adrenaline rush like never before!",
+  "This activity is a real adrenaline-pumping adventure!",
+  "I'm still buzzing from the excitement of this activity!",
+  "The equipment provided was top-notch!",
+  "This activity is perfect for thrill-seekers!",
+  "I had an incredible time participating in this activity!",
+  "The staff made sure everyone had a great time!",
+  "This activity is an absolute thrill ride!",
+  "I couldn't get enough of this activity!",
+  "This is hands down the best activity I've ever done!",
+  "I'm already planning to do this activity again!",
+  "Such a fun and enjoyable experience!",
+  "This activity is a hidden gem!",
+  "I felt like a superhero during this activity!",
+  "This activity is a real adrenaline rush!",
+  "I had the time of my life doing this activity!",
+  "The guides made the activity even more exciting!",
+  "This activity is perfect for adventure lovers!",
+  "I can't believe how much fun I had!",
+  "This activity is a real thrill!",
+  "The whole experience was amazing!",
+  "This activity is a must-do when visiting!",
+  "I was on an adrenaline high throughout the activity!",
+  "This activity is a real crowd-pleaser!",
+  "I felt like I was in an action movie!",
+  "The staff went above and beyond to make it memorable!",
+  "I couldn't stop smiling the entire time!",
+  "This activity is worth every second!",
+  "I had a fantastic time!",
+  "The adrenaline rush was unreal!",
+  "This activity is perfect for thrill enthusiasts!",
+  "I would do this activity again in a heartbeat!",
+  "I'm so glad I tried this activity!",
+  "This activity is a real game-changer!",
+  "I was completely blown away!",
+  "This activity is an absolute must-try!",
+  "I'm still buzzing from the excitement!",
+  "I can't recommend this activity highly enough!",
+  "This activity is a real adrenaline-pumper!",
+  "I had the best time ever!"]
+
+  reviews_array.each do |review|
+    Review.create!(
+      rating: [3,4,5].sample,
+      comment: review,
+      trip_activity: trip_activity
+    )
+  end
+
+
+
+
+
+
 
 # Review.create!(rating: "4", comment: "The activity was a thrilling adventure that got my adrenaline pumping.")
 

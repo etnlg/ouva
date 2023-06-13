@@ -44,9 +44,9 @@
     <div class="reviews-show-page">
 
 
-     <% @reviews.each do |review| %>
-      <p><%= review.comment %></p>
-      <p><%= review.rating %></p>
+     <% 5.times do %>
+      <p><%= Review.all.sample.comment %></p>
+      <p><%= Review.all.sample.rating %></p>
      <% end %>
     </div>
 
