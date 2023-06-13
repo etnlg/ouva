@@ -7,12 +7,22 @@ class MessagesController < ApplicationController
     @message.chatroom = @chatroom
     if current_user.nil?
       @message.owner_id = current_owner.id
+      @username = current_owner.username
       @message.save!
-      redirect_to business_chat_path(@chatroom)
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: {message: @message, username: @username})
+      )
+      head :ok
     else
       @message.user_id = current_user.id
+      @username = current_user.username
       @message.save!
-      redirect_to chatroom_path(@chatroom)
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: {message: @message, username: @username})
+      )
+      head :ok
     end
   end
 
