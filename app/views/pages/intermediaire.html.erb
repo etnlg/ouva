@@ -31,18 +31,20 @@
 
   <% date = Date.parse(@start_date) %>
  <div class="main-container-intermediaire">
+
     <% (1..@trip_length).each do |n| %>
       <% n = (n * 1.0 ).to_s %>
+      <% date += 1 %>
 
-          <% date += 1 %>
         <div class="container-intermediaire-page">
+
           <div class="date-intermediaire-page">
               <p><strong>Day <%= n.to_i %><p>
               <p></strong> <%=date%><p>
           </div>
             <% if session['act_hash'][n] != nil %>
-
             <% id = session['act_hash'][n][0] %>
+
             <div class="name-activity-intermediaire-page" data-controller="activity">
                 <p class="name-centered"><%= Activity.find(id).name %></p>
               <% else %>
@@ -54,6 +56,7 @@
                   <h2>No activity this day</h2>
                 </div>
               </div>
+
               <% end %>
             </div>
 
