@@ -1,24 +1,45 @@
-<form class="form-show", action = "/pages/intermediaire">
-      <input type="hidden" name="start_date" value= <%= @start_date %> >
-      <input type="hidden" name="end_date" value= <%= @end_date %>>
-      <input type="hidden" name="activity_id" value=<%= @activity_id %> >
-      <input type="hidden" name="location" value=<%= @location %> >
-      <% if @day_date.nil? %>
+ <div class="modal">
+
+
+  <form class="form-show", action = "/pages/intermediaire">
+        <input type="hidden" name="start_date" value= <%= @start_date %> >
+        <input type="hidden" name="end_date" value= <%= @end_date %>>
+        <input type="hidden" name="activity_id" value=<%= @activity_id %> >
+        <input type="hidden" name="location" value=<%= @location %> >
+        <% if @day_date.nil? %>
+          <div class="form-show-line">
+            <label for="date"></label>
+            <input type="date" placeholder="Choose" id="date" min = <%= Date.parse(@start_date) + 1 %> max = <%= Date.parse(@end_date) - 1 %> name="date" required><br><br>
+          </div>
+        <% else %>
+          <input type="hidden" name="date" value= <%= @day_date %>>
+        <% end %>
+
         <div class="form-show-line">
-          <label for="date"></label>
-          <input type="date" placeholder="Choose" id="date" min = <%= Date.parse(@start_date) + 1 %> max = <%= Date.parse(@end_date) - 1 %> name="date" required><br><br>
+          <label for="travelers"></label>
+          <input type="number" placeholder="Number of travelers" id="travelers" name="travelers" min="1" required><br><br>
         </div>
-      <% else %>
-        <input type="hidden" name="date" value= <%= @day_date %>>
-      <% end %>
 
-      <div class="form-show-line">
-        <label for="travelers"></label>
-        <input type="number" placeholder="Number of travelers" id="travelers" name="travelers" min="1" required><br><br>
+        <div class="form-show-line">
+          <input type="submit" value="Add to Itinerary">
+        </div>
+  </form>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
-      <div class="form-show-line">
-        <input type="submit" value="Add to Itinerary">
+      <div class="modal-body">
+        ...
       </div>
-
-    </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
