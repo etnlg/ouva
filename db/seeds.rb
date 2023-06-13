@@ -7,12 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Destroying everything"
-
+Review.destroy_all
 TripActivity.destroy_all
 User.destroy_all
 Owner.destroy_all
 Trip.destroy_all
-Review.destroy_all
+
 Activity.destroy_all
 
 puts "Creating owners and Users"
