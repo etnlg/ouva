@@ -22,13 +22,14 @@
               <p></strong> (<%=date%>)<p>
           </div>
             <% if session['act_hash'][n] != nil %>
-            <% id = session['act_hash'][n][0] %>
-            <div class="name-activity-intermediaire-page">
+              <% id = session['act_hash'][n][0] %>
+              <div class="name-activity-intermediaire-page">
                 <p class="name-centered"><%= Activity.find(id).name %></p>
-              <% else %>
-                <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "add-activity-intermediaire" %>
-              <% end %>
-            </div>
+              </div>
+            <% else %>
+              <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "add-activity-intermediaire" %>
+            <% end %>
+          </div>
         </div>
 
     <% end %>
