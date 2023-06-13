@@ -1,6 +1,7 @@
 .div-checkout-payment-container {
   display: flex;
   justify-content: space-around;
+  margin: 48px 0 48px 0;
 }
 
 .h2-checkout, .h2-payment {
@@ -11,7 +12,6 @@
   display: flex;
   justify-content: space-between;
 }
-
 
 hr {
   margin-top: 5px;
@@ -26,6 +26,7 @@ hr {
 .div-act-name-price {
   display: flex;
   justify-content: space-between;
+  margin-top: 16px;
 }
 
 .div-total-price {
