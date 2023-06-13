@@ -34,4 +34,14 @@ class PagesController < ApplicationController
     @start_date = params[:start_date]
     @end_date = params[:end_date]
   end
+
+  def explore
+    @activities = Activity.all
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+      }
+    end
+  end
 end

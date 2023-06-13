@@ -13,6 +13,10 @@ class ChatroomsController < ApplicationController
     @message = Message.new
   end
 
+  def index
+    @chatrooms = Chatroom.where(user_id: current_user.id)
+  end
+
   private
 
   def chatroom_params
