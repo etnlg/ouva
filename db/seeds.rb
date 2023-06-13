@@ -19,7 +19,7 @@ puts "Creating owners and Users"
 
 
 
-User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "111111", username: "flo")
+User.create!(firstname: "Florian", lastname: "Autriche", email: "flo@icloud.com", password: "111111", username: "flo")
 User.create!(firstname: "Vincent", lastname: "Hubert", email: "vincent@icloud.com", password: "111111", username: "Vincent")
 User.create!(firstname: "Emily", lastname: "Brown", email: "emily@icloud.com", password: "111111", username: "Emily")
 User.create!(firstname: "Tom", lastname: "Shiba", email: "tom@icloud.com", password: "111111", username: "Tom")
@@ -28,32 +28,32 @@ User.create!(firstname: "Louis", lastname: "Fingers", email: "louis@icloud.com",
 User.create!(firstname: "Jean", lastname: "Poulet", email: "jean@icloud.com", password: "111111", username: "jean")
 User.create!(firstname: "Elon", lastname: "Musk", email: "elon@icloud.com", password: "111111", username: "elon")
 User.create!(firstname: "Stephane", lastname: "Boss", email: "stephane@icloud.com", password: "111111", username: "steph")
+User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "111111", username: "etnlg")
 
-Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "111111", username: "willy")
+Owner.create!(firstname: "William", lastname: "Chan", email: "willy@icloud.com", password: "111111", username: "willy")
 Owner.create!(firstname: "Danella", lastname: "Kababanda", email: "dan@icloud.com", password: "111111", username: "Dan")
 
 
 # Review.create!(rating: "", comment: "")
 
 
-puts "Creating trips"
+# puts "Creating trips"
 
-@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
-@barca.save!
-@paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
-@paris.save!
-@menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.all.sample.id)
-@menorca.save!
-@aix = Trip.new(destination: "Aix-en-provence", start_date: Date.new(2023, 8, 15), end_date: Date.new(2023, 8, 22), user_id: User.all.sample.id)
-@aix.save!
-@biarritz = Trip.new(destination: "Biarritz", start_date: Date.new(2023, 6, 3), end_date: Date.new(2023, 6, 10), user_id: User.all.sample.id)
-@biarritz.save!
-@madrid = Trip.new(destination: "Madrid", start_date: Date.new(2023, 6, 15), end_date: Date.new(2023, 6, 22), user_id: User.all.sample.id)
-@madrid.save!
-@marseille = Trip.new(destination: "Marseille", start_date: Date.new(2023, 6, 23), end_date: Date.new(2023, 6, 29), user_id: User.all.sample.id)
-@marseille.save!
+# @barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
+# @barca.save!
+# @paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
+# @paris.save!
+# @menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.all.sample.id)
+# @menorca.save!
+# @aix = Trip.new(destination: "Aix-en-provence", start_date: Date.new(2023, 8, 15), end_date: Date.new(2023, 8, 22), user_id: User.all.sample.id)
+# @aix.save!
+# @biarritz = Trip.new(destination: "Biarritz", start_date: Date.new(2023, 6, 3), end_date: Date.new(2023, 6, 10), user_id: User.all.sample.id)
+# @biarritz.save!
+# @madrid = Trip.new(destination: "Madrid", start_date: Date.new(2023, 6, 15), end_date: Date.new(2023, 6, 22), user_id: User.all.sample.id)
+# @madrid.save!
+# @marseille = Trip.new(destination: "Marseille", start_date: Date.new(2023, 6, 23), end_date: Date.new(2023, 6, 29), user_id: User.all.sample.id)
+# @marseille.save!
 
-User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "111111", username: "etnlg")
 
 puts "Creating activities"
 
