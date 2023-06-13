@@ -57,93 +57,149 @@ Owner.create!(firstname: "Danella", lastname: "Kababanda", email: "dan@icloud.co
 
 puts "Creating activities"
 
-
-
-image = Rails.root.join("app", "assets", "images", "fullscreen_xoroi_diurno.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Explore the Cova d'en Xoroi", description: "Venture into the captivating Cova d'en Xoroi, a natural cave located in the cliffs with stunning views over the Mediterranean. By day, it's a unique place to enjoy a drink while looking out to sea. At night, the cave transforms into a nightclub, offering an unparalleled experience.",
-  location: "Cova d'en Xoroi, Menorca",
-  price: 20)
-activity.photo.attach(io: file, filename: "fullscreen_xoroi_diurno.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "cova1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "cova2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "cova3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Explore the Cova d'en Xoroi", description: "Venture into the
+  captivating Cova d'en Xoroi, a natural cave located in the cliffs with stunning views over the Mediterranean. By day,
+  it's a unique place to enjoy a drink while looking out to sea. At night, the cave transforms into a nightclub,
+  offering an unparalleled experience.", location: "Cova d'en Xoroi, Menorca", price: 50)
+activity.photo.attach(io: file1, filename: "cova1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "cova2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "cova3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "naveta-des-tudons.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Tour the Naveta d'es Tudons", description: "Discover the Naveta d'es Tudons, the most well-preserved burial structure in the Balearic Islands. This prehistoric monument offers a unique glimpse into Menorca's distant past and is a must-see for history enthusiasts.",
-location: "Naveta d'es Tudons, Menorca",
-price: 10)
-activity.photo.attach(io: file, filename: "naveta-des-tudons.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "tudons1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "tudons2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "tudons3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Tour the Naveta d'es Tudons", description: "Discover the Naveta
+  d'es Tudons, the most well-preserved burial structure in the Balearic Islands. This prehistoric monument offers a
+  unique glimpse into Menorca's distant past and is a must-see for history enthusiasts.",
+  location: "Naveta d'es Tudons, Menorca", price: 60)
+activity.photo.attach(io: file1, filename: "tudons1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "tudons2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "tudons3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "20181011-095110-largejpg.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Hike the Cami de Cavalls", description: "Embark on an adventure along the Cami de Cavalls, a trail that encircles the island. Offering stunning views of the coastline, this trail allows you to experience the island's diverse landscapes. Whether you take on a small section or the entire path, this is a must for outdoor enthusiasts.",
-location: "Cami de Cavalls, Menorca",
-price: 0)
-activity.photo.attach(io: file, filename: "20181011-095110-largejpg.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "hike1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "hike2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "hike3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Hike the Cami de Cavalls", description: "Embark on an adventure
+  along the Cami de Cavalls, a trail that encircles the island. Offering stunning views of the coastline, this trail
+  allows you to experience the island's diverse landscapes. Whether you take on a small section or the entire path,
+  this is a must for outdoor enthusiasts.", location: "Cami de Cavalls, Menorca", price: 30)
+activity.photo.attach(io: file1, filename: "hike1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "hike2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "hike3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "home-06-menorca-a-cavall.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Menorca Horse Riding", description: "Experience the beauty of Menorca on horseback. Riding along the Cami de Cavalls or through the island's stunning interior, you'll have the chance to see Menorca from a unique perspective. Suitable for all ages and skill levels.",
-location: "Son bou, Menorca",
-price: 60)
-activity.photo.attach(io: file, filename: "home-06-menorca-a-cavall.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "horse1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "horse2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "horse3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Menorca Horse Riding", description: "Experience the beauty of
+  Menorca on horseback. Riding along the Cami de Cavalls or through the island's stunning interior, you'll have the
+  chance to see Menorca from a unique perspective. Suitable for all ages and skill levels.",
+  location: "Son bou, Menorca", price: 100)
+activity.photo.attach(io: file1, filename: "horse1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "menorca_kayak_pont_ali.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Kayaking in Cala Galdana", description: "Immerse yourself in the crystal clear waters of Cala Galdana by kayak. Explore the spectacular coastline, discovering hidden beaches and caves. This is a perfect activity for both beginners and experienced paddlers.",
-location: "Cala Galdana, Menorca",
-price: 35)
-activity.photo.attach(io: file, filename: "menorca_kayak_pont_ali.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "kayak1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "kayak2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "kayak3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Kayaking in Cala Galdana", description: "Immerse yourself in
+  the crystal clear waters of Cala Galdana by kayak. Explore the spectacular coastline, discovering hidden beaches and
+  caves. This is a perfect activity for both beginners and experienced paddlers.", location: "Cala Galdana, Menorca",
+  price: 70)
+activity.photo.attach(io: file1, filename: "kayak1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "kayak2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "kayak3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "torre-fornells.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Visit the Fornells Tower", description: "Explore the Fornells Tower, an 18th-century defense tower built to guard against Turkish invasions. Climb to the top for a panoramic view of the surrounding coastline.",
-location: "Fornells Tower, Menorca",
-price: 4)
-activity.photo.attach(io: file, filename: "torre-fornells.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "tower1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "tower2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "tower3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Visit the Fornells Tower", description: "Explore the Fornells
+  Tower, an 18th-century defense tower built to guard against Turkish invasions. Climb to the top for a panoramic view
+  of the surrounding coastline.", location: "Fornells Tower, Menorca", price: 60)
+activity.photo.attach(io: file1, filename: "tower1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "tower2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "tower3.jpg", content_type: "image/jpg")
 activity.save!
 
-image = Rails.root.join("app", "assets", "images", "img-20180604-000427-706.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Binibeca Vell Visit", description: "Wander the quaint, whitewashed streets of Binibeca Vell, a charming fishing village on Menorca's south coast. It's a quiet, picturesque place that's perfect for a leisurely stroll.",
-location: "Binibeca Vell, Menorca",
-price: 0)
-activity.photo.attach(io: file, filename: "img-20180604-000427-706.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "binibeca1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "binibeca2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "binibeca3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Binibeca Vell Visit", description: "Wander the quaint,
+  whitewashed streets of Binibeca Vell, a charming fishing village on Menorca's south coast. It's a quiet, picturesque
+  place that's perfect for a leisurely stroll.", location: "Binibeca Vell, Menorca", price: 50)
+activity.photo.attach(io: file1, filename: "binibeca1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "binibeca2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "binibeca3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "Scuba-diver.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Scuba Scuba-diver in Menorca", description: "Dive into the clear waters of Menorca and discover a world of marine life. Whether you're a beginner or an experienced diver, you'll find an underwater adventure that's perfect for you.",
-location: "Binibeca, Menorca",
-price: 70)
-activity.photo.attach(io: file, filename: "Scuba-diver.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "diving1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "diving2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "diving3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Scuba-diving in Menorca", description: "Dive into the clear
+  waters of Menorca and discover a world of marine life. Whether you're a beginner or an experienced diver, you'll find
+  an underwater adventure that's perfect for you.", location: "Binibeca, Menorca", price: 120)
+activity.photo.attach(io: file1, filename: "diving1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "diving2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "diving3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "SUPing_masthead.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Stand Up Paddleboarding (SUP)", description: "Experience the coast of Menorca from a stand-up paddleboard. Glide over the crystal-clear waters, explore secluded beaches, and enjoy the tranquillity of the sea.",
-location: "Cala en Bosc, Menoca",
-price: 30)
-activity.photo.attach(io: file, filename: "SUPing_masthead.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "paddle1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "paddle2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "paddle3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Stand Up Paddleboarding (SUP)", description: "Experience the
+coast of Menorca from a stand-up paddleboard. Glide over the crystal-clear waters, explore secluded beaches, and enjoy
+the tranquillity of the sea.", location: "Cala en Bosc, Menoca", price: 70)
+activity.photo.attach(io: file1, filename: "paddle1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "paddle2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "paddle3.jpg", content_type: "image/jpg")
 activity.save!
 
-image = Rails.root.join("app", "assets", "images", "1567092107_spacerimg.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Visit Taula de Torralba", description: "Explore the Taula de Torralba, a prehistoric monument unique to Menorca. This ancient T-shaped stone monument is a fascinating piece of the island's history.",
-location: "Taula de Torralba, Menorca",
-price: 30)
-activity.photo.attach(io: file, filename: "1567092107_spacerimg.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "visit1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "visit2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "visit3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Visit Taula de Torralba", description: "Explore the Taula de
+  Torralba, a prehistoric monument unique to Menorca. This ancient T-shaped stone monument is a fascinating piece of
+  the island's history.", location: "Taula de Torralba, Menorca", price: 50)
+activity.photo.attach(io: file1, filename: "visit1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "visit2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "visit3.jpg", content_type: "image/jpg")
 activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "iceland", "diving.jpg")
