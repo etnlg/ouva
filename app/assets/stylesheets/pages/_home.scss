@@ -5,6 +5,9 @@
   background-position: center;
   padding: 150px 0;
   height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .banner h1 {
@@ -17,23 +20,30 @@
 
 
 .circle-home {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 450px;
   height: 450px;
   border-radius: 50%;
   background: linear-gradient(309deg, #23180b94 23.96%, #23180b6f 51.56%, #23180b36 79.69%);
-  // background-color: #23180b ;
-  // opacity: 50%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .datecalendar > label {
   color: rgb(0, 0, 0);
+}
+
+.datecalendar input {
+  border: white;
+  width: 380px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-input input {
+  height: 35px;
 }
 
 body {
@@ -75,6 +85,8 @@ body {
   height: 500px;
   object-fit: cover;
   object-position: 0% 15%;
+  // background-size: cover;
+  // background-position: center;
 }
 
 .date-home-page {
@@ -90,4 +102,8 @@ body {
 .container-date {
   display: flex;
   justify-content: center;
+}
+
+.div-h2-home > h2 {
+  font-size: 2.5rem;
 }

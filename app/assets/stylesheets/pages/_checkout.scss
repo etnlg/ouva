@@ -1,0 +1,104 @@
+.div-checkout-payment-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 48px 0 48px 0;
+}
+
+.h2-checkout, .h2-payment {
+  margin-bottom: 20px;
+}
+
+.div-column-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.div-payment hr {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.div-act-name-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.div-total-price {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.div-checkout {
+  width: 60%;
+}
+
+
+.div-input-name, .div-input-card {
+  display: block;
+}
+
+
+.div-label-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.div-payment {
+  width: 20%;
+  border: 2px solid black;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+
+.div-payment > h2 {
+  font-weight: 900;
+}
+
+
+input[type="text"] {
+  background-color: #F6F1EF;
+}
+
+
+.p-credit, .p-paypal {
+  background-color: #F6F1EF;
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 0;
+  font-weight: 900;
+}
+
+
+.payment-selected {
+  background-color: #9BBDC5;
+}
+
+
+.div-book-now > a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  border: 2px solid #9BBDC5;
+  background-color: #9BBDC5;
+  color: black;
+  margin-top: 15px;
+  width: 35%;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+
+.div-book-now {
+  display: flex;
+  justify-content: center;
+}

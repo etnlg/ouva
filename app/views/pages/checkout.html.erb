@@ -1,18 +1,98 @@
-<% total_price = 0 %>
+<div class="div-checkout-payment-container">
 
-<div class = "bg-white shadow border p-2">
+  <div class="div-checkout">
+    <h2 class="h2-checkout"><strong>Checkout Cart</strong></h2>
 
-  <h2>Checkout cart</h2>
+    <div class="div-column-name">
+      <h6><strong>Activities</strong></h6>
+      <h6><strong>Total price</strong></h6>
+    </div>
 
-  <% @activity_ids.each_value do |id_trav| %>
-      <% activity = Activity.find(id_trav[0]) %>
-      <% price = activity.price * id_trav[1].to_i %>
-      <p><strong><%= activity.name %>:</strong> <%= price.to_i %> CAD<p>
-      <% total_price += price %>
-  <% end %>
-    <h4><strong>Total price:</strong><%= total_price.to_i %></h4>
+    <hr>
+
+    <% total_price = 0 %>
+
+    <div>
+      <div class="div-act-name-price">
+        <div class="div-act-name">
+          <% @activity_ids.each_value do |id_trav| %>
+            <% activity = Activity.find(id_trav[0]) %>
+            <p><strong><%= activity.name %></strong></p>
+          <% end %>
+        </div>
+
+        <div>
+          <% @activity_ids.each_value do |id_trav| %>
+            <% activity = Activity.find(id_trav[0]) %>
+            <% price = activity.price * id_trav[1].to_i %>
+            <p><strong><%= price.to_i %> CAD</strong></p>
+            <% total_price += price %>
+          <% end %>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="div-total-price">
+        <p><strong>Total: <%= total_price.to_i %> CAD</strong></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="div-payment">
+
+    <h2 class="h2-payment"><strong>Payment Info</strong></h2>
+
+    <hr>
+
+    <div class="d-flex justify-content-evenly" data-controller="payment">
+      <div>
+        <p class="p-credit" data-payment-target="option" data-action="click->payment#toggleClass"><strong>Credit Card</strong></p>
+      </div>
+
+      <div>
+        <p class="p-paypal" data-payment-target="option" data-action="click->payment#toggleClass"><strong>Paypal</strong></p>
+      </div>
+    </div>
+
+    <hr>
+
+    <label for="name"><strong>Name on Card:</strong></label>
+    <div class="div-input-name">
+      <input type="text" id="name" name="name" size="28" placeholder="Jean-Claude Autricque">
+    </div>
+
+    <hr>
+
+    <label for="card"><strong>Card Number:</strong></label>
+    <div class="div-input-card">
+      <input type="text" id="card" name="card" maxlength="16" size="28" placeholder="**** **** **** 1234">
+    </div>
+
+    <hr>
+
+    <div class="div-label-input">
+      <div class="div-label-input-dates">
+        <label for="card"><strong>Expiration Date:</strong></label>
+        <div class="div-input-date">
+          <input type="text" id="date" name="date" maxlength="2" size="2" placeholder="10">
+          <input type="text" id="date" name="date" maxlength="4" size="4" placeholder="2026">
+        </div>
+      </div>
+      <div class="div-label-input-cvv">
+        <label for="cvv"><strong>CVV:</strong></label>
+        <div>
+          <input type="text" id="cvv" name="cvv" maxlength="3" size="3" placeholder="123">
+        </div>
+      </div>
+    </div>
+
+    <div class="div-book-now">
+      <%= link_to "Book now!", trips_path(trip: Trip.new, destination: @location, #activity_id: @activity_ids,
+        end_date: @end_date, start_date: @start_date),
+        data: {turbo_method: :post} %>
+    </div>
+  </div>
+
 </div>
-
-<%= link_to "Book now!", trips_path(trip: Trip.new, destination: @location, #activity_id: @activity_ids,
- end_date: @end_date, start_date: @start_date),
-      data: {turbo_method: :post} %>

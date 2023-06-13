@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :activities
   end
   root to: "pages#home"
+  get "pages/explore", to: "pages#explore", as: "explore"
   get "pages/intermediaire", to: "pages#intermediaire", as: "intermediaire"
   get "pages/checkout", to: "pages#checkout", as: "checkout"
   get "pages/add", to: "pages#add", as: "add"
