@@ -1,20 +1,27 @@
+<div id=container-intermediaire>
 <h2>Your trip!</h2>
 <% date = Date.parse(@start_date) %>
 
 <% (1..@trip_length).each do |n| %>
   <% n = (n * 1.0 ).to_s %>
-  <div class = "bg-white shadow m-3 p-3">
-    <% date += 1 %>
-    <p><strong>Day <%= n.to_i %></strong> (<%=date%>)<p>
-    <% if session['act_hash'][n] != nil %>
-      <% id = session['act_hash'][n][0] %>
-      <p><strong>Name:</strong> <%= Activity.find(id).name %></p>
-      <p><strong>Description:</strong> <%= Activity.find(id).description %></p>
-    <% else %>
-      <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date) %>
-    <% end %>
+  <div class ="">
+      <% date += 1 %>
+    <div class="container-intermediaire-page">
+      <div class="date-intermediaire-page">
+          <p><strong>Day <%= n.to_i %></strong> (<%=date%>)<p>
+      </div>
+        <% if session['act_hash'][n] != nil %>
+        <% id = session['act_hash'][n][0] %>
+        <div class="name-activity-intermediaire-page">
+            <p><strong>Name:</strong> <%= Activity.find(id).name %></p>
+          <% else %>
+            <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date) %>
+          <% end %>
+        </div>
+      </div>
   </div>
 <% end %>
 
 <div class = "d-flex">
  <%= link_to "Book this trip", checkout_path(location: @location, num_traveller: @num_traveller, start_date: @start_date, end_date: @end_date, activitiy_ids: session['act_hash']) %>
+</div>

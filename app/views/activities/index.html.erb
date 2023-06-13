@@ -30,11 +30,16 @@
           </div>
         <% end %>
 
-        <p>
-          <%= link_to add_path(start_date: @start_date, end_date: @end_date, activity_id: activity.id, location: @location), class: "button-index-page" do %>
-            Add to Valise
-          <% end %>
-        </p>
+
+
+        <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Launch demo modal
+        </button> %>
+
+          <%# <%= link_to add_path(start_date: @start_date, end_date: @end_date, activity_id: activity.id, location: @location), data-bs-toggle="modal" data-bs-target="#exampleModal", class: "button-index-page" do %>
+            <%# Add to Valise %>
+          <%# <% end %>
+
 
       </div>
     <% end %>
