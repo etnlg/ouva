@@ -1,6 +1,10 @@
-<h1>Explore</h1>
-<div class = "shadow border d-flex align-items-center" style="width: 90%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div class="div-explore">
+  <h1>Explore</h1>
+</div>
+
+<div class="shadow border d-flex align-items-center div-map"
+  style="width: 90%; height: 600px; margin-left: auto; margin-right: auto;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>

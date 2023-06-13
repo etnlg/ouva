@@ -1,7 +1,10 @@
-<div class="container chatroom">
+<div class="container chatroom"
+     data-controller="chatroom-subscription"
+     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+
   <h1>#<%= @chatroom.name %></h1>
 
-  <div class="messages">
+  <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <% if message.user_id.nil?  %>
         <% username = message.owner.username %>
@@ -26,6 +29,5 @@
     placeholder: "Message ##{@chatroom.name}",
     wrapper_html: {class: "flex-grow-1"}
   %>
-  <%= f.input :from_owner, :as => :hidden, :input_html => { :value => true } %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>

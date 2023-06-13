@@ -17,7 +17,7 @@
         <div class="div-act-name">
           <% @activity_ids.each_value do |id_trav| %>
             <% activity = Activity.find(id_trav[0]) %>
-            <p><%= activity.name %></p>
+            <p><strong><%= activity.name %></strong></p>
           <% end %>
         </div>
 
@@ -25,7 +25,7 @@
           <% @activity_ids.each_value do |id_trav| %>
             <% activity = Activity.find(id_trav[0]) %>
             <% price = activity.price * id_trav[1].to_i %>
-            <p><%= price.to_i %> <strong>CAD</strong></p>
+            <p><strong><%= price.to_i %> CAD</strong></p>
             <% total_price += price %>
           <% end %>
         </div>
@@ -34,7 +34,7 @@
       <hr>
 
       <div class="div-total-price">
-        <p><%= total_price.to_i %> <strong>CAD</strong></p>
+        <p><strong>Total: <%= total_price.to_i %> CAD</strong></p>
       </div>
     </div>
 

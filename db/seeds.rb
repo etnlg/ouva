@@ -8,18 +8,20 @@
 
 puts "Destroying everything"
 
+Message.destroy_all
+Chatroom.destroy_all
 TripActivity.destroy_all
 User.destroy_all
 Owner.destroy_all
 Trip.destroy_all
-Review.destroy_all
+
 Activity.destroy_all
 
 puts "Creating owners and Users"
 
 
 
-User.create!(firstname: "Florian", lastname: "Autrcihe", email: "flo@icloud.com", password: "111111", username: "flo")
+User.create!(firstname: "Florian", lastname: "Autriche", email: "flo@icloud.com", password: "111111", username: "flo")
 User.create!(firstname: "Vincent", lastname: "Hubert", email: "vincent@icloud.com", password: "111111", username: "Vincent")
 User.create!(firstname: "Emily", lastname: "Brown", email: "emily@icloud.com", password: "111111", username: "Emily")
 User.create!(firstname: "Tom", lastname: "Shiba", email: "tom@icloud.com", password: "111111", username: "Tom")
@@ -28,122 +30,178 @@ User.create!(firstname: "Louis", lastname: "Fingers", email: "louis@icloud.com",
 User.create!(firstname: "Jean", lastname: "Poulet", email: "jean@icloud.com", password: "111111", username: "jean")
 User.create!(firstname: "Elon", lastname: "Musk", email: "elon@icloud.com", password: "111111", username: "elon")
 User.create!(firstname: "Stephane", lastname: "Boss", email: "stephane@icloud.com", password: "111111", username: "steph")
+User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "111111", username: "etnlg")
 
-Owner.create!(firstname: "William", lastname: "Chang", email: "willy@icloud.com", password: "111111", username: "willy")
+Owner.create!(firstname: "William", lastname: "Chan", email: "willy@icloud.com", password: "111111", username: "willy")
 Owner.create!(firstname: "Danella", lastname: "Kababanda", email: "dan@icloud.com", password: "111111", username: "Dan")
 
 
 # Review.create!(rating: "", comment: "")
 
 
-puts "Creating trips"
+# puts "Creating trips"
 
-@barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
-@barca.save!
-@paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
-@paris.save!
+# @barca = Trip.new(destination: "Barcelona", start_date: Date.new(2023,07,3), end_date: Date.new(2023, 07, 10), user_id: User.all.sample.id)
+# @barca.save!
+# @paris = Trip.new(destination: "Paris", start_date: Date.new(2023,05,20), end_date: Date.new(2023, 05, 27), user_id: User.all.sample.id)
+# @paris.save!
 @menorca = Trip.new(destination: "Menorca", start_date: Date.new(2023, 8,3), end_date: Date.new(2023, 8, 10), user_id: User.all.sample.id)
 @menorca.save!
-@aix = Trip.new(destination: "Aix-en-provence", start_date: Date.new(2023, 8, 15), end_date: Date.new(2023, 8, 22), user_id: User.all.sample.id)
-@aix.save!
-@biarritz = Trip.new(destination: "Biarritz", start_date: Date.new(2023, 6, 3), end_date: Date.new(2023, 6, 10), user_id: User.all.sample.id)
-@biarritz.save!
-@madrid = Trip.new(destination: "Madrid", start_date: Date.new(2023, 6, 15), end_date: Date.new(2023, 6, 22), user_id: User.all.sample.id)
-@madrid.save!
-@marseille = Trip.new(destination: "Marseille", start_date: Date.new(2023, 6, 23), end_date: Date.new(2023, 6, 29), user_id: User.all.sample.id)
-@marseille.save!
+# @aix = Trip.new(destination: "Aix-en-provence", start_date: Date.new(2023, 8, 15), end_date: Date.new(2023, 8, 22), user_id: User.all.sample.id)
+# @aix.save!
+# @biarritz = Trip.new(destination: "Biarritz", start_date: Date.new(2023, 6, 3), end_date: Date.new(2023, 6, 10), user_id: User.all.sample.id)
+# @biarritz.save!
+# @madrid = Trip.new(destination: "Madrid", start_date: Date.new(2023, 6, 15), end_date: Date.new(2023, 6, 22), user_id: User.all.sample.id)
+# @madrid.save!
+# @marseille = Trip.new(destination: "Marseille", start_date: Date.new(2023, 6, 23), end_date: Date.new(2023, 6, 29), user_id: User.all.sample.id)
+# @marseille.save!
 
-User.create!(firstname: "Etienne", lastname: "Le Guay", email: "etn@icloud.com", password: "111111", username: "etnlg")
 
 puts "Creating activities"
 
-
-
-image = Rails.root.join("app", "assets", "images", "fullscreen_xoroi_diurno.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Explore the Cova d'en Xoroi", description: "Venture into the captivating Cova d'en Xoroi, a natural cave located in the cliffs with stunning views over the Mediterranean. By day, it's a unique place to enjoy a drink while looking out to sea. At night, the cave transforms into a nightclub, offering an unparalleled experience.",
-  location: "Cova d'en Xoroi, Menorca",
-  price: 20)
-activity.photo.attach(io: file, filename: "fullscreen_xoroi_diurno.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "cova1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "cova2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "cova3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Explore the Cova d'en Xoroi", description: "Venture into the
+  captivating Cova d'en Xoroi, a natural cave located in the cliffs with stunning views over the Mediterranean. By day,
+  it's a unique place to enjoy a drink while looking out to sea. At night, the cave transforms into a nightclub,
+  offering an unparalleled experience.", location: "Cova d'en Xoroi, Menorca", price: 50)
+activity.photo.attach(io: file1, filename: "cova1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "cova2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "cova3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "naveta-des-tudons.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Tour the Naveta d'es Tudons", description: "Discover the Naveta d'es Tudons, the most well-preserved burial structure in the Balearic Islands. This prehistoric monument offers a unique glimpse into Menorca's distant past and is a must-see for history enthusiasts.",
-location: "Naveta d'es Tudons, Menorca",
-price: 10)
-activity.photo.attach(io: file, filename: "naveta-des-tudons.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "tudons1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "tudons2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "tudons3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Tour the Naveta d'es Tudons", description: "Discover the Naveta
+  d'es Tudons, the most well-preserved burial structure in the Balearic Islands. This prehistoric monument offers a
+  unique glimpse into Menorca's distant past and is a must-see for history enthusiasts.",
+  location: "Naveta d'es Tudons, Menorca", price: 60)
+activity.photo.attach(io: file1, filename: "tudons1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "tudons2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "tudons3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "20181011-095110-largejpg.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Hike the Cami de Cavalls", description: "Embark on an adventure along the Cami de Cavalls, a trail that encircles the island. Offering stunning views of the coastline, this trail allows you to experience the island's diverse landscapes. Whether you take on a small section or the entire path, this is a must for outdoor enthusiasts.",
-location: "Cami de Cavalls, Menorca",
-price: 0)
-activity.photo.attach(io: file, filename: "20181011-095110-largejpg.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "hike1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "hike2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "hike3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Hike the Cami de Cavalls", description: "Embark on an adventure
+  along the Cami de Cavalls, a trail that encircles the island. Offering stunning views of the coastline, this trail
+  allows you to experience the island's diverse landscapes. Whether you take on a small section or the entire path,
+  this is a must for outdoor enthusiasts.", location: "Cami de Cavalls, Menorca", price: 30)
+activity.photo.attach(io: file1, filename: "hike1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "hike2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "hike3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "home-06-menorca-a-cavall.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Menorca Horse Riding", description: "Experience the beauty of Menorca on horseback. Riding along the Cami de Cavalls or through the island's stunning interior, you'll have the chance to see Menorca from a unique perspective. Suitable for all ages and skill levels.",
-location: "Son bou, Menorca",
-price: 60)
-activity.photo.attach(io: file, filename: "home-06-menorca-a-cavall.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "horse1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "horse2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "horse3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Menorca Horse Riding", description: "Experience the beauty of
+  Menorca on horseback. Riding along the Cami de Cavalls or through the island's stunning interior, you'll have the
+  chance to see Menorca from a unique perspective. Suitable for all ages and skill levels.",
+  location: "Son bou, Menorca", price: 100)
+activity.photo.attach(io: file1, filename: "horse1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "menorca_kayak_pont_ali.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Kayaking in Cala Galdana", description: "Immerse yourself in the crystal clear waters of Cala Galdana by kayak. Explore the spectacular coastline, discovering hidden beaches and caves. This is a perfect activity for both beginners and experienced paddlers.",
-location: "Cala Galdana, Menorca",
-price: 35)
-activity.photo.attach(io: file, filename: "menorca_kayak_pont_ali.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "kayak1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "kayak2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "kayak3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Kayaking in Cala Galdana", description: "Immerse yourself in
+  the crystal clear waters of Cala Galdana by kayak. Explore the spectacular coastline, discovering hidden beaches and
+  caves. This is a perfect activity for both beginners and experienced paddlers.", location: "Cala Galdana, Menorca",
+  price: 70)
+activity.photo.attach(io: file1, filename: "kayak1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "kayak2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "kayak3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "torre-fornells.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.first.id, name: "Visit the Fornells Tower", description: "Explore the Fornells Tower, an 18th-century defense tower built to guard against Turkish invasions. Climb to the top for a panoramic view of the surrounding coastline.",
-location: "Fornells Tower, Menorca",
-price: 4)
-activity.photo.attach(io: file, filename: "torre-fornells.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "tower1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "tower2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "tower3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Visit the Fornells Tower", description: "Explore the Fornells
+  Tower, an 18th-century defense tower built to guard against Turkish invasions. Climb to the top for a panoramic view
+  of the surrounding coastline.", location: "Fornells Tower, Menorca", price: 60)
+activity.photo.attach(io: file1, filename: "tower1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "tower2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "tower3.jpg", content_type: "image/jpg")
 activity.save!
 
-image = Rails.root.join("app", "assets", "images", "img-20180604-000427-706.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Binibeca Vell Visit", description: "Wander the quaint, whitewashed streets of Binibeca Vell, a charming fishing village on Menorca's south coast. It's a quiet, picturesque place that's perfect for a leisurely stroll.",
-location: "Binibeca Vell, Menorca",
-price: 0)
-activity.photo.attach(io: file, filename: "img-20180604-000427-706.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "binibeca1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "binibeca2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "binibeca3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Binibeca Vell Visit", description: "Wander the quaint,
+  whitewashed streets of Binibeca Vell, a charming fishing village on Menorca's south coast. It's a quiet, picturesque
+  place that's perfect for a leisurely stroll.", location: "Binibeca Vell, Menorca", price: 50)
+activity.photo.attach(io: file1, filename: "binibeca1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "binibeca2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "binibeca3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "Scuba-diver.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Scuba Scuba-diver in Menorca", description: "Dive into the clear waters of Menorca and discover a world of marine life. Whether you're a beginner or an experienced diver, you'll find an underwater adventure that's perfect for you.",
-location: "Binibeca, Menorca",
-price: 70)
-activity.photo.attach(io: file, filename: "Scuba-diver.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "diving1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "diving2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "diving3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Scuba-diving in Menorca", description: "Dive into the clear
+  waters of Menorca and discover a world of marine life. Whether you're a beginner or an experienced diver, you'll find
+  an underwater adventure that's perfect for you.", location: "Binibeca, Menorca", price: 120)
+activity.photo.attach(io: file1, filename: "diving1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "diving2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "diving3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-image = Rails.root.join("app", "assets", "images", "SUPing_masthead.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Stand Up Paddleboarding (SUP)", description: "Experience the coast of Menorca from a stand-up paddleboard. Glide over the crystal-clear waters, explore secluded beaches, and enjoy the tranquillity of the sea.",
-location: "Cala en Bosc, Menoca",
-price: 30)
-activity.photo.attach(io: file, filename: "SUPing_masthead.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "paddle1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "paddle2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "paddle3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Stand Up Paddleboarding (SUP)", description: "Experience the
+coast of Menorca from a stand-up paddleboard. Glide over the crystal-clear waters, explore secluded beaches, and enjoy
+the tranquillity of the sea.", location: "Cala en Bosc, Menoca", price: 70)
+activity.photo.attach(io: file1, filename: "paddle1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "paddle2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "paddle3.jpg", content_type: "image/jpg")
 activity.save!
 
-image = Rails.root.join("app", "assets", "images", "1567092107_spacerimg.jpg")
-file = File.open(ActionController::Base.helpers.image_path(image))
-activity = Activity.new(owner_id: Owner.last.id, name: "Visit Taula de Torralba", description: "Explore the Taula de Torralba, a prehistoric monument unique to Menorca. This ancient T-shaped stone monument is a fascinating piece of the island's history.",
-location: "Taula de Torralba, Menorca",
-price: 30)
-activity.photo.attach(io: file, filename: "1567092107_spacerimg.jpg", content_type: "image/jpg")
+image1 = Rails.root.join("app", "assets", "images", "menorca", "visit1.jpg")
+image2 = Rails.root.join("app", "assets", "images", "menorca", "visit2.jpg")
+image3 = Rails.root.join("app", "assets", "images", "menorca", "visit3.jpg")
+file1 = File.open(ActionController::Base.helpers.image_path(image1))
+file2 = File.open(ActionController::Base.helpers.image_path(image2))
+file3 = File.open(ActionController::Base.helpers.image_path(image3))
+activity = Activity.new(owner_id: Owner.last.id, name: "Visit Taula de Torralba", description: "Explore the Taula de
+  Torralba, a prehistoric monument unique to Menorca. This ancient T-shaped stone monument is a fascinating piece of
+  the island's history.", location: "Taula de Torralba, Menorca", price: 50)
+activity.photo.attach(io: file1, filename: "visit1.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file2, filename: "visit2.jpg", content_type: "image/jpg")
+activity.photo.attach(io: file3, filename: "visit3.jpg", content_type: "image/jpg")
 activity.save!
 
 image1 = Rails.root.join("app", "assets", "images", "iceland", "diving.jpg")
@@ -178,9 +236,6 @@ activity.photo.attach(io: file2, filename: "snowmobile2.jpg", content_type: "ima
 activity.photo.attach(io: file3, filename: "snowmobile3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-
-
 image1 = Rails.root.join("app", "assets", "images", "iceland", "horse.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "horse2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "iceland", "horse3.jpg")
@@ -197,10 +252,6 @@ activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jp
 activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-
-
-
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "swim1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "swim2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "ethiopie", "Swim3.jpg")
@@ -209,12 +260,11 @@ file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Swimming in the middle of the desert", description: "Go crazy
   and try this unique activity that has great benefits for your health Vitamin D decreases the chance of SAD.
-  It is an integral part of absorbing calcium", location: "Djibouti, Ethiopia", price: 200)
+  It is an integral part of absorbing calcium", location: "Djibouti, Ethiopia", price: 70)
 activity.photo.attach(io: file1, filename: "swim1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "Swim3.jpg", content_type: "image/jpg")
 activity.save!
-
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "camping1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "camping2.jpg")
@@ -224,12 +274,11 @@ file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image2))
 activity = Activity.new(owner_id: Owner.last.id, name: "Imagine camping in the middle of the desert", description: "Be
   adventurous and try this amazing activity that we offer no need to pack your tents we got everything that is needed",
-  location: "Lalibela, Ethiopie", price: 350)
+  location: "Lalibela, Ethiopie", price: 250)
 activity.photo.attach(io: file1, filename: "camping1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "camping2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "camping3.jpg", content_type: "image/jpg")
 activity.save!
-
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt2.jpg")
@@ -388,7 +437,7 @@ file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Walking in the world oldest forest", description: "The Baobab tree,
   also known as the Tree of life, is one of the oldest trees in the world. You will have the chance to walk in the same
   footsteps as our ancestors and relive more than 2000 years of history ", location: "Baobab Avenue, Madagascar", price:
-   100)
+   50)
 activity.photo.attach(io: file1, filename: "baobab1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "baobab2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "baobab3.jpg", content_type: "image/jpg")
@@ -402,7 +451,7 @@ file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Snorkeling among sea puppies", description: "Snorkel in the
   clearest water in the world amongs more than 500 friendly creatures and corals. All the equipments and underwater
-  camera included in the excursion", location: "Nosy Be, Madagascar", price: 200)
+  camera included in the excursion", location: "Nosy Be, Madagascar", price: 100)
 activity.photo.attach(io: file1, filename: "snorkel1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "snorkel2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "snorkel3.jpg", content_type: "image/jpg")
@@ -417,7 +466,7 @@ file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Rock climbing in the Rock Forest of Tsingy", description: "Rock
   climbing in the famous Rock Forest of Tsingy. These rocks were formed during the prehistorical era and you will have
   the chance to visit Indiana Jones set and feel like a holiday star! From climbing to ziplining, this activity is not
-  for the faint of heart.", location: "Tsingy National Park, Madagascar", price: 200)
+  for the faint of heart.", location: "Tsingy National Park, Madagascar", price: 70)
 activity.photo.attach(io: file1, filename: "tsingy1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "tsingy2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "tsingy3.jpg", content_type: "image/jpg")
@@ -431,7 +480,7 @@ file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Diving in the unknown", description: "Dive in the depth of
   Madagascar, where you will encounter underwater species that only live in this area.", location: "Nosy Be,
-  Madagascar", price: 300)
+  Madagascar", price: 100)
 activity.photo.attach(io: file1, filename: "diving1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "diving2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "diving3.jpg", content_type: "image/jpg")
@@ -446,7 +495,7 @@ file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Jumping off Maramokotro mountain", description: "Hike to the top
   of Maramokotro mountain. The journey will take approximately 3 hours. Halfway in the journey, we will do a pitstop
   where you would taste local food and then resume your journey to the top where a wingsuit will be provided to you.
-  The only thing left, is to jump off and fly!", location: "Maramokotro, Madagascar", price: 600)
+  The only thing left, is to jump off and fly!", location: "Maramokotro, Madagascar", price: 80)
 activity.photo.attach(io: file1, filename: "wingsuit1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "wingsuit2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "wingsuit3.jpg", content_type: "image/jpg")
@@ -461,7 +510,7 @@ file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Paragliding off Andringitra mountains", description: "For
   adrenaline seeker, we will go up Andringitra mountains. A very remote area with a spetacular valley and unforgettable
   landscape, a flat and clear, broad bottom of valley without any electrical line, nor road, facing Tsaranoro cliffs
-  with a dropof more than 800 meters!", location: "Andringitra, Madagascar", price: 500)
+  with a dropof more than 800 meters!", location: "Andringitra, Madagascar", price: 90)
 activity.photo.attach(io: file1, filename: "para1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "para2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "para3.jpg", content_type: "image/jpg")
@@ -476,12 +525,11 @@ file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Mountain biking down a volcano", description: "Going down a
   mountain sounds exciting? How about going down an active volcano? Even better, if you are able to beat the time of
   world renowned Travis Pastrana, this activity will be on the house! Bike, protection equipment and helicopter airlift
-  included.", location: "Morafenobe, Madagascar", price: 1500)
+  included.", location: "Morafenobe, Madagascar", price: 80)
 activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
 activity.save!
-
 
 image1 = Rails.root.join("app", "assets", "images", "iceland", "dog1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "dog2.jpg")
@@ -537,8 +585,6 @@ activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-
 image1 = Rails.root.join("app", "assets", "images", "madagascar", "cave1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "madagascar", "cave2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "madagascar", "cave3.jpg")
@@ -549,7 +595,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Caving with crocodiles",
   with resort idyll, a visit to the Crocodile Caves located underground in Ankarana National Park will be truly
   refreshing. This large underground network of caves and rivers is a home to 14 species of squealing bats, giant eels,
   endemic blind shrimps and crocodiles. Rock spires and dropping water contribute to the scary atmosphere. There is only
-  one way in and one way out.", location: "Morafenobe, Madagascar", price: 1200)
+  one way in and one way out.", location: "Morafenobe, Madagascar", price: 70)
 activity.photo.attach(io: file1, filename: "cave1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "cave2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "cave3.jpg", content_type: "image/jpg")
@@ -563,7 +609,7 @@ file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: "Canyoning in Madagascar", description: "This activity combines
   hiking, swimming, jumping, abseiling, and sliding through narrow canyon spaces. It is nothing but fun and it is
-  enjoyed by people of all ages and skill levels", location: "Morafenobe, Madagascar", price: 250)
+  enjoyed by people of all ages and skill levels", location: "Morafenobe, Madagascar", price: 50)
 activity.photo.attach(io: file1, filename: "canyon1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "canyon2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "canyon3.jpg", content_type: "image/jpg")
@@ -579,7 +625,7 @@ activity = Activity.new(owner_id: Owner.last.id, name: "Hiking in Isalo National
   most popular nature destination, Isalo National Park, lies amidst the Jurassic-era highlands of the country's
   southwest. Established in 1962, it protects over 190,000 acres of land dominated by a dramatic sandstone massif that has been
   eroded by time and weather into an otherworldly collection of plateaus, canyons, gorges, and pinnacles", location:
-  "Isalo National Park, Madagascar", price: 500)
+  "Isalo National Park, Madagascar", price: 50)
 activity.photo.attach(io: file1, filename: "hiking1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "hiking2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "hiking3.jpg", content_type: "image/jpg")
@@ -622,21 +668,101 @@ activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg"
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
 activity.save!
 
-activities = Activity.all.limit(5)
-activities.each do |t_activity|
-  trip_activity = TripActivity.create!(
-    trip: @menorca,
-    activity: t_activity,
-    start_time: Date.today,
-    end_time: Date.today,
-    done: true
-  )
-  Review.create!(
-    rating: 4,
-    comment: "The activity was a thrilling adventure that got my adrenaline pumping.",
-    trip_activity: trip_activity
-  )
-end
+trip_activity = TripActivity.create!(
+  trip: @menorca,
+  activity: Activity.all.sample,
+  start_time: Date.today,
+  end_time: Date.today,
+  done: true
+)
+
+reviews_array = [
+  "This was a great activity, just insane!",
+  "Good and nice activity",
+  "I had so much fun doing this activity!",
+  "Absolutely amazing experience!",
+  "Highly recommended activity!",
+  "The best activity I've ever tried!",
+  "I can't wait to do this activity again!",
+  "Incredible and thrilling adventure!",
+  "I had a blast participating in this activity!",
+  "Such a unique and enjoyable experience!",
+  "This activity exceeded my expectations!",
+  "Fantastic activity with friendly staff!",
+  "Great activity for all ages!",
+  "I can't believe how much I enjoyed this activity!",
+  "Well worth the price, I loved it!",
+  "The instructors were knowledgeable and helpful.",
+  "This activity is a must-try!",
+  "I can't stop raving about this activity!",
+  "So much adrenaline rush during this activity!",
+  "I felt safe and secure throughout the entire activity.",
+  "Awesome activity that left me wanting more!",
+  "I can't recommend this activity enough!",
+  "A fun and thrilling way to spend the day!",
+  "This activity is perfect for adventure seekers!",
+  "I was blown away by this activity!",
+  "Such an exhilarating experience!",
+  "The views during this activity were breathtaking!",
+  "I had an absolute blast!",
+  "Unforgettable memories made during this activity!",
+  "This activity is worth every penny!",
+  "I can't wait to bring my friends next time!",
+  "The guides were friendly and knowledgeable.",
+  "I felt an adrenaline rush like never before!",
+  "This activity is a real adrenaline-pumping adventure!",
+  "I'm still buzzing from the excitement of this activity!",
+  "The equipment provided was top-notch!",
+  "This activity is perfect for thrill-seekers!",
+  "I had an incredible time participating in this activity!",
+  "The staff made sure everyone had a great time!",
+  "This activity is an absolute thrill ride!",
+  "I couldn't get enough of this activity!",
+  "This is hands down the best activity I've ever done!",
+  "I'm already planning to do this activity again!",
+  "Such a fun and enjoyable experience!",
+  "This activity is a hidden gem!",
+  "I felt like a superhero during this activity!",
+  "This activity is a real adrenaline rush!",
+  "I had the time of my life doing this activity!",
+  "The guides made the activity even more exciting!",
+  "This activity is perfect for adventure lovers!",
+  "I can't believe how much fun I had!",
+  "This activity is a real thrill!",
+  "The whole experience was amazing!",
+  "This activity is a must-do when visiting!",
+  "I was on an adrenaline high throughout the activity!",
+  "This activity is a real crowd-pleaser!",
+  "I felt like I was in an action movie!",
+  "The staff went above and beyond to make it memorable!",
+  "I couldn't stop smiling the entire time!",
+  "This activity is worth every second!",
+  "I had a fantastic time!",
+  "The adrenaline rush was unreal!",
+  "This activity is perfect for thrill enthusiasts!",
+  "I would do this activity again in a heartbeat!",
+  "I'm so glad I tried this activity!",
+  "This activity is a real game-changer!",
+  "I was completely blown away!",
+  "This activity is an absolute must-try!",
+  "I'm still buzzing from the excitement!",
+  "I can't recommend this activity highly enough!",
+  "This activity is a real adrenaline-pumper!",
+  "I had the best time ever!"]
+
+  reviews_array.each do |review|
+    Review.create!(
+      rating: [3,4,5].sample,
+      comment: review,
+      trip_activity: trip_activity
+    )
+  end
+
+
+
+
+
+
 
 # Review.create!(rating: "4", comment: "The activity was a thrilling adventure that got my adrenaline pumping.")
 
