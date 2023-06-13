@@ -236,9 +236,6 @@ activity.photo.attach(io: file2, filename: "snowmobile2.jpg", content_type: "ima
 activity.photo.attach(io: file3, filename: "snowmobile3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-
-
 image1 = Rails.root.join("app", "assets", "images", "iceland", "horse.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "horse2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "iceland", "horse3.jpg")
@@ -255,10 +252,6 @@ activity.photo.attach(io: file2, filename: "horse2.jpg", content_type: "image/jp
 activity.photo.attach(io: file3, filename: "horse3.jpg", content_type: "image/jpg")
 activity.save!
 
-
-
-
-
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "swim1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "swim2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "ethiopie", "Swim3.jpg")
@@ -273,7 +266,6 @@ activity.photo.attach(io: file2, filename: "swim2.jpg", content_type: "image/jpg
 activity.photo.attach(io: file3, filename: "Swim3.jpg", content_type: "image/jpg")
 activity.save!
 
-
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "camping1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "camping2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "ethiopie", "camping3.jpg")
@@ -287,7 +279,6 @@ activity.photo.attach(io: file1, filename: "camping1.jpg", content_type: "image/
 activity.photo.attach(io: file2, filename: "camping2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "camping3.jpg", content_type: "image/jpg")
 activity.save!
-
 
 image1 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt2.jpg")
@@ -540,7 +531,6 @@ activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
 activity.save!
 
-
 image1 = Rails.root.join("app", "assets", "images", "iceland", "dog1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "iceland", "dog2.jpg")
 image3 = Rails.root.join("app", "assets", "images", "iceland", "dog3.jpg")
@@ -594,8 +584,6 @@ activity.photo.attach(io: file1, filename: "bike1.jpg", content_type: "image/jpg
 activity.photo.attach(io: file2, filename: "bike2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "bike3.jpg", content_type: "image/jpg")
 activity.save!
-
-
 
 image1 = Rails.root.join("app", "assets", "images", "madagascar", "cave1.jpg")
 image2 = Rails.root.join("app", "assets", "images", "madagascar", "cave2.jpg")
