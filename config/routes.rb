@@ -14,12 +14,13 @@ Rails.application.routes.draw do
   resources :activities
   get "trips/which", to: "trips#which", as: 'which_trip'
   resources :trips do
-    resources :trip_activities
+    resources :trip_activities do
+      post "reviews", to: "reviews"
+    end
   end
   resources :chatrooms do
     resources :messages, only: :create
   end
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -18,6 +18,7 @@ class TripActivitiesController < ApplicationController
       }
     end
     @activity = @activities.sample
+    @review = Review.new
   end
 
 
@@ -28,6 +29,8 @@ class TripActivitiesController < ApplicationController
     @trip_activity.save!
     redirect_to root_path
   end
+
+  private
 
   def trip_activity_params
     params.require(:trip_activity).permit(:start_time, :end_time)
