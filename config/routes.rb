@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get "trips/which", to: "trips#which", as: 'which_trip'
   resources :trips do
     resources :trip_activities do
-      post "reviews", to: "reviews"
+      resources :reviews
     end
   end
   resources :chatrooms do
