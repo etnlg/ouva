@@ -41,14 +41,24 @@
     <h2><strong>LOCATION</strong></h2>
     <p><%= @activity.location %></p>
     <h2><strong>REVIEWS</strong></h2>
-    <div class="reviews-show-page">
 
 
      <% 5.times do %>
-      <p><%= Review.all.sample.comment %></p>
-      <p><%= Review.all.sample.rating %></p>
-     <% end %>
-    </div>
+        <div class="reviews-show-page">
+          <% review = Review.offset(rand(Review.count)).first %>
+          <p><%= Review.all.sample.comment %></p>
+          <p>
+            Rating:
+            <% rating = Review.all.sample.rating.to_i %>
+            <% rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+
+
+
 
   </div>
 
