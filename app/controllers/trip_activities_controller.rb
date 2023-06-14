@@ -10,14 +10,14 @@ class TripActivitiesController < ApplicationController
     @trip_activities.each do |trip_activity|
       @activity_ids.push(trip_activity.activity_id)
     end
-    activities = Activity.where(id: @activity_ids)
-    @markers = activities.geocoded.map do |activity|
+    @activities = Activity.where(id: @activity_ids)
+    @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude,
       }
     end
-    @activity = activities.sample
+    @activity = @activities.sample
   end
 
 
