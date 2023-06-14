@@ -32,22 +32,20 @@
  <div class="main-container-intermediaire">
 
     <% (1..@trip_length).each do |n| %>
-      <% n = (n * 1.0 ).to_s %>
+      <% x = 0 %>
       <% date += 1 %>
-
         <div class="container-intermediaire-page">
-
           <div class="date-intermediaire-page">
-              <p><strong>Day <%= n.to_i %><p>
+              <p><strong>Day <%= n %><p>
               <p></strong> <%=date%><p>
           </div>
-            <% if session['act_hash'][n] != nil %>
-            <% if session['act_hash'][n] != "NoActivity" %>
-                <% id = session['act_hash'][n][0] %>
-                <div class="name-activity-intermediaire-page" data-controller="activity">
-                  <p class="name-centered"><%= Activity.find(id).name %></p>
 
-                  <%# <p>
+          <% @trip_activities.each do |trip_activity| %>
+            <% if trip_activity.day == n %>
+              <% x += 1 %>
+              <div class="name-activity-intermediaire-page" data-controller="activity">
+                <p class="name-centered"><%= trip_activity.activity.name %></p>
+                <%# <p>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                       Leave a review
                     </button>
@@ -61,24 +59,15 @@
                         <%# <% end %>
                     <%# </div> %>
                   <%# </div>  %>
-
-                </div>
-              <% else %>
-                <div class="name-activity-intermediaire-page" data-controller="activity">
-                  <p class="name-centered">No activity this day</p>
-                </div>
-              <% end %>
-              <% else %>
-                <div class="name-activity-intermediaire-page">
-                  <p class="name-centered">No activity this day</p>
-                </div>
               </div>
-
-              <% end %>
-            </div>
-
+            <% end %>
+          <% end %>
+            <% if x == 0 %>
+              <div class="name-activity-intermediaire-page">
+                <p class="name-centered">No activity this day</p>
+              </div>
+            <% end %>
         </div>
-
     <% end %>
   </div>
 

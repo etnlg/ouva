@@ -4,13 +4,11 @@
 
 import { application } from "./application"
 
-
 import ActivityController from "./activity_controller"
 application.register("activity", ActivityController)
 
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
-
 
 import FlatpickrController from "./flatpickr_controller"
 application.register("flatpickr", FlatpickrController)
@@ -23,3 +21,6 @@ application.register("map", MapController)
 
 import PaymentController from "./payment_controller"
 application.register("payment", PaymentController)
+
+import TripActivitiesController from "./trip_activities_controller"
+application.register("trip-activities", TripActivitiesController)
