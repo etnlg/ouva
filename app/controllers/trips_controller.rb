@@ -15,7 +15,10 @@ class TripsController < ApplicationController
     @activity_ids = session[:act_hash]
     @activity_ids.each do |day, array|
       if array[0].to_i != 0
-        trip_activity = TripActivity.new(trip_id: @trip.id, activity_id: array[0], day: day.to_i, done: false)
+        trip_activity = TripActivity.new(trip_id: @trip.id,
+                                         activity_id: array[0],
+                                         day: day.to_i, done: false,
+                                         traveler: array[1])
         trip_activity.save!
       end
     end
