@@ -1,37 +1,33 @@
-<div>
-  <h2>Your trips</h2>
+<div class="text-center mt-4">
+  <h2><strong>Your trips</strong></h2>
 
+  <div class="div-trips-card">
+    <% @trips.each do |t| %>
 
-  <% @trips.each do |t| %>
-
-    <div class="trips-card">
-
-      <div class="div-trips-card-photo">
-        <%= cl_image_tag t.activities.first.photo.last.key, crop: :fill, id: "card-image-top" %>
-      </div>
-
-      <div class="div-card-description">
-
-        <div class="div-destination">
-          <h4 class="h4-destination"><%= t.destination.titleize %></h4>
+      <div class="trips-card">
+        <div class="div-trips-card-photo">
+          <%= cl_image_tag t.activities.first.photo.last.key, crop: :fill, id: "card-image-top" %>
         </div>
 
-        <div class="div-date-link">
-
-          <div class="div-date">
-          <p class="p-date"><strong><i class="fa-solid fa-calendar-days"></i> <%= t.start_date %> - <%= t.end_date %></strong></p>
+        <div class="div-card-description">
+          <div class="div-destination">
+            <h4 class="h4-destination"><%= t.destination.titleize %></h4>
           </div>
 
-          <div>
-            <p class="p-link-trip-activities"><%= link_to "See details about the trip", trip_trip_activities_path(t) %></p>
+          <div class="div-date-link">
+            <div class="div-date">
+            <p class="p-date"><strong><i class="fa-solid fa-calendar-days"></i> <%= t.start_date %> - <%= t.end_date %></strong></p>
+            </div>
+
+            <div>
+              <p class="p-link-trip-activities"><%= link_to "See details about the trip", trip_trip_activities_path(t) %></p>
+            </div>
           </div>
 
         </div>
       </div>
-
-    </div>
-
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
-<%# class = "bg-white shadow m-3 p-3" %>
+<%# Trip.last.activities[0].price + Trip.last.activities[1].price + Trip.last.activities[2].price %>

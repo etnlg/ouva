@@ -1,3 +1,11 @@
+.div-trips-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // margin-left: 10px;
+  gap: 16px;
+
+}
+
 .trips-card {
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
   margin: 40px;
