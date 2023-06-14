@@ -3,15 +3,25 @@
 
   <div class="div-trips-card">
     <% @trips.each do |t| %>
+      <% trip_activities = TripActivity.where(trip_id: t.id) %>
+      <% total_price = 0 %>
+      <% trip_activities.each do |trip_activity| %>
+        <% total_price += Activity.find(trip_activity.activity_id).price * trip_activity.traveler %>
+      <% end %>
 
       <div class="trips-card">
         <div class="div-trips-card-photo">
-          <%= cl_image_tag t.activities.first.photo.last.key, crop: :fill, id: "card-image-top" %>
+          <% if t.activities.first.nil? %>
+            <p>YOOOOOOOOO</p>
+          <% else %>
+            <%= cl_image_tag t.activities.first.photo.last.key, crop: :fill, id: "card-image-top" %>
+          <% end %>
         </div>
 
         <div class="div-card-description">
-          <div class="div-destination">
+          <div class="div-destination p-1">
             <h4 class="h4-destination"><%= t.destination.titleize %></h4>
+            <h5 class="h4-destination"><%= total_price.to_i %> CAD</h5>
           </div>
 
           <div class="div-date-link">
