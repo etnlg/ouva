@@ -47,14 +47,14 @@
                 <p class="name-centered"><%= trip_activity.activity.name %></p>
 
                   <p>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <button class="btn btn-primary mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                       Leave a review
                     </button>
                   </p>
                   <div class="collapse" id="collapseExample">
                     <div class="card card-body">
                         <%= simple_form_for([Trip.find(trip_activity.trip_id), trip_activity, @review]) do |f| %>
-                          <%= f.input :rating %>
+                          <%= f.input :rating, collection: 0..5 %>
                           <%= f.input :comment %>
                           <%= f.submit %>
                         <% end %>
@@ -62,7 +62,7 @@
                   </div>
 
               </div>
-            <% end %>j
+            <% end %>
           <% end %>
             <% if x == 0 %>
               <div class="name-activity-intermediaire-page">
