@@ -49,7 +49,7 @@
                 <p class="name-centered"><%= Activity.find(id).name %></p>
               <% else %>
               <div class="button-break-add d-flex" data-activity-target="Div" data-controller="activity">
-                <%= link_to "Add an acitvity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "btn-intermediaire" %>
+                <%= link_to "Add an activity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "btn-intermediaire" %>
                 <button type="button" class="btn-intermediaire-break" data-action="click->activity#disablediv">Take a break</button>
               </div>
                 <div class="name-centered d-none" data-activity-target="noact" data-controller="activity">

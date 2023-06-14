@@ -44,12 +44,21 @@
 
 
      <% 5.times do %>
-    <div class="reviews-show-page">
-     <% review = Review.offset(rand(Review.count)).first %>
-      <p><%= Review.all.sample.comment %></p>
-      <p><%= Review.all.sample.rating %>/5</p>
-    </div>
-     <% end %>
+        <div class="reviews-show-page">
+          <% review = Review.offset(rand(Review.count)).first %>
+          <p><%= Review.all.sample.comment %></p>
+          <p>
+            Rating:
+            <% rating = Review.all.sample.rating.to_i %>
+            <% rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+
+
+
 
   </div>
 
