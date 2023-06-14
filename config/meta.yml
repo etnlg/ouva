@@ -1,0 +1,6 @@
+meta_name: "ouva"
+meta_title: "Ouva - Travel to the unknown"
+meta_description: "Planning a trip can be daunting, but with Ouva,
+the experience of traveling has never been that easy and stress free"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@chantaseng1"   # required for Twitter Cards
