@@ -46,6 +46,22 @@
                 <% id = session['act_hash'][n][0] %>
                 <div class="name-activity-intermediaire-page" data-controller="activity">
                   <p class="name-centered"><%= Activity.find(id).name %></p>
+
+                  <%# <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Leave a review
+                    </button>
+                  </p>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <%= simple_form_for model: @reviews do |f| %>
+                          <%#= f.input :rating %>
+                          <%#= f.input :comment %>
+                          <%#= f.submit %>
+                        <%# <% end %>
+                    <%# </div> %>
+                  <%# </div>  %>
+
                 </div>
               <% else %>
                 <div class="name-activity-intermediaire-page" data-controller="activity">
