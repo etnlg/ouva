@@ -53,7 +53,7 @@
                   </p>
                   <div class="collapse" id="collapseExample">
                     <div class="card card-body">
-                        <%= simple_form_for model: @review do |f| %>
+                        <%= simple_form_for([@trip_activity, @review]) do |f| %>
                           <%= f.input :rating %>
                           <%= f.input :comment %>
                           <%= f.submit %>
