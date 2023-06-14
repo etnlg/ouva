@@ -1,33 +1,108 @@
-
-<div class = "shadow border" style="width: 100%; height: 400px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+                    url('<%= cl_image_path @activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>')">
+<h1 id="title-banner-intermediaire"> <strong><%= @trip.destination.titleize %> </strong> </h1>
 </div>
 
-<h3 class="name-valise"><%= @trip.destination.titleize %></h3>
+<hr class="my-4 bg-dark">
 
-<div class="activity-index-page">
-    <% @trip_activities.each do |trip_activity| %>
-      <% activity = Activity.find(trip_activity.activity_id) %>
-      <div class="card-home-valise-page">
-          <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
-          <div class="inner-text-card">
-            <div class="name-activity-home-page">
-              <h4 class="name"><strong><%= activity.name %></strong></h4>
-            </div>
-            <div class="location-price-card-home">
-              <div class="cards-location">
-                <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+<div id=container-intermediaire>
+
+  <h2 class="your-trip">Your trip</h2>
+
+  <hr />
+
+  <div class="scrolling">
+      <p class="text-center"><%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em> -
+      <%= @trip_length.to_i %> DAYS IN <em><%= @trip.destination.upcase %></em>
+      </p>
+  </div>
+
+  <hr />
+
+
+  <% date = @trip.start_date %>
+ <div class="main-container-intermediaire">
+
+    <% (1..@trip_length).each do |n| %>
+      <% n = (n * 1.0 ).to_s %>
+      <% date += 1 %>
+
+        <div class="container-intermediaire-page">
+
+          <div class="date-intermediaire-page">
+              <p><strong>Day <%= n.to_i %><p>
+              <p></strong> <%=date%><p>
+          </div>
+            <% if session['act_hash'][n] != nil %>
+            <% if session['act_hash'][n] != "NoActivity" %>
+                <% id = session['act_hash'][n][0] %>
+                <div class="name-activity-intermediaire-page" data-controller="activity">
+                  <p class="name-centered"><%= Activity.find(id).name %></p>
+                </div>
+              <% else %>
+                <div class="name-activity-intermediaire-page" data-controller="activity">
+                  <p class="name-centered">No activity this day</p>
+                </div>
+              <% end %>
+              <% else %>
+                <div class="name-activity-intermediaire-page">
+                  <p class="name-centered">No activity this day</p>
+                </div>
               </div>
-              <div class="cards-price">
-                <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %>CAD</strong></p>
-              </div>
+
+              <% end %>
             </div>
+
+        </div>
+
     <% end %>
   </div>
 
-  <div class="link-back-home">
-    <%= link_to "Back to home page", root_path %>
+
+</div>
+
+
+<div class="first-image-intermediaire d-flex">
+  <%= cl_image_tag @activity.photo.blobs[1].key, crop: :fill, id: "card-image-top" %>
+  <div class="text-first-image">
+    <div>
+      <h2 class="text-center-first">Discover <em><%= @trip.destination.titleize %></em> like never before</h2>
+    </div>
+    <p>
+    <i class="fa-solid fa-quote-left"></i>
+        Don't just learn, experience. <br>
+        Don't just read, absorb. <br>
+        Don't just change, transform. <br>
+        Don't just relate, advocate. <br>
+        Don't just criticize, encourage. <br>
+        Don't just take, give. <br>
+        Don't just see, feel. <br>
+        Don't just dream, do. <br>
+        Don't just hear, listen. <br>
+        Don't just talk, act. <br>
+        Don't just tell, show. <br>
+        Don't just exist, live.<i class="fa-solid fa-quote-right"></i><br>
+        <strong>Roy T. Bennett, The Light in the Heart</strong> </p>
   </div>
+</div>
+
+<div class="second-image-intermediaire d-flex">
+  <div class="text-second-image">
+    <div>
+      <h2 class="text-center">Make memories in <em><%= @trip.destination.titleize %> </em></h2>
+    </div>
+    <p>Memories are like treasure because they allow us to relive delightful times in our lives.
+    Memories become stories that we tell hundreds and thousands of times throughout our life.
+    The beautiful thing about our memories is that, not only are they beautiful to us, they are also beautiful to others.
+    Book your trip and make</p>
+  </div>
+  <%= cl_image_tag @activity.photo.blobs[2].key, crop: :fill, id: "card-image-top" %>
 </div>

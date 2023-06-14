@@ -8,6 +8,7 @@
 
 puts "Destroying everything"
 
+Review.destroy_all
 Message.destroy_all
 Chatroom.destroy_all
 TripActivity.destroy_all

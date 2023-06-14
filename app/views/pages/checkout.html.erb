@@ -16,17 +16,21 @@
       <div class="div-act-name-price">
         <div class="div-act-name">
           <% @activity_ids.each_value do |id_trav| %>
-            <% activity = Activity.find(id_trav[0]) %>
-            <p><strong><%= activity.name %></strong></p>
+            <% if id_trav[0].to_i != 0 %>
+              <% activity = Activity.find(id_trav[0]) %>
+              <p><strong><%= activity.name %></strong></p>
+            <% end %>
           <% end %>
         </div>
 
         <div>
           <% @activity_ids.each_value do |id_trav| %>
-            <% activity = Activity.find(id_trav[0]) %>
-            <% price = activity.price * id_trav[1].to_i %>
-            <p><strong><%= price.to_i %> CAD</strong></p>
-            <% total_price += price %>
+            <% if id_trav[0].to_i != 0 %>
+              <% activity = Activity.find(id_trav[0]) %>
+              <% price = activity.price * id_trav[1].to_i %>
+              <p><strong><%= price.to_i %> CAD</strong></p>
+              <% total_price += price %>
+            <% end %>
           <% end %>
         </div>
       </div>

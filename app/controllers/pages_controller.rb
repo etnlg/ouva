@@ -16,19 +16,25 @@ class PagesController < ApplicationController
 
   def intermediaire
     @location = params[:location]
-    @date = params[:date]
+    @date = params[:day_date]
     @num_traveller = params[:travelers]
     @start_date = params[:start_date]
     @end_date = params[:end_date]
+    activity_day = (Date.parse(@date) - Date.parse(@start_date)) * 1.0
     if session['act_hash'].nil?
       session['act_hash'] = {}
     end
-    activity_day = (Date.parse(@date) - Date.parse(@start_date)) * 1.0
-    session['act_hash'][activity_day.to_s] = [Activity.find(params[:activity_id]).id, @num_traveller]
+    if params[:breakday]
+      session['act_hash'][activity_day.to_s] = "NoActivity"
+    else
+      session['act_hash'][activity_day.to_s] = [Activity.find(params[:activity_id]).id, @num_traveller]
+    end
     @trip_length =(Date.parse(@end_date) - Date.parse(@start_date)) - 1
     arr = []
     session['act_hash'].each_value do |v|
-      arr.push(v[0])
+      if v[0].to_i != 0
+        arr.push(v[0])
+      end
     end
     id = arr.sample
     @activity = Activity.find(id)

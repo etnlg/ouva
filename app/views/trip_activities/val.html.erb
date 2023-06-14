@@ -1,0 +1,33 @@
+
+<div class = "shadow border" style="width: 100%; height: 400px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
+<h3 class="name-valise"><%= @trip.destination.titleize %></h3>
+
+<div class="activity-index-page">
+    <% @trip_activities.each do |trip_activity| %>
+      <% activity = Activity.find(trip_activity.activity_id) %>
+      <div class="card-home-valise-page">
+          <%= cl_image_tag activity.photo.blobs[0].key, crop: :fill, id: "card-image-top" %>
+          <div class="inner-text-card">
+            <div class="name-activity-home-page">
+              <h4 class="name"><strong><%= activity.name %></strong></h4>
+            </div>
+            <div class="location-price-card-home">
+              <div class="cards-location">
+                <p class="location"><i class="fa-solid fa-map-pin"></i><%= activity.location %></p>
+              </div>
+              <div class="cards-price">
+                <p class = price><strong><i class="fa-regular fa-bookmark"></i><%= activity.price.to_i %>CAD</strong></p>
+              </div>
+            </div>
+    <% end %>
+  </div>
+
+  <div class="link-back-home">
+    <%= link_to "Back to home page", root_path %>
+  </div>
+</div>
