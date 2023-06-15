@@ -46,11 +46,11 @@
                 <p class="name-centered"><%= trip_activity.activity.name %></p>
 
                   <p>
-                    <button class="button-review-trip" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  <button class="button-review-trip" type="button" data-bs-toggle="collapse" data-bs-target="#<%=trip_activity.id %>" aria-expanded="false" aria-controls="collapseExample">
                       Leave a review
                     </button>
                   </p>
-                  <div class="collapse" id="collapseExample">
+                  <div class="collapse" id="<%=trip_activity.id %>">
                     <div class="card card-body">
                         <%= simple_form_for([Trip.find(trip_activity.trip_id), trip_activity, @review]) do |f| %>
                           <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience", input_html: {data: {controller: "star-rating"}} %>

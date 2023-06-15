@@ -1,14 +1,12 @@
 .div-trips-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // margin-left: 10px;
-  gap: 16px;
-
 }
 
 .trips-card {
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
-  margin: 40px;
+  margin: 40px auto;
+  row-gap: 71px;
   height: 500px;
   width: 624px;
   background-color: white;
@@ -25,9 +23,6 @@
   margin: 0;
 }
 
-// .p-start-date, .p-end-date, .p-link-trip-activities {
-//   margin-bottom: 10px;
-// }
 
 .div-card-description {
   display: flex;
