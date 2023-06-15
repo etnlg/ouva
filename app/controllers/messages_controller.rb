@@ -9,9 +9,11 @@ class MessagesController < ApplicationController
       @message.owner_id = current_owner.id
       @username = current_owner.username
       @message.save!
+      sender_id = current_owner.id
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: {message: @message, username: @username})
+        message: render_to_string(partial: "message", locals: {message: @message, username: @username}),
+        sender_id: sender_id
       )
       head :ok
     else
@@ -20,7 +22,8 @@ class MessagesController < ApplicationController
       @message.save!
       ChatroomChannel.broadcast_to(
         @chatroom,
-        render_to_string(partial: "message", locals: {message: @message, username: @username})
+        message: render_to_string(partial: "message", locals: {message: @message, username: @username}),
+        sender_id: current_user.id
       )
       head :ok
     end

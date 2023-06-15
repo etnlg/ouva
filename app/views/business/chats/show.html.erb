@@ -1,9 +1,12 @@
 <div class="container chatroom"
      data-controller="chatroom-subscription"
-     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+     data-chatroom-subscription-current-user-id-value="<%= current_owner.id %>"
+     >
 
-  <h1>#<%= @chatroom.name %></h1>
-
+  <div class = "m-5 d-flex justify-content-center">
+      <h3><strong>Chat with <%= User.find(@chatroom.user_id).firstname %> <%= User.find(@chatroom.user_id).lastname %></strong></h3>
+  </div>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <% if message.user_id.nil?  %>
@@ -21,13 +24,14 @@
     <% end %>
   </div>
 </div>
-<%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@chatroom.name}",
-    wrapper_html: {class: "flex-grow-1"}
+
+  <%= simple_form_for [@chatroom, @message],
+    html: {class: "d-flex"} do |f|
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-<% end %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message ##{@chatroom.name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "btn btn-primary", style:"height: 38px" %>
+  <% end %>
