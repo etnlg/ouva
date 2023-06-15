@@ -40,7 +40,7 @@
 
     <h2><strong>LOCATION</strong></h2>
     <p><%= @activity.location %></p>
-    <h2><strong>UNSURE OF THE INFORMATIONS?</strong></h2>
+    <h2><strong>MORE INFORMATION</strong></h2>
     <% chatroom = Chatroom.where(user_id: current_user.id, owner_id: @activity.owner_id) %>
     <% if chatroom.empty? %>
       <p><%= link_to "Chat with the owner of this activity", chatrooms_path(owner_id: @activity.owner_id), data: {turbo_method: :post} %>
