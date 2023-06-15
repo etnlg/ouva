@@ -88,13 +88,21 @@ input[type="text"] {
   text-decoration: none;
   display: flex;
   justify-content: center;
-  border: 2px solid #9BBDC5;
-  background-color: #9BBDC5;
-  color: black;
+  align-items: center;
   margin-top: 15px;
-  width: 35%;
+  width: 100px;
+  height: 38px;
+  background-color: #9BBDC5;
   border-radius: 5px;
-  padding: 2px;
+  box-shadow: 1px 1px 1px;
+  color: black;
+}
+
+.div-book-now > a:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: white;
 }
 
 

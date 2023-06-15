@@ -12,9 +12,48 @@
   transform: scale(105%);
   transition: all ease-in-out 200ms;
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
-  color: black;
+  color: white;
   background-color: #9BBDC5;
 }
+
+.button-review-trip {
+  width: 135px;
+  height: 38px;
+  margin-top: 5px;
+  background-color: #9BBDC5;
+  border: solid #9BBDC5;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  color: black;
+}
+
+.button-review-trip:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: white;
+  background-color: #9BBDC5;
+}
+
+.button-create-review {
+  width: 135px;
+  height: 38px;
+  margin-top: 5px;
+  background-color: #9BBDC5;
+  border: solid #9BBDC5;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px;
+  color: black;
+}
+
+.button-create-review:hover {
+  transform: scale(105%);
+  transition: all ease-in-out 200ms;
+  box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+  color: white;
+  background-color: #9BBDC5;
+}
+
 
 .btn-sign-up, .btn-reset {
   width: 91px;
@@ -29,7 +68,7 @@
   transform: scale(105%);
   transition: all ease-in-out 200ms;
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
-  color: black;
+  color: white;
   background-color: #9BBDC5;
 }
 
@@ -37,7 +76,7 @@
   transform: scale(105%);
   transition: all ease-in-out 200ms;
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
-  color: black;
+  color: white;
   background-color: #9BBDC5;
 }
 
