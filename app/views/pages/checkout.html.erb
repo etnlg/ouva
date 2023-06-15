@@ -93,7 +93,7 @@
     </div>
 
     <div class="div-book-now">
-      <%= link_to "Book now!", trips_path(destination: @location, #activity_id: @activity_ids,
+      <%= link_to "Book now", trips_path(destination: @location, #activity_id: @activity_ids,
         end_date: @end_date, start_date: @start_date),
         data: {turbo_method: :post} %>
     </div>
