@@ -45,7 +45,7 @@
                 <% id = session['act_hash'][n][0] %>
                 <div class="name-activity-intermediaire-page" data-controller="activity">
                   <p class="name-centered"><%= Activity.find(id).name %> <br>
-                  <%= @activity.price %> CAD</p>
+                  <%= @activity.price.to_i %> CAD</p>
                 </div>
               <% else %>
                 <div class="name-activity-intermediaire-page" data-controller="activity">
