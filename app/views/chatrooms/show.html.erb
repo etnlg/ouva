@@ -1,33 +1,76 @@
 <div class="container chatroom"
      data-controller="chatroom-subscription"
-     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+     data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+     data-chatroom-subscription-current-user-value="<%= current_user.nil? ? current_owner.id : current_user.id %>"
+     data-chatroom-subscription-current-owner-value="<%= current_owner %>">
 
   <h1>#<%= @chatroom.name %></h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-      <% if message.user_id.nil?  %>
-        <% username = message.owner.username %>
+      <% if current_owner.nil? %>
+
+        <% if message.user_id.nil?  %>
+          <% username = message.owner.username %>
+          <div class = "message-row d-flex justify-content-start">
+            <div class = "receiver-style" id="message-<%= message.id %>">
+              <small>
+                <strong><%= username %></strong>
+                <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+              </small>
+              <p><%= message.content %></p>
+            </div>
+          </div>
+        <% else %>
+          <% username = message.user.username %>
+          <div class = "message-row d-flex justify-content-end">
+            <div class = "sender-style" id="message-<%= message.id %>">
+              <small>
+                <strong><%= username %></strong>
+                <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+              </small>
+              <p><%= message.content %></p>
+            </div>
+          </div>
+        <% end %>
+
       <% else %>
-        <% username = message.user.username %>
+
+        <% if message.owner_id.nil?  %>
+          <% username = message.user.username %>
+          <div class = "message-row d-flex justify-content-start">
+            <div class = "receiver-style" id="message-<%= message.id %>">
+              <small>
+                <strong><%= username %></strong>
+                <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+              </small>
+              <p><%= message.content %></p>
+            </div>
+          </div>
+        <% else %>
+          <% username = message.owner.username %>
+          <div class = "message-row d-flex justify-content-end">
+            <div class = "sender-style" id="message-<%= message.id %>">
+              <small>
+                <strong><%= username %></strong>
+                <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+              </small>
+              <p><%= message.content %></p>
+            </div>
+          </div>
+        <% end %>
+
       <% end %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= username %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
     <% end %>
   </div>
-</div>
-<%= simple_form_for [@chatroom, @message],
-  html: {data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Message ##{@chatroom.name}",
-    wrapper_html: {class: "flex-grow-1"}
+  <%= simple_form_for [@chatroom, @message],
+    html: {data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex"} do |f|
   %>
-  <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-<% end %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Message ##{@chatroom.name}",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%= f.submit "Send", class: "btn btn-primary mb-3", style:"height: 38px" %>
+  <% end %>
+</div>
