@@ -669,9 +669,48 @@ activity.photo.attach(io: file2, filename: "ski2.jpg", content_type: "image/jpg"
 activity.photo.attach(io: file3, filename: "ski3.jpg", content_type: "image/jpg")
 activity.save!
 
+
+trip = Trip.new
+trip.start_date = Date.parse("2023-05-01")
+trip.end_date = Date.parse("2023-05-07")
+trip.user_id = User.find_by(email: "flo@icloud.com").id
+trip.destination = "menorca"
+trip.save!
+
+menorca_activities = Activity.near("menorca", 100)
+
 trip_activity = TripActivity.create!(
-  trip: @menorca,
-  activity: Activity.all.sample,
+  trip: trip,
+  activity: menorca_activities.sample,
+  day: 1,
+  traveler: 2,
+  start_time: Date.today,
+  end_time: Date.today,
+  done: true
+)
+trip_activity = TripActivity.create!(
+  trip: trip,
+  activity: menorca_activities.sample,
+  day: 2,
+  traveler: 2,
+  start_time: Date.today,
+  end_time: Date.today,
+  done: true
+)
+trip_activity = TripActivity.create!(
+  trip: trip,
+  activity: menorca_activities.sample,
+  day: 4,
+  traveler: 2,
+  start_time: Date.today,
+  end_time: Date.today,
+  done: true
+)
+trip_activity = TripActivity.create!(
+  trip: trip,
+  activity: menorca_activities.sample,
+  day: 5,
+  traveler: 2,
   start_time: Date.today,
   end_time: Date.today,
   done: true
