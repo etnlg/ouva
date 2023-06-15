@@ -231,7 +231,7 @@ file3 = File.open(ActionController::Base.helpers.image_path(image3))
 activity = Activity.new(owner_id: Owner.last.id, name: " Snowmobile tour on Langjokull Glacier", description: "Hop on
   a snowmobile and go on an exhilarating ride on the snowy slopes.
   You'll be talking about your adventure on Iceland's second largest glacier for years to come! Welcome to the wintry
-  world of glaciers in Iceland!", location: "Skjol, Iceland", price: 250)
+  world of glaciers in Iceland!", location: "Skjól, Iceland", price: 250)
 activity.photo.attach(io: file1, filename: "snowmobile1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "snowmobile2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "snowmobile3.jpg", content_type: "image/jpg")
