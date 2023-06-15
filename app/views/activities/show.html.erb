@@ -48,21 +48,35 @@
       <p><%= link_to "Chat with the owner of this activity", chatroom_path(chatroom[0]) %>
     <% end %>
     <h2><strong>REVIEWS</strong></h2>
-
-
-     <% 5.times do %>
-        <div class="reviews-show-page">
-          <% review = Review.offset(rand(Review.count)).first %>
-          <p><%= Review.all.sample.comment %></p>
-          <p>
+     <% x = 0 %>
+     <% @vrai_reviews.each do |review| %>
+       <% x += 1 %>
+       <div class="reviews-show-page">
+         <p><%= review.comment %></p>
+         <p>
             Rating:
-            <% rating = Review.all.sample.rating.to_i %>
+            <% rating = review.rating.to_i %>
             <% rating.times do %>
               <i class="fas fa-star"></i>
             <% end %>
           </p>
-        </div>
+       </div>
+     <% end %>
+     <% if x < 4 %>
+      <% 5.times do %>
+          <div class="reviews-show-page">
+            <% review = Review.offset(rand(Review.count)).first %>
+            <p><%= Review.all.sample.comment %></p>
+            <p>
+              Rating:
+              <% rating = Review.all.sample.rating.to_i %>
+              <% rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+            </p>
+          </div>
 
+        <% end %>
       <% end %>
 
 
@@ -102,4 +116,8 @@
     </form>
   </div>
 
+</div>
+
+<div class="link-back-home">
+  <%= link_to "Back to activities", activities_path(location: @location, start_date: @start_date, end_date: @end_date, day_date: @day_date) %>
 </div>
