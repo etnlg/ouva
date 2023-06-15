@@ -13,17 +13,9 @@
 }
 
 .vertical-line {
-  width: 10px; /* Adjust the width as needed */
-  background-color: black; /* Adjust the color as needed */
+  width: 10px;
+  background-color: black;
 }
-
-
-
-// .main-container-intermediaire {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
 
 
 .container-intermediaire-page {
@@ -94,6 +86,7 @@
   background-color: rgb(255, 255, 255);
   border: solid #DCCFBB;
   text-align: center;
+  border-radius: 5px;
 }
 
 
@@ -103,6 +96,7 @@
 
 .name-centered {
   margin: auto;
+  padding: 20px;
 }
 
 .btn-intermediaire-book {
