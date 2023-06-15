@@ -37,9 +37,14 @@
   color: rgb(0, 0, 0);
 }
 
+.enter-destination-home {
+  border-radius: 10px 0;
+  height: 35px;
+}
+
 .datecalendar input {
   border: white;
-  width: 380px;
+  width: 250px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -79,7 +84,7 @@ body {
 }
 
 
-.carousel-inner {
+.carousel-inner-home {
   padding-left: 40px;
   padding-right: 40px;
 }
@@ -89,8 +94,6 @@ body {
   height: 500px;
   object-fit: cover;
   object-position: 0% 15%;
-  // background-size: cover;
-  // background-position: center;
 }
 
 .date-home-page {
@@ -99,7 +102,7 @@ body {
   align-items: center;
   background-color: white;
   border-radius: 10px 0;
-  width: 390px;
+  width: 260px;
   height: 35px;
 }
 

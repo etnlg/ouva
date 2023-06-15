@@ -20,8 +20,6 @@
       <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
       <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
       <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
-      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
-      <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em> -
       <%= @trip_length.to_i %> DAYS IN <em><%= @location.upcase %></em>
       </p>
   </div>
@@ -46,7 +44,8 @@
               <% if session['act_hash'][n] != "NoActivity" %>
                 <% id = session['act_hash'][n][0] %>
                 <div class="name-activity-intermediaire-page" data-controller="activity">
-                  <p class="name-centered"><%= Activity.find(id).name %></p>
+                  <p class="name-centered"><%= Activity.find(id).name %> <br>
+                  <%= @activity.price %> CAD</p>
                 </div>
               <% else %>
                 <div class="name-activity-intermediaire-page" data-controller="activity">
@@ -56,7 +55,7 @@
             <% else %>
               <div class="button-break-add d-flex" data-activity-target="Div" data-controller="activity">
                 <%= link_to "Add an activity", activities_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date), class: "btn-intermediaire" %>
-                <%= link_to "Take a break", intermediaire_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date, breakday: true), class: "btn-intermediaire" %>
+                <%= link_to "Take a break", intermediaire_path(start_date: @start_date, end_date: @end_date, location: @location, day_date: date, breakday: true), class: "btn-intermediaire-break" %>
               </div>
               <div class="name-centered d-none" data-activity-target="noact" data-controller="activity">
                 <h2>No activity this day</h2>
