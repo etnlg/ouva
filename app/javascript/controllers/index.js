@@ -22,5 +22,8 @@ application.register("map", MapController)
 import PaymentController from "./payment_controller"
 application.register("payment", PaymentController)
 
+import StarRatingController from "./star_rating_controller"
+application.register("star-rating", StarRatingController)
+
 import TripActivitiesController from "./trip_activities_controller"
 application.register("trip-activities", TripActivitiesController)

@@ -8,6 +8,7 @@
     "@rails/actioncable": "^7.0.5",
     "bootstrap": "^5.3.0",
     "flatpickr": "^4.6.13",
+    "star-rating.js": "^4.3.0",
     "webpack": "^5.85.1",
     "webpack-cli": "^5.1.3"
   },
