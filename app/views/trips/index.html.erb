@@ -19,9 +19,13 @@
         </div>
 
         <div class="div-card-description">
-          <div class="div-destination p-1">
-            <h4 class="h4-destination"><%= t.destination.titleize %></h4>
-            <h5 class="h4-destination"><%= total_price.to_i %> CAD</h5>
+          <div class="div-destination">
+
+            <h4 class="h4-destination"><strong><%= t.destination.titleize %></strong></h4>
+
+
+            <p class="p-price"><strong><%= total_price.to_i %></strong> CAD</p>
+
           </div>
 
           <div class="div-date-link">

@@ -38,11 +38,21 @@
 
 .h4-destination {
   font-size: 1.5rem;
-  margin-left: 10px;
+  // margin-left: 10px;
+  margin-bottom: 10px;
 }
 
-.p-date, .p-link-trip-activities {
+.p-price, .p-date, .p-link-trip-activities {
   margin: 0 10px 16px 0;
+}
+
+.p-price {
+  font-size: 20px;
+}
+
+.div-destination {
+  text-align: left;
+  margin-left: 10px;
 }
 
 // .div-start-end-date {
