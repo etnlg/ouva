@@ -27,6 +27,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     number_of_reviews = 3
     @reviews = @activity.random_reviews(number_of_reviews)
+    @vrai_reviews = Review.where(activity_id: @activity.id)
     @start_date = params[:start_date]
     @end_date = params[:end_date]
     @day_date = params[:day_date]
