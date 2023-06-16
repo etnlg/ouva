@@ -80,10 +80,9 @@ require 'faker'
             <% names = [Faker::Name.first_name] %>
             <div class="reviews-show-page">
               <% review = Review.offset(rand(Review.count)).first %>
-              <p> <strong>By <%= names.sample %> </strong></p>
+              <p> <em><%= names.sample %> </em></p>
               <p><%= Review.all.sample.comment %></p>
               <p>
-                Rating:
                 <% rating = Review.all.sample.rating.to_i %>
                 <% rating.times do %>
                   <i class="fas fa-star"></i>
