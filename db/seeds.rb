@@ -287,7 +287,7 @@ image3 = Rails.root.join("app", "assets", "images", "ethiopie", "hunt3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image2))
-activity = Activity.new(owner_id: Owner.last.id, name: "Do you have a competiton spirit? Try this!", description: "This
+activity = Activity.new(owner_id: Owner.last.id, name: "Safari", description: "This
   is going to blow your mind, Imagine having different groups that will compete with the group we will assign to you,
   the winners will go home with big rewards ", location: "Lalibela, Ethiopie", price: 300)
 activity.photo.attach(io: file1, filename: "hunt1.jpg", content_type: "image/jpg")
@@ -464,10 +464,10 @@ image3 = Rails.root.join("app", "assets", "images", "madagascar", "tsingy3.jpg")
 file1 = File.open(ActionController::Base.helpers.image_path(image1))
 file2 = File.open(ActionController::Base.helpers.image_path(image2))
 file3 = File.open(ActionController::Base.helpers.image_path(image3))
-activity = Activity.new(owner_id: Owner.last.id, name: "Rock climbing in the Rock Forest of Tsingy", description: "Rock
+activity = Activity.new(owner_id: Owner.last.id, name: "Rock climbing", description: "Rock
   climbing in the famous Rock Forest of Tsingy. These rocks were formed during the prehistorical era and you will have
   the chance to visit Indiana Jones set and feel like a holiday star! From climbing to ziplining, this activity is not
-  for the faint of heart.", location: "Tsingy National Park, Madagascar", price: 70)
+  for the faint of heart.", location: "Tsingy, Madagascar", price: 70)
 activity.photo.attach(io: file1, filename: "tsingy1.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file2, filename: "tsingy2.jpg", content_type: "image/jpg")
 activity.photo.attach(io: file3, filename: "tsingy3.jpg", content_type: "image/jpg")
