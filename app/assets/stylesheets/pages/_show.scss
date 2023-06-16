@@ -68,7 +68,7 @@ margin-top: 15px;
   width: 100%;
   height: 100%;
   color: #fff;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4698) 23.96%, rgba(0, 0, 0, 0.081) 51.56%, rgba(0, 0, 0, 0.1215) 79.69%);  // background-color: rgba(67, 67, 67, 0.162);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4698) 23.96%, rgba(0, 0, 0, 0.081) 51.56%, rgba(0, 0, 0, 0.1215) 79.69%);
 }
 
 .carousel-caption h1 {
@@ -94,4 +94,11 @@ margin-top: 15px;
   transition: all ease-in-out 200ms;
   box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
   color: white;
+}
+
+
+.cards-review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
