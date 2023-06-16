@@ -43,9 +43,19 @@ require 'faker'
     <h2><strong>MORE INFORMATION</strong></h2>
     <% chatroom = Chatroom.where(user_id: current_user.id, owner_id: @activity.owner_id) %>
     <% if chatroom.empty? %>
-      <p><%= link_to "Chat with the owner of this activity", chatrooms_path(owner_id: @activity.owner_id), data: {turbo_method: :post} %>
+      <%= link_to chatrooms_path(owner_id: @activity.owner_id), data: {turbo_method: :post} do %>
+        <div class="chatroom-link">
+          <i class="fa-solid fa-comments"></i>
+          <p>Chat with the owner of this activity</p>
+        </div>
+      <% end %>
     <% else %>
-      <p><%= link_to "Chat with the owner of this activity", chatroom_path(chatroom[0]) %>
+        <%= link_to chatroom_path(chatroom[0]) do %>
+          <div class="chatroom-link">
+            <i class="fa-solid fa-comments"></i>
+            <p>Chat with the owner of this activity</p>
+          </div>
+        <% end %>
     <% end %>
 
     <h2><strong>REVIEWS</strong></h2>

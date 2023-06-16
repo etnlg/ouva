@@ -46,9 +46,11 @@
                 <p class="name-centered"><%= trip_activity.activity.name %></p>
 
                   <p>
-                  <button class="button-review-trip" type="button" data-bs-toggle="collapse" data-bs-target="#<%=trip_activity.id %>" aria-expanded="false" aria-controls="collapseExample">
-                      Leave a review
-                    </button>
+                  <% if Review.where(trip_activity_id: trip_activity.id).empty? %>
+                    <button class="button-review-trip" type="button" data-bs-toggle="collapse" data-bs-target="#<%=trip_activity.id %>" aria-expanded="false" aria-controls="collapseExample">
+                        Leave a review
+                      </button>
+                  <% end %>
                   </p>
                   <div class="collapse" id="<%=trip_activity.id %>">
                     <div class="card card-body">

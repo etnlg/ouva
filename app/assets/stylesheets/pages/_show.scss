@@ -96,6 +96,29 @@ margin-top: 15px;
   color: white;
 }
 
+.chatroom-link {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: $blue;
+  background-color: white;
+  border: 1px solid $blue;
+  width: 315px;
+  padding: 15px;
+  border-radius: 5px;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+      transform: scale(105%);
+      transition: all ease-in-out 200ms;
+      box-shadow: 1px 1px 10px 1px rgba(76, 76, 76, 0.585);
+      color: rgb(0, 0, 0);
+      background-color: #ffffff;
+  }
+
 
 .cards-review {
   display: grid;
